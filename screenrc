@@ -1,0 +1,4 @@
+startup_message off
+term screen-256color
+
+hardstatus alwayslastline '%{= wk} %-w%{+b wk}%50> %n* %t %{= wk}%+w%< %{= wk}%-=%D %m/%d/%y | %C:%s %A | %1`%{-} %2`%{-}'

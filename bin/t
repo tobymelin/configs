@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+#
+# Python script to automate opening
+# twitch.tv links using streamlink
+#
+
+from os import system
+from os.path import isfile, dirname
+from sys import argv, platform
+#from shutil import which
+import shutil
+
+default_quality = '720p'
+
+LIVESTR_CMD = 'streamlink'
+
+if len(argv) == 1:
+	channel = input('Channel: ')
+else:
+	if argv[1].find("twitch.tv") != -1:
+		if argv[1].find("/profile") == -1:
+			channel = argv[1]
+		else:
+			channel = argv[1].replace("/profile", "")
+	else:
+		channel = "twitch.tv/" + argv[1]
+
+if len(argv) > 2:
+	quality = argv[2]
+else:
+	quality = default_quality
+
+if shutil.which(LIVESTR_CMD.split(' ', 1)[0]):
+	status = system(LIVESTR_CMD + ' %s %s' % (channel, quality))
+
+	if status == 1:
+		print("\nError. Status returned: %s." % status)
+
+		if quality != 'best':
+			print("- Trying best quality.")
+			status = system(LIVESTR_CMD + ' %s best' % channel)
+		else:
+			print("- Stream currently not available.")
+
+	print("\nExit status: %s" % status)

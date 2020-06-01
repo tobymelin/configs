@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Bash script used to compile cover letters using Pandoc
+# (Markdown to PDF with a custom LaTeX template)
+
+INPUTFILE="$(basename -s .md $1)"
+
+pandoc -o $INPUTFILE.pdf --pdf-engine=xelatex --template coverletter $INPUTFILE.md
