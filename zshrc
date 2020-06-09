@@ -105,10 +105,12 @@ VSCODE='open -a "Visual Studio Code"'
 
 alias c='clear'
 alias code="$VSCODE"
+alias d='du -h'
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
+alias m='mv -v'
 alias rr='rm -r'
 alias r='rm -v'
 alias v='vim'
@@ -119,4 +121,10 @@ alias -g :gi=' | grep -i'
 alias -g :p='| less'
 
 alias -s {md,py}=$VSCODE
-alias -s git="git clone"
+alias -s pdf='open -a Preview'
+alias -s git='git clone'
+
+mkd() {
+	mkdir -p "$1"
+	cd "$1"
+}
