@@ -1,0 +1,26 @@
+# vim: syntax=bash
+#
+# Default locations:
+# ~/.config/git/ignore on Unix/macOS
+# %USERPROFILE%\git\ignore on Windows
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Other files #
+###############
+.*.swp
