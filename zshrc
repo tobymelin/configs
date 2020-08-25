@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/opt/ruby/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/toby/.oh-my-zsh"
@@ -100,8 +100,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
 
-VSCODE='open -a "Visual Studio Code"'
+if test -f ".zshrc.local"; then
+	source .zshrc.local
+fi
+
+case `uname` in 
+	'Darwin')
+		VSCODE='open -a "Visual Studio Code"'
+		;;
+	'Linux')
+		;;
+esac
 
 alias c='clear'
 alias code="$VSCODE"
@@ -111,14 +122,28 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
 alias m='mv -v'
-alias rr='rm -r'
+alias py='python3'
+alias rr='rm -rv'
 alias r='rm -v'
 alias v='vim'
 alias x='exit'
 
+# Git aliases
+alias g='git'
+alias gb='git branch'
+alias gc='git commit -am'
+alias gcm='git commit -m'
+alias gd='git diff'
+alias gp='git push'
+alias gs='git status'
+
+alias -g :cp='| pbcopy'
 alias -g :g='| grep'
 alias -g :gi=' | grep -i'
-alias -g :p='| less'
+alias -g :h='| head'
+alias -g :p='| less -R'
+alias -g :t='| tail'
+alias -g :t1='| tail -n 1'
 
 alias -s {md,py}=$VSCODE
 alias -s pdf='open -a Preview'
