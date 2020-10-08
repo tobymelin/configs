@@ -2,7 +2,7 @@
 export PATH=$HOME/bin:/usr/local/opt/ruby/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/toby/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -117,6 +117,7 @@ esac
 alias c='clear'
 alias code="$VSCODE"
 alias d='du -h'
+alias di='colordiff -Nau'
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
@@ -125,6 +126,7 @@ alias m='mv -v'
 alias py='python3'
 alias rr='rm -rv'
 alias r='rm -v'
+alias sc='screen'
 alias v='vim'
 alias x='exit'
 
