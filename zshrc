@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="jreesedit"
+ZSH_THEME="jreese"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -106,6 +106,8 @@ if test -f ".zshrc.local"; then
 	source .zshrc.local
 fi
 
+export TERM='xterm-256color'
+
 case `uname` in 
 	'Darwin')
 		VSCODE='open -a "Visual Studio Code"'
@@ -123,10 +125,14 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
 alias m='mv -v'
+alias p='pacman'
 alias py='python3'
 alias rr='rm -rv'
 alias r='rm -v'
+alias s='sudo'
 alias sc='screen'
+alias sudo='sudo '
+alias sx='startx'
 alias v='vim'
 alias x='exit'
 
@@ -135,6 +141,7 @@ alias g='git'
 alias gb='git branch'
 alias gc='git commit -am'
 alias gcm='git commit -m'
+alias gco='git checkout'
 alias gd='git diff'
 alias gp='git push'
 alias gs='git status'
@@ -155,3 +162,6 @@ mkd() {
 	mkdir -p "$1"
 	cd "$1"
 }
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

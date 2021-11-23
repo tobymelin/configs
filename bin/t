@@ -10,9 +10,9 @@ from sys import argv, platform
 #from shutil import which
 import shutil
 
-default_quality = '720p'
+default_quality = '720p60,720p'
 
-LIVESTR_CMD = 'streamlink'
+LIVESTR_CMD = 'streamlink -p mpv'
 
 if len(argv) == 1:
 	channel = input('Channel: ')
