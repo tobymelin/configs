@@ -1,0 +1,6 @@
+#
+# Script for scaling display output to provide more real estate in a VM
+#
+#!/bin/bash
+
+xrandr --output Virtual1 --scale 1.25x1.25
