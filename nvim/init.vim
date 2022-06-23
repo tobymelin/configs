@@ -15,22 +15,38 @@ Plug 'AndrewRadev/splitjoin.vim'
 " Buffer Switcher Window
 Plug 'matbme/JABS.nvim'
 
+" Hop (Navigation Plugin)
+Plug 'phaazon/hop.nvim'
+
+" Tabout plugin
+Plug 'abecodes/tabout.nvim'
+
 call plug#end()
 
+language en_US.utf8
 syntax on
 colorscheme dracula
 set number relativenumber
 set shellslash
 set scrolloff=1
+set tabstop=2
+set fileformats=unix,dos
 
 " Required for org-mode
 set conceallevel=2
 set concealcursor=nc
 
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 nmap <C-Tab> :JABSOpen<CR>
+nmap <C-F> :HopChar2<CR>
+map <C-S-V> "*p
 
 
 lua require 'jabs'.setup {}
+lua require 'hop'.setup {}
+lua require 'tabout'.setup {}
 
 lua << EOF
   require("todo-comments").setup {
@@ -65,13 +81,24 @@ require'nvim-treesitter.configs'.setup {
       -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
   highlight = {
         enable = true,
-    additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
+    --additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
       },
-  ensure_installed = {'org'}, -- Or run :TSUpdate org
+  --ensure_installed = {'org'}, -- Or run :TSUpdate org
+}
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.org = {
+  install_info = {
+    url = 'https://github.com/milisims/tree-sitter-org',
+    revision = 'main',
+    files = { 'src/parser.c', 'src/scanner.cc' },
+  },
+  filetype = 'org',
 }
 
 require('orgmode').setup({
-      org_agenda_files = {[[~/Dropbox/org/*]]},
-  org_default_notes_file = '~/Dropbox/org/refile.org',
+		org_agenda_files = {[[~/Dropbox/org/*]]},
+		org_default_notes_file = '~/Dropbox/org/refile.org',
 })
 EOF
+
