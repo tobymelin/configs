@@ -15,6 +15,9 @@ Plug 'AndrewRadev/splitjoin.vim'
 " Buffer Switcher Window
 Plug 'matbme/JABS.nvim'
 
+" Markdown plugin
+Plug 'ixru/nvim-markdown'
+
 " Hop (Navigation Plugin)
 Plug 'phaazon/hop.nvim'
 
@@ -30,6 +33,7 @@ set number relativenumber
 set shellslash
 set scrolloff=1
 set tabstop=2
+set shiftwidth=2
 set fileformats=unix,dos
 
 " Required for org-mode
@@ -40,6 +44,7 @@ nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 nmap <C-Tab> :JABSOpen<CR>
+nmap <leader><Tab> :JABSOpen<CR>
 nmap <C-F> :HopChar2<CR>
 map <C-S-V> "*p
 
