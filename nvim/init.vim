@@ -26,6 +26,10 @@ Plug 'abecodes/tabout.nvim'
 
 call plug#end()
 
+
+" ================================
+" VIM Settings
+" ================================
 language en_US.utf8
 syntax on
 colorscheme dracula
@@ -34,18 +38,26 @@ set shellslash
 set scrolloff=1
 set tabstop=2
 set shiftwidth=2
+" Case sensitive search if using uppercase characters, otherwise case
+" insensitive
+set ignorecase
+set smartcase
 set fileformats=unix,dos
 
 " Required for org-mode
 set conceallevel=2
 set concealcursor=nc
 
+" ================================
+" Key mappings
+" ================================
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 nmap <C-Tab> :JABSOpen<CR>
 nmap <leader><Tab> :JABSOpen<CR>
 nmap <C-F> :HopChar2<CR>
+nmap <leader>/ :HopChar2<CR>
 map <C-S-V> "*p
 
 
