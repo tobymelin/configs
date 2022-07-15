@@ -71,7 +71,7 @@ lua << EOF
       TODOPRIO1 = { icon = "☐ ", color = "error" },
       TODOPRIO2 = { icon = "☐ ", color = "warning" },
       TODO = { icon = "☐ ", color = "info" },
-      WAITING = { color = "gray" },
+      WAITING = { icon = "∞ ", color = "gray" },
       MOVED = { icon = "→ ", color = "info" },
       DONE = {  icon = "✓ ", color = "green" },
     },
@@ -114,8 +114,9 @@ parser_config.org = {
 }
 
 require('orgmode').setup({
-		org_agenda_files = {[[~/Dropbox/org/*]]},
-		org_default_notes_file = '~/Dropbox/org/refile.org',
+    org_agenda_files = {[[~/Dropbox/org/*]]},
+    org_default_notes_file = '~/Dropbox/org/refile.org',
+    org_todo_keywords = {'TODO', 'WAITING', 'MOVED', '|', 'DONE'},
 })
 EOF
 
