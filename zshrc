@@ -133,8 +133,15 @@ alias s='sudo'
 alias sc='tmux'
 alias sudo='sudo '
 alias sx='startx'
-alias v='vim'
 alias x='exit'
+
+if type nvim &> /dev/null; then
+				alias v='nvim'
+				export EDITOR='nvim'
+else
+				alias v='vim'
+				export EDITOR='vim'
+fi
 
 # Git aliases
 alias g='git'
