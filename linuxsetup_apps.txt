@@ -1,0 +1,17 @@
+zsh
+dmenu
+xorg-xinit
+xorg-server
+i3
+wget
+firefox
+ttf-dejavu
+alacritty
+neovim
+tmux
+man-db
+base-devel
+git
+xclip
+openssh
+
