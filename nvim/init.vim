@@ -24,6 +24,9 @@ Plug 'phaazon/hop.nvim'
 " Tabout plugin
 Plug 'abecodes/tabout.nvim'
 
+" VimTeX
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 
@@ -31,7 +34,8 @@ call plug#end()
 " VIM Settings
 " ================================
 language en_US.utf8
-syntax on
+filetype plugin indent on
+syntax enable
 colorscheme dracula
 set number relativenumber
 set shellslash
