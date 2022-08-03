@@ -33,7 +33,10 @@ call plug#end()
 " ================================
 " VIM Settings
 " ================================
-language en_US.utf8
+if has('win32') || has('win64')
+	language en_US.utf8
+endif
+
 filetype plugin indent on
 syntax enable
 colorscheme dracula
