@@ -65,6 +65,7 @@ nmap <C-Tab> :JABSOpen<CR>
 nmap <leader><Tab> :JABSOpen<CR>
 nmap <C-F> :HopChar2<CR>
 nmap <leader>/ :HopChar2<CR>
+nmap <leader>h :nohlsearch<CR>
 map <C-S-V> "*p
 
 
