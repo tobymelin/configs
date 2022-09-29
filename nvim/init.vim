@@ -27,6 +27,10 @@ Plug 'abecodes/tabout.nvim'
 " VimTeX
 Plug 'lervag/vimtex'
 
+" Vim Markdown plugin
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
+
 call plug#end()
 
 
@@ -80,7 +84,9 @@ lua << EOF
       TODOPRIO2 = { icon = "☐ ", color = "warning" },
       TODO = { icon = "☐ ", color = "info" },
       WAITING = { icon = "∞ ", color = "gray" },
-      MOVED = { icon = "→ ", color = "info" },
+      WAIT = { icon = "∞ ", color = "gray" },
+      MOVED = { icon = "→ ", color = "#999999" },
+      MVED = { icon = "→ ", color = "#999999" },
       DONE = {  icon = "✓ ", color = "green" },
     },
     colors = {
@@ -124,7 +130,7 @@ parser_config.org = {
 require('orgmode').setup({
     org_agenda_files = {[[~/Dropbox/org/*]]},
     org_default_notes_file = '~/Dropbox/org/refile.org',
-    org_todo_keywords = {'TODO', 'WAITING', 'MOVED', '|', 'DONE'},
+    org_todo_keywords = {'TODO', 'WAIT', 'MVED', '|', 'DONE'},
 })
 EOF
 
