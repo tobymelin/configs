@@ -183,3 +183,8 @@ if type brew &> /dev/null; then
 	#export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.7/include"
 	#export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby@2.7/lib/pkgconfig"
 fi
+
+py() {
+	python3 -c \"from math import *; print(${@})\"
+}
+
