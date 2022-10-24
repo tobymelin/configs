@@ -168,6 +168,9 @@ mkd() {
 	cd "$1"
 }
 
+pycalc() {
+	python3 -c \"from math import *; print(${@})\"
+}
 
 # nvm-specific commands
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -183,8 +186,4 @@ if type brew &> /dev/null; then
 	#export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.7/include"
 	#export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby@2.7/lib/pkgconfig"
 fi
-
-py() {
-	python3 -c \"from math import *; print(${@})\"
-}
 
