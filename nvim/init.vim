@@ -128,9 +128,17 @@ parser_config.org = {
 }
 
 require('orgmode').setup({
-    org_agenda_files = {[[~/Dropbox/org/*]]},
-    org_default_notes_file = '~/Dropbox/org/refile.org',
-    org_todo_keywords = {'TODO', 'WAIT', 'MVED', '|', 'DONE'},
+    org_agenda_files = {[[~/org/*]], [[~/org/weekly/*]]},
+    org_default_notes_file = '~/org/refile.org',
+		org_blank_before_new_entry = { heading = false, plain_list_item = false },
+		org_priority_highest = 1,
+		org_priority_default = 3,
+		org_priority_lowest = 5,
+    org_todo_keywords = {'TODO(t)', 'WAIT', '|', 'MVED', 'DONE'},
+		org_capture_templates = {
+			t = { description = 'Task', template = '* TODO %?\n %u' },
+			n = { description = 'Note', template = '* %?\n %u' }
+		}
 })
 EOF
 
