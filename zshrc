@@ -108,7 +108,7 @@ if test -f ".zshrc.local"; then
 	source .zshrc.local
 fi
 
-export ORGDIR="~/org"
+export ORGDIR="$HOME/org"
 export TERM='xterm-256color'
 
 if type nvim &> /dev/null; then
@@ -134,8 +134,6 @@ alias sc='tmux'
 alias sudo='sudo '
 alias sx='startx'
 alias v="$EDITOR"
-#alias vorg="v $ORGDIR/weekly/$(date -v1w +"%y%m%d").org $ORGDIR/refile.org"
-alias vorg="v $ORGDIR/weekly/$(date -v1w +"%y%m%d").org"
 alias x='exit'
 alias zxc='code .'
 
@@ -147,6 +145,8 @@ alias gcam='git commit -am'
 alias gcm='git commit -m'
 alias gco='git checkout'
 alias gd='git diff'
+alias gdt='git difftool'
+alias gmt='git mergetool'
 alias gp='git push'
 alias gs='git status'
 
@@ -168,6 +168,19 @@ mkd() {
 	cd "$1"
 }
 
+#alias vorg="v $ORGDIR/weekly/$(date -v1w +"%y%m%d").org $ORGDIR/refile.org"
+#alias vorg="v $ORGDIR/weekly/$(date -v1w +"%y%m%d").org"
+vorg() {
+	orgfn=$ORGDIR/weekly/$(date -v1w +"%y%m%d").org
+
+	if [[ !( -e $orgfn ) ]]; then
+		touch $orgfn
+	fi
+
+	#$EDITOR $ORGDIR/weekly/$(date -v1w +"%y%m%d").org
+	$EDITOR $orgfn
+}
+
 pycalc() {
 	python3 -c \"from math import *; print(${@})\"
 }
@@ -185,5 +198,11 @@ if type brew &> /dev/null; then
 	#export LDFLAGS="-L/opt/homebrew/opt/ruby@2.7/lib"
 	#export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.7/include"
 	#export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby@2.7/lib/pkgconfig"
+fi
+
+if [ -d $HOME/Library/Android/sdk ]; then
+	export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+	export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+	export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 fi
 
