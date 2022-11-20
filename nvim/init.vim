@@ -2,7 +2,7 @@ call plug#begin()
 
 Plug 'Mofiqul/dracula.nvim'
 
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-orgmode/orgmode'
 
 " TODO comments/highlight
@@ -30,6 +30,18 @@ Plug 'lervag/vimtex'
 " Vim Markdown plugin
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
+
+" Telescope File Tree
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+Plug 'nvim-tree/nvim-web-devicons'
+
+" Status Line
+Plug 'nvim-lualine/lualine.nvim'
+
+" Git plugins
+Plug 'TimUntersberger/neogit'
+Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
 
@@ -65,17 +77,27 @@ set concealcursor=nc
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 nmap <C-Tab> :JABSOpen<CR>
 nmap <leader><Tab> :JABSOpen<CR>
 nmap <C-F> :HopChar2<CR>
 nmap <leader>/ :HopChar2<CR>
+nmap <leader>G :Neogit<CR>
 nmap <leader>h :nohlsearch<CR>
+nmap <leader>w :w<CR>
 map <C-S-V> "*p
 
 
 lua require 'jabs'.setup {}
 lua require 'hop'.setup {}
 lua require 'tabout'.setup {}
+lua require 'telescope'.setup {}
+lua require 'gitsigns'.setup {}
 
 lua << EOF
   require("todo-comments").setup {
@@ -140,5 +162,15 @@ require('orgmode').setup({
 			n = { description = 'Note', template = '* %?\n %u' }
 		}
 })
+
+require('lualine').setup({
+	options = {
+		theme = 'material',
+		component_separators = { left = '|', right = '|' },
+		section_separators = { left = '', right = '' },
+	}
+})
+
+require('neogit').setup()
 EOF
 
