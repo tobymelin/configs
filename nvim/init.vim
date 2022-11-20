@@ -36,6 +36,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'nvim-tree/nvim-web-devicons'
 
+" NERDTree
+Plug 'preservim/nerdtree'
+
 " Status Line
 Plug 'nvim-lualine/lualine.nvim'
 
@@ -82,6 +85,8 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 nmap <C-Tab> :JABSOpen<CR>
 nmap <leader><Tab> :JABSOpen<CR>
