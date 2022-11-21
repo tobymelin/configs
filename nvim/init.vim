@@ -34,7 +34,6 @@ Plug 'preservim/vim-markdown'
 " Telescope File Tree
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
-Plug 'nvim-tree/nvim-web-devicons'
 
 " NERDTree
 Plug 'preservim/nerdtree'
@@ -45,6 +44,10 @@ Plug 'nvim-lualine/lualine.nvim'
 " Git plugins
 Plug 'TimUntersberger/neogit'
 Plug 'lewis6991/gitsigns.nvim'
+
+" vim-tree
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-tree.lua'
 
 call plug#end()
 
@@ -95,6 +98,7 @@ nmap <leader>/ :HopChar2<CR>
 nmap <leader>G :Neogit<CR>
 nmap <leader>h :nohlsearch<CR>
 nmap <leader>w :w<CR>
+nmap <leader>t :NvimTreeToggle<CR>
 map <C-S-V> "*p
 
 
@@ -110,6 +114,7 @@ lua << EOF
       TODOPRIO1 = { icon = "☐ ", color = "error" },
       TODOPRIO2 = { icon = "☐ ", color = "warning" },
       TODO = { icon = "☐ ", color = "info" },
+      ACTV = { icon = "☐ ", color = "#f08080" },
       WAITING = { icon = "∞ ", color = "gray" },
       WAIT = { icon = "∞ ", color = "gray" },
       MOVED = { icon = "→ ", color = "#999999" },
@@ -161,7 +166,7 @@ require('orgmode').setup({
 		org_priority_highest = 1,
 		org_priority_default = 3,
 		org_priority_lowest = 5,
-    org_todo_keywords = {'TODO(t)', 'WAIT', '|', 'MVED', 'DONE'},
+    org_todo_keywords = {'TODO(t)', 'WAIT', 'ACTV', '|', 'MVED', 'DONE'},
 		org_capture_templates = {
 			t = { description = 'Task', template = '* TODO %?\n %u' },
 			n = { description = 'Note', template = '* %?\n %u' }
@@ -177,5 +182,24 @@ require('lualine').setup({
 })
 
 require('neogit').setup()
+EOF
+
+lua << EOF
+require("nvim-tree").setup({
+	view = {
+		mappings = {
+			list = {
+				{ key = "u", action = "dir_up" }
+			}
+		}
+	},
+	filters = {
+		dotfiles = true
+	},
+	update_focused_file = {
+		enable = true,
+		update_root = true,
+	},
+})
 EOF
 
