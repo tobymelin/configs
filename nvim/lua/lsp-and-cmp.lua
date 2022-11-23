@@ -1,8 +1,5 @@
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.eslint.setup{}
-
 local cmp = require'cmp'
 
 -- Use an on_attach function to only map the following keys
@@ -69,9 +66,21 @@ cmp.setup({
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['tsserver'].setup {
+
+-- require('lspconfig')['tsserver'].setup {
+require("typescript").setup {
+  server = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    root_dir = function() return vim.loop.cwd() end
+  }
+}
+
+require'lspconfig'.eslint.setup{
   on_attach = on_attach,
-  capabilities = capabilities
+  capabilities = capabilities,
+  root_dir = function() return vim.loop.cwd() end
 }
 
