@@ -32,6 +32,9 @@ Plug 'phaazon/hop.nvim'
 " Tabout plugin
 Plug 'abecodes/tabout.nvim'
 
+" Toggle line comments
+Plug 'terrortylor/nvim-comment'
+
 " VimTeX
 Plug 'lervag/vimtex'
 
@@ -140,6 +143,7 @@ lua << EOF
 	require 'telescope'.setup {}
 	require 'trouble'.setup {}
 	require 'cmp'.setup {}
+  require 'nvim_comment'.setup {}
 
   require('lualine').setup({
     options = {
