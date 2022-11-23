@@ -3,6 +3,8 @@ call plug#begin()
 " Colorschemes
 Plug 'Mofiqul/dracula.nvim'
 Plug 'navarasu/onedark.nvim'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Common Dependencies
 Plug 'nvim-lua/plenary.nvim'
@@ -89,7 +91,6 @@ set expandtab
 set ignorecase
 set smartcase
 set fileformats=unix,dos
-set completeopt=menu,menuone,noselect " required for cmp
 
 " Required for org-mode
 set conceallevel=2
@@ -127,7 +128,9 @@ map <C-S-V> "*p
 
 lua << EOF
   require 'git'
+  require 'orgmode-conf'
   require 'lsp-and-cmp'
+  require 'todo-comments-conf'
 
 	require 'jabs'.setup {}
 	require 'hop'.setup {}
@@ -135,98 +138,30 @@ lua << EOF
 	require 'telescope'.setup {}
 	require 'trouble'.setup {}
 	require 'cmp'.setup {}
-EOF
 
-lua << EOF
-  require("todo-comments").setup {
-    keywords = {
-      TODOPRIO1 = { icon = "☐ ", color = "error" },
-      TODOPRIO2 = { icon = "☐ ", color = "warning" },
-      TODO = { icon = "☐ ", color = "info" },
-      ACTV = { icon = "☐ ", color = "#f08080" },
-      WAITING = { icon = "∞ ", color = "gray" },
-      WAIT = { icon = "∞ ", color = "gray" },
-      MOVED = { icon = "→ ", color = "#999999" },
-      MVED = { icon = "→ ", color = "#999999" },
-      DONE = {  icon = "✓ ", color = "green" },
-    },
-    colors = {
-      gray = { "#cccccc" },
-      green = { "#37c88b" },
-    },
-    highlight = {
-      keyword = "bg",
-      pattern = { [[.*<(KEYWORDS)\s*:]], [[\*\s<(KEYWORDS)\s]] }, -- pattern or table of patterns, used for highlightng (vim regex)  
-      comments_only = false,
+  require('lualine').setup({
+    options = {
+      theme = 'material',
+      component_separators = { left = '|', right = '|' },
+      section_separators = { left = '', right = '' },
     }
-  }
-EOF
+  })
 
-
-" CONFIG FOR ORG-MODE
-lua << EOF
--- Load custom tree-sitter grammar for org filetype
-    require('orgmode').setup_ts_grammar()
-
--- Tree-sitter configuration
-require'nvim-treesitter.configs'.setup {
-      -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-  highlight = {
-        enable = true,
-    --additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
-      },
-  --ensure_installed = {'org'}, -- Or run :TSUpdate org
-}
-
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.org = {
-  install_info = {
-    url = 'https://github.com/milisims/tree-sitter-org',
-    revision = 'main',
-    files = { 'src/parser.c', 'src/scanner.cc' },
-  },
-  filetype = 'org',
-}
-
-require('orgmode').setup({
-    org_agenda_files = {[[~/org/*]], [[~/org/weekly/*]]},
-    org_default_notes_file = '~/org/refile.org',
-		org_blank_before_new_entry = { heading = false, plain_list_item = false },
-		org_priority_highest = 1,
-		org_priority_default = 3,
-		org_priority_lowest = 5,
-    org_todo_keywords = {'TODO(t)', 'WAIT', 'ACTV', '|', 'MVED', 'DONE'},
-		org_capture_templates = {
-			t = { description = 'Task', template = '* TODO %?\n %u' },
-			n = { description = 'Note', template = '* %?\n %u' }
-		}
-})
-
-require('lualine').setup({
-	options = {
-		theme = 'material',
-		component_separators = { left = '|', right = '|' },
-		section_separators = { left = '', right = '' },
-	}
-})
-EOF
-
-lua << EOF
-require("nvim-tree").setup({
-	view = {
-		mappings = {
-			list = {
-				{ key = "u", action = "dir_up" }
-			}
-		}
-	},
-	filters = {
-		dotfiles = true
-	},
-	update_focused_file = {
-		enable = true,
-		update_root = true,
-	},
-})
+  require("nvim-tree").setup({
+    view = {
+      mappings = {
+        list = {
+          { key = "u", action = "dir_up" }
+        }
+      }
+    },
+    filters = {
+      dotfiles = true
+    },
+    update_focused_file = {
+      enable = true,
+      update_root = true,
+    },
+  })
 EOF
 

@@ -1,3 +1,5 @@
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.eslint.setup{}
 
