@@ -35,6 +35,9 @@ Plug 'abecodes/tabout.nvim'
 " Toggle line comments
 Plug 'terrortylor/nvim-comment'
 
+" Toggleterm
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
 " VimTeX
 Plug 'lervag/vimtex'
 
@@ -144,6 +147,9 @@ lua << EOF
 	require 'trouble'.setup {}
 	require 'cmp'.setup {}
   require 'nvim_comment'.setup {}
+  require 'toggleterm'.setup {
+    open_mapping = [[<c-\>]]
+  }
 
   require('lualine').setup({
     options = {
