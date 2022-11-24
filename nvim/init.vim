@@ -29,6 +29,9 @@ Plug 'ixru/nvim-markdown'
 " Hop (Navigation Plugin)
 Plug 'phaazon/hop.nvim'
 
+" Multiline selection (Sublime-like)
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 " Tabout plugin
 Plug 'abecodes/tabout.nvim'
 
