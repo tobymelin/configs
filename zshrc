@@ -183,6 +183,10 @@ vorg() {
 	$EDITOR $orgfn
 }
 
+llm() {
+  cd "$(llama "$@")"
+}
+
 pycalc() {
 	python3 -c \"from math import *; print(${@})\"
 }
