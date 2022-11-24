@@ -138,6 +138,7 @@ alias x='exit'
 alias zxc='code .'
 
 # Git aliases
+alias lg='lazygit'
 alias g='git'
 alias gb='git branch'
 alias gc='git commit'
