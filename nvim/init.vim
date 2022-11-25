@@ -11,7 +11,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 
 " Treesitter and org mode
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-orgmode/orgmode'
 
 " TODO comments/highlight
