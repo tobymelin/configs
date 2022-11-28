@@ -73,7 +73,7 @@ ZSH_DISABLE_COMPFIX="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python colorize colored-man-pages z git-prompt gh)
+plugins=(git python colorize colored-man-pages z git-prompt gh golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -205,6 +205,12 @@ if type brew &> /dev/null; then
 	#export LDFLAGS="-L/opt/homebrew/opt/ruby@2.7/lib"
 	#export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.7/include"
 	#export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby@2.7/lib/pkgconfig"
+fi
+
+# go path
+if [ -d $HOME/go/bin ]; then
+  export GOPATH=$HOME/go/bin
+  export PATH=$PATH:$GOPATH
 fi
 
 if [ -d $HOME/Library/Android/sdk ]; then
