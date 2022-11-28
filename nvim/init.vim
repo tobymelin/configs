@@ -5,6 +5,7 @@ Plug 'Mofiqul/dracula.nvim'
 Plug 'navarasu/onedark.nvim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 
 " Common Dependencies
 Plug 'nvim-lua/plenary.nvim'
@@ -90,7 +91,7 @@ endif
 
 filetype plugin indent on
 syntax enable
-colorscheme dracula
+colorscheme gruvbox
 set number relativenumber
 set shellslash
 set scrolloff=1
@@ -153,6 +154,7 @@ lua << EOF
 	require 'trouble'.setup {}
 	require 'cmp'.setup {}
   require 'nvim_comment'.setup {}
+
   require 'toggleterm'.setup {
     open_mapping = [[<c-\>]]
   }

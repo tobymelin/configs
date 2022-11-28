@@ -84,3 +84,5 @@ require'lspconfig'.eslint.setup{
   root_dir = function() return vim.loop.cwd() end
 }
 
+require'lspconfig'.gopls.setup {}
+
