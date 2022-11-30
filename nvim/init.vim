@@ -72,6 +72,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'folke/lsp-trouble.nvim'
 
 Plug 'jose-elias-alvarez/typescript.nvim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/nvim-cmp'
@@ -95,9 +96,13 @@ colorscheme gruvbox
 set number relativenumber
 set shellslash
 set scrolloff=1
+set list " show tab and space characters
+
+" Set tab width and auto-expand tab characters
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
 " Case sensitive search if using uppercase characters, otherwise case
 " insensitive
 set ignorecase

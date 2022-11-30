@@ -86,3 +86,5 @@ require'lspconfig'.eslint.setup{
 
 require'lspconfig'.gopls.setup {}
 
+vim.g.go_doc_popup_window = 1
+
