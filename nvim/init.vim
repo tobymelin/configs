@@ -151,11 +151,11 @@ lua << EOF
   require 'lsp-and-cmp'
   require 'todo-comments-conf'
 
-	require 'jabs'.setup {}
-	require 'hop'.setup {}
-	require 'telescope'.setup {}
-	require 'trouble'.setup {}
-	require 'cmp'.setup {}
+  require 'jabs'.setup {}
+  require 'hop'.setup {}
+  require 'telescope'.setup {}
+  require 'trouble'.setup {}
+  require 'cmp'.setup {}
   require 'nvim_comment'.setup {}
 
   require 'toggleterm'.setup {
