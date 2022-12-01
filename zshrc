@@ -153,6 +153,8 @@ alias gmt='git mergetool'
 alias gp='git push'
 alias gs='git status'
 
+alias nr='npm run'
+
 alias -g :cp='| pbcopy'
 alias -g :g='| grep'
 alias -g :gi=' | grep -i'
