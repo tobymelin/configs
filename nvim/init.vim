@@ -11,6 +11,9 @@ Plug 'morhetz/gruvbox'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 
+" Utilities
+Plug 'sudormrfbin/cheatsheet.nvim'
+
 " Treesitter and org mode
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-orgmode/orgmode'
@@ -137,6 +140,7 @@ nnoremap yF :silent ! echo % \| pbcopy<CR>
 nmap <C-Tab> :JABSOpen<CR>
 nmap <leader><Tab> :JABSOpen<CR>
 nmap <leader>/ :HopChar2<CR>
+nmap <leader>? :Cheatsheet<CR>
 nmap <leader>G :Neogit<CR>
 nmap <leader>gd :DiffviewOpen<CR>
 nmap <leader>h :nohlsearch<CR>
@@ -157,6 +161,7 @@ lua << EOF
   require 'trouble'.setup {}
   require 'cmp'.setup {}
   require 'nvim_comment'.setup {}
+  require 'cheatsheet'.setup {}
 
   require 'toggleterm'.setup {
     open_mapping = [[<c-\>]]
