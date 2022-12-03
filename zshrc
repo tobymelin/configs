@@ -156,6 +156,7 @@ alias gs='git status'
 alias nr='npm run'
 
 alias -g :cp='| pbcopy'
+alias -g :d='| delta'
 alias -g :g='| grep'
 alias -g :gi=' | grep -i'
 alias -g :h='| head'
