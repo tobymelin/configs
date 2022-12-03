@@ -83,6 +83,11 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
+" nvim debugging tools
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'mxsdev/nvim-dap-vscode-js'
+
 call plug#end()
 
 
@@ -153,6 +158,7 @@ lua << EOF
   require 'git'
   require 'orgmode-conf'
   require 'lsp-and-cmp'
+  require 'dap-conf'
   require 'todo-comments-conf'
 
   require 'jabs'.setup {}
