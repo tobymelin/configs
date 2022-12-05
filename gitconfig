@@ -1,0 +1,14 @@
+[user]
+# Please adapt and uncomment the following lines:
+name = Toby M.
+#email = 
+[delta]
+  line-numbers = true
+  side-by-side = true
+  hyperlinks = true
+
+  file-modified-label = modified:
+[core]
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
