@@ -89,5 +89,5 @@ require'lspconfig'.gopls.setup {}
 vim.g.go_doc_popup_window = 1
 
 vim.keymap.set('n', '<space>gr', ":GoRun<CR>", opts)
-vim.keymap.set('n', '<space>gr', ":GoTest<CR>", opts)
+vim.keymap.set('n', '<space>gt', ":GoTest<CR>", opts)
 
