@@ -1,0 +1,7 @@
+# Config location: 
+#    Linux: ~/.config/lazygit/config.yml
+#    MacOS: ~/Library/Application Support/lazygit/config.yml
+#    Windows: %APPDATA%\lazygit\config.yml
+git:
+  autoFetch: false
+
