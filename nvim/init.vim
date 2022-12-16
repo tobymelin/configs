@@ -54,9 +54,15 @@ Plug 'preservim/vim-markdown'
 
 " Telescope File Tree
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " NERDTree
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
+"Plug 'SidOfc/carbon.nvim'
+"Plug 'nvim-tree/nvim-tree.lua'
+
+Plug 'MunifTanjim/nui.nvim' " dependency for neo-tree
+Plug 'nvim-neo-tree/neo-tree.nvim'
 
 " Status Line
 Plug 'nvim-lualine/lualine.nvim'
@@ -66,9 +72,6 @@ Plug 'TimUntersberger/neogit'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'tpope/vim-fugitive'
-
-" vim-tree
-Plug 'nvim-tree/nvim-tree.lua'
 
 " nvim completion
 Plug 'neovim/nvim-lspconfig'
@@ -122,6 +125,8 @@ set conceallevel=2
 set concealcursor=nc
 
 let g:vim_markdown_folding_disabled=1
+" vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
+let g:neo_tree_remove_legacy_commands = 1
 
 " ================================
 " Key mappings
@@ -134,11 +139,13 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fd <cmd>Telescope file_browser<cr>
 
 nnoremap <leader>qw <cmd>bdel<CR>
 nnoremap <leader>qt <cmd>tabc<CR>
 
-nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-t> :Lcarbon<CR>
 
 nnoremap yF :silent ! echo % \| pbcopy<CR>
 
@@ -150,7 +157,7 @@ nmap <leader>G :Neogit<CR>
 nmap <leader>gd :DiffviewOpen<CR>
 nmap <leader>h :nohlsearch<CR>
 nmap <leader>w :w<CR>
-nmap <leader>t :NvimTreeToggle<CR>
+nmap <leader>t :Neotree<CR>
 nmap <leader>T :TroubleToggle<CR>
 map <C-S-V> "*p
 
@@ -164,6 +171,8 @@ lua << EOF
   require 'jabs'.setup {}
   require 'hop'.setup {}
   require 'telescope'.setup {}
+  require("telescope").load_extension "file_browser"
+
   require 'trouble'.setup {}
   require 'cmp'.setup {}
   require 'nvim_comment'.setup {}
@@ -181,6 +190,9 @@ lua << EOF
     }
   })
 
+  require("neo-tree").setup {}
+
+  --[[
   require("nvim-tree").setup({
     view = {
       mappings = {
@@ -197,6 +209,7 @@ lua << EOF
       update_root = true,
     },
   })
+  ]]--
 
 	require 'tabout'.setup {
     tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
