@@ -71,6 +71,9 @@ Plug 'nvim-neo-tree/neo-tree.nvim'
 " Status Line
 Plug 'nvim-lualine/lualine.nvim'
 
+" Center buffers
+Plug 'shortcuts/no-neck-pain.nvim'
+
 " Git plugins
 "Plug 'TimUntersberger/neogit'
 Plug 'lewis6991/gitsigns.nvim'
@@ -169,6 +172,7 @@ nmap <leader>h :nohlsearch<CR>
 nmap <leader>w :w<CR>
 nmap <leader>t :Neotree<CR>
 nmap <leader>T :TroubleToggle<CR>
+nmap <leader>C :NoNeckPain<CR>
 map <C-S-V> "*p
 
 lua << EOF
@@ -188,6 +192,7 @@ lua << EOF
   require 'cmp'.setup {}
   require 'nvim_comment'.setup {}
   require 'cheatsheet'.setup {}
+  require 'no-neck-pain'.setup {}
 
   require('lualine').setup({
     options = {
