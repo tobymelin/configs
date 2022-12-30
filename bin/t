@@ -10,7 +10,8 @@ from sys import argv, platform
 #from shutil import which
 import shutil
 
-default_quality = '720p60,720p'
+#default_quality = '720p60,720p'
+default_quality = 'best,720p60,720p'
 
 LIVESTR_CMD = 'streamlink -p mpv'
 
