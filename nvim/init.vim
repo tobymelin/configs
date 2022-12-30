@@ -68,7 +68,7 @@ Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 
 " Git plugins
-Plug 'TimUntersberger/neogit'
+"Plug 'TimUntersberger/neogit'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'tpope/vim-fugitive'
@@ -153,7 +153,6 @@ nmap <C-Tab> :JABSOpen<CR>
 nmap <leader><Tab> :JABSOpen<CR>
 nmap <leader>/ :HopChar2<CR>
 nmap <leader>? :Cheatsheet<CR>
-nmap <leader>G :Neogit<CR>
 nmap <leader>gd :DiffviewOpen<CR>
 nmap <leader>h :nohlsearch<CR>
 nmap <leader>w :w<CR>
@@ -166,6 +165,7 @@ lua << EOF
   require 'orgmode-conf'
   require 'lsp-and-cmp'
   require 'dap-conf'
+  require 'term'
   require 'todo-comments-conf'
 
   require 'jabs'.setup {}
@@ -177,10 +177,6 @@ lua << EOF
   require 'cmp'.setup {}
   require 'nvim_comment'.setup {}
   require 'cheatsheet'.setup {}
-
-  require 'toggleterm'.setup {
-    open_mapping = [[<c-\>]]
-  }
 
   require('lualine').setup({
     options = {
