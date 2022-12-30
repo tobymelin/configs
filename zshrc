@@ -73,7 +73,7 @@ ZSH_DISABLE_COMPFIX="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python colorize colored-man-pages z git-prompt gh golang gcloud)
+plugins=(git python colorize colored-man-pages z git-prompt git-extras gh golang gcloud)
 
 source $ZSH/oh-my-zsh.sh
 
