@@ -6,6 +6,7 @@ Plug 'navarasu/onedark.nvim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
+Plug 'tanvirtin/monokai.nvim'
 
 " Common Dependencies
 Plug 'nvim-lua/plenary.nvim'
@@ -103,7 +104,8 @@ endif
 
 filetype plugin indent on
 syntax enable
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme monokai_pro
 set number relativenumber
 set shellslash
 set scrolloff=1
