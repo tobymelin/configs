@@ -1,0 +1,11 @@
+#!/bin/bash
+
+SSH_CONF="$HOME/.ssh/config"
+
+if [ -n $1 ] && [ "$1" == "-l" ]; then
+  grep Identity $SSH_CONF
+else
+  sed -i -E -e "s/_sk.*/_sk$1/" $SSH_CONF
+  grep Identity $SSH_CONF
+fi
+
