@@ -104,8 +104,7 @@ endif
 
 filetype plugin indent on
 syntax enable
-" colorscheme gruvbox
-colorscheme monokai_pro
+colorscheme gruvbox
 set number relativenumber
 set shellslash
 set scrolloff=1
