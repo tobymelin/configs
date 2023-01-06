@@ -91,3 +91,32 @@ vim.g.go_doc_popup_window = 1
 vim.keymap.set('n', '<space>gr', ":GoRun<CR>", opts)
 vim.keymap.set('n', '<space>gt', ":GoTest<CR>", opts)
 
+
+-- local null_ls = require("null-ls")
+-- local prettier = require("prettier")
+--
+-- null_ls.setup {
+--   root_dir = require("null-ls.utils").root_pattern(".git", "package.json"),
+--   sources = {
+--     null_ls.builtins.formatting.prettier.with({
+--       prefer_local = "node_modules/.bin",
+--     }),
+--   },
+-- }
+--
+-- prettier.setup({
+--   ["null-ls"] = {
+--     condition = function()
+--       return prettier.config_exists({
+--         -- if `false`, skips checking `package.json` for `"prettier"` key
+--         check_package_json = true,
+--       })
+--     end,
+--     runtime_condition = function(params)
+--       -- return false to skip running prettier
+--       return true
+--     end,
+--     timeout = 5000,
+--   }
+-- })
+--

@@ -53,6 +53,9 @@ Plug 'lervag/vimtex'
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 
+" Harpoon (also requires plenary)
+Plug 'ThePrimeagen/harpoon'
+
 " Telescope File Tree
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
@@ -91,6 +94,10 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'mxsdev/nvim-dap-vscode-js'
+
+" Prettier (requires null-ls and lspconfig)
+" Plug 'jose-elias-alvarez/null-ls.nvim'
+" Plug 'MunifTanjim/prettier.nvim'
 
 call plug#end()
 
@@ -144,6 +151,9 @@ nnoremap <leader>fd <cmd>Telescope file_browser<cr>
 
 nnoremap <leader>qw <cmd>bdel<CR>
 nnoremap <leader>qt <cmd>tabc<CR>
+
+nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader>hi :lua require("harpoon.mark").add_file()<CR>
 
 " nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-t> :Lcarbon<CR>
