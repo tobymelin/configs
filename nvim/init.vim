@@ -68,8 +68,9 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'MunifTanjim/nui.nvim' " dependency for neo-tree
 Plug 'nvim-neo-tree/neo-tree.nvim'
 
-" Status Line
+" Status Line and tabline
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'mkitt/tabline.vim'
 
 " Center buffers
 Plug 'shortcuts/no-neck-pain.nvim'
@@ -138,6 +139,11 @@ set concealcursor=nc
 let g:vim_markdown_folding_disabled=1
 " vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 let g:neo_tree_remove_legacy_commands = 1
+
+" tabline colour configuration
+hi TabLine      ctermfg=Black  ctermbg=8     cterm=NONE
+hi TabLineFill  ctermfg=Black  ctermbg=235     cterm=NONE
+hi TabLineSel   ctermfg=White  ctermbg=33  cterm=NONE
 
 " ================================
 " Key mappings
