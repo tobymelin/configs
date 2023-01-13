@@ -164,6 +164,18 @@ nnoremap <leader>qt <cmd>tabc<CR>
 nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>hi :lua require("harpoon.mark").add_file()<CR>
 
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 " nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-t> :Lcarbon<CR>
 
