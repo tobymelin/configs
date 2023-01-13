@@ -73,7 +73,7 @@ ZSH_DISABLE_COMPFIX="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python colorize colored-man-pages z git-prompt git-extras gh golang gcloud zsh-autosuggestions)
+plugins=(git python colorize colored-man-pages z git-prompt git-extras gh golang gcloud zsh-autosuggestions npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,7 +109,7 @@ if test -f ".zshrc.local"; then
 fi
 
 export ORGDIR="$HOME/org"
-export TERM='xterm-256color'
+#export TERM='xterm-256color'
 
 if type nvim &> /dev/null; then
 				export EDITOR='nvim'
