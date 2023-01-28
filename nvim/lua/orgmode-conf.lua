@@ -28,7 +28,7 @@ require('orgmode').setup({
     org_default_notes_file = '~/org/refile.org',
 		org_blank_before_new_entry = { heading = false, plain_list_item = false },
 		org_priority_highest = 1,
-		org_priority_default = 3,
+		org_priority_default = 4,
 		org_priority_lowest = 5,
     org_todo_keywords = {'TODO(t)', 'WAIT', 'ACTV', '|', 'MVED', 'DONE'},
 		org_capture_templates = {
