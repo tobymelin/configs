@@ -99,6 +99,9 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'mxsdev/nvim-dap-vscode-js'
 
+" nvim test runner
+Plug 'vim-test/vim-test'
+
 " Prettier (requires null-ls and lspconfig)
 " Plug 'jose-elias-alvarez/null-ls.nvim'
 " Plug 'MunifTanjim/prettier.nvim'
@@ -175,6 +178,13 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
+" vim-test mappings
+nmap <silent> <leader>rt :TestNearest<CR>
+nmap <silent> <leader>rf :TestFile<CR>
+nmap <silent> <leader>ra :TestSuite<CR>
+nmap <silent> <leader>rl :TestLast<CR>
+nmap <silent> <leader>rg :TestVisit<CR>
 
 " nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-t> :Lcarbon<CR>
