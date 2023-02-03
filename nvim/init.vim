@@ -63,7 +63,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 " NERDTree
 "Plug 'preservim/nerdtree'
 "Plug 'SidOfc/carbon.nvim'
-"Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-tree.lua'
 
 Plug 'MunifTanjim/nui.nvim' " dependency for neo-tree
 Plug 'nvim-neo-tree/neo-tree.nvim'
@@ -90,6 +90,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/nvim-cmp'
+
+Plug 'Issafalcon/lsp-overloads.nvim'
 
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
@@ -198,7 +200,8 @@ nmap <leader>? :Cheatsheet<CR>
 nmap <leader>gd :DiffviewOpen<CR>
 nmap <leader>h :nohlsearch<CR>
 nmap <leader>w :w<CR>
-nmap <leader>t :Neotree<CR>
+" nmap <leader>t :Neotree<CR>
+nmap <leader>t :NvimTreeToggle<CR>
 nmap <leader>T :TroubleToggle<CR>
 nmap <leader>C :NoNeckPain<CR>
 map <C-S-V> "*p
@@ -231,6 +234,14 @@ lua << EOF
   })
 
   require("neo-tree").setup {}
+
+  vim.opt.termguicolors = true
+
+  require("nvim-tree").setup({
+    view = {
+      width = 40,
+    }
+  })
 
   --[[
   require("nvim-tree").setup({
