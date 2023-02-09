@@ -1,7 +1,10 @@
 call plug#begin()
 
 " Colorschemes
-Plug 'Mofiqul/dracula.nvim'
+" Plug 'Mofiqul/dracula.nvim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
+Plug 'Everblush/nvim'
 Plug 'navarasu/onedark.nvim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'NLKNguyen/papercolor-theme'
@@ -105,8 +108,8 @@ Plug 'mxsdev/nvim-dap-vscode-js'
 Plug 'vim-test/vim-test'
 
 " Prettier (requires null-ls and lspconfig)
-" Plug 'jose-elias-alvarez/null-ls.nvim'
-" Plug 'MunifTanjim/prettier.nvim'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'MunifTanjim/prettier.nvim'
 
 call plug#end()
 
@@ -120,7 +123,8 @@ endif
 
 filetype plugin indent on
 syntax enable
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme dracula
 set number relativenumber
 set shellslash
 set scrolloff=1
@@ -201,7 +205,8 @@ nmap <leader>gd :DiffviewOpen<CR>
 nmap <leader>h :nohlsearch<CR>
 nmap <leader>w :w<CR>
 " nmap <leader>t :Neotree<CR>
-nmap <leader>t :NvimTreeToggle<CR>
+" nmap <leader>t :NvimTreeToggle<CR>
+nmap <leader>t :NvimTreeFindFileToggle<CR>
 nmap <leader>T :TroubleToggle<CR>
 nmap <leader>C :NoNeckPain<CR>
 map <C-S-V> "*p

@@ -2,6 +2,11 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 local cmp = require'cmp'
 
+-- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "rounded",
+})
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -77,6 +82,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require("typescript").setup {
   server = {
     on_attach = on_attach,
+    handlers = handlers,
     capabilities = capabilities,
     root_dir = function() return vim.loop.cwd() end
   }
@@ -84,6 +90,7 @@ require("typescript").setup {
 
 require'lspconfig'.eslint.setup{
   on_attach = on_attach,
+  handlers = handlers,
   capabilities = capabilities,
   root_dir = function() return vim.loop.cwd() end
 }
@@ -94,11 +101,20 @@ vim.g.go_doc_popup_window = 1
 
 vim.keymap.set('n', '<space>gr', ":GoRun<CR>", opts)
 vim.keymap.set('n', '<space>gt', ":GoTest<CR>", opts)
+vim.keymap.set('n', '<space>fx', ":EslintFixAll<CR>", opts)
 
 
--- local null_ls = require("null-ls")
+local null_ls = require("null-ls")
 -- local prettier = require("prettier")
---
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.prettier.with({
+          only_local = "node_modules/.bin",
+        }),
+    },
+})
+
 -- null_ls.setup {
 --   root_dir = require("null-ls.utils").root_pattern(".git", "package.json"),
 --   sources = {
@@ -107,7 +123,7 @@ vim.keymap.set('n', '<space>gt', ":GoTest<CR>", opts)
 --     }),
 --   },
 -- }
---
+
 -- prettier.setup({
 --   ["null-ls"] = {
 --     condition = function()
