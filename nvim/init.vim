@@ -10,6 +10,8 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'tanvirtin/monokai.nvim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " Common Dependencies
 Plug 'nvim-lua/plenary.nvim'
@@ -17,6 +19,7 @@ Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 
 " Utilities
 Plug 'sudormrfbin/cheatsheet.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Treesitter and org mode
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -88,6 +91,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'neovim/nvim-lspconfig'
 Plug 'folke/lsp-trouble.nvim'
 
+Plug 'glepnir/lspsaga.nvim'
+
 Plug 'jose-elias-alvarez/typescript.nvim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
@@ -124,7 +129,7 @@ endif
 filetype plugin indent on
 syntax enable
 " colorscheme gruvbox
-colorscheme dracula
+colorscheme nightfly
 set number relativenumber
 set shellslash
 set scrolloff=1
@@ -290,5 +295,10 @@ lua << EOF
 
   vim.api.nvim_set_keymap('i', '<A-x>', "<Plug>(TaboutMulti)", {silent = true})
   vim.api.nvim_set_keymap('i', '<A-z>', "<Plug>(TaboutBackMulti)", {silent = true})
+
+  vim.opt.listchars:append "space:⋅"
+  require("indent_blankline").setup {
+    space_char_blankline = " ",
+  }
 EOF
 
