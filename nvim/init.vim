@@ -226,7 +226,16 @@ lua << EOF
 
   require 'jabs'.setup {}
   require 'hop'.setup {}
-  require 'telescope'.setup {}
+  require 'telescope'.setup {
+    defaults = {
+      mappings = {
+        i = {
+          ["<C-B>"] = require('telescope.actions').preview_scrolling_up,
+          ["<C-D>"] = require('telescope.actions').preview_scrolling_down,
+        }
+      }
+    }
+  }
   require("telescope").load_extension "file_browser"
 
   require 'trouble'.setup {}
