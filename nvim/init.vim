@@ -197,6 +197,8 @@ nmap <silent> <leader>ra :TestSuite<CR>
 nmap <silent> <leader>rl :TestLast<CR>
 nmap <silent> <leader>rg :TestVisit<CR>
 
+let g:test#javascript#ava#file_pattern = '\vtests?/.*\.(js|jsx|coffee|ts|tsx)$'
+
 " nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-t> :Lcarbon<CR>
 
