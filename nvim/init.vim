@@ -52,6 +52,9 @@ Plug 'terrortylor/nvim-comment'
 " Toggleterm
 Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
+" Maximize window splits
+Plug 'declancm/maximize.nvim'
+
 " VimTeX
 Plug 'lervag/vimtex'
 
@@ -66,13 +69,8 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
-" NERDTree
-"Plug 'preservim/nerdtree'
-"Plug 'SidOfc/carbon.nvim'
+" nvim-tree
 Plug 'nvim-tree/nvim-tree.lua'
-
-Plug 'MunifTanjim/nui.nvim' " dependency for neo-tree
-Plug 'nvim-neo-tree/neo-tree.nvim'
 
 " Status Line and tabline
 Plug 'nvim-lualine/lualine.nvim'
@@ -172,6 +170,10 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fd <cmd>Telescope file_browser<cr>
 
+nnoremap tr <cmd>Telescope lsp_references<CR>
+nnoremap td <cmd>Telescope lsp_definitions<CR>
+nnoremap tt <cmd>Telescope diagnostics<CR>
+
 nnoremap <leader>qw <cmd>bdel<CR>
 nnoremap <leader>qt <cmd>tabc<CR>
 
@@ -200,7 +202,8 @@ nmap <silent> <leader>rg :TestVisit<CR>
 let g:test#javascript#ava#file_pattern = '\vtests?/.*\.(js|jsx|coffee|ts|tsx)$'
 
 " nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-t> :Lcarbon<CR>
+nnoremap <C-t> :NvimTreeFindFile<CR>
+" nnoremap <C-t> :Neotree reveal<CR>
 
 nnoremap yF :silent ! echo % \| pbcopy<CR>
 
@@ -211,9 +214,9 @@ nmap <leader>? :Cheatsheet<CR>
 nmap <leader>gd :DiffviewOpen<CR>
 nmap <leader>h :nohlsearch<CR>
 nmap <leader>w :w<CR>
-" nmap <leader>t :Neotree<CR>
-" nmap <leader>t :NvimTreeToggle<CR>
-nmap <leader>t :NvimTreeFindFileToggle<CR>
+" nmap <leader>tt :Neotree<CR>
+nmap <leader>tt :NvimTreeToggle<CR>
+" nmap <leader>t :NvimTreeFindFileToggle<CR>
 nmap <leader>T :TroubleToggle<CR>
 nmap <leader>C :NoNeckPain<CR>
 map <C-S-V> "*p
@@ -231,6 +234,10 @@ lua << EOF
   require 'telescope'.setup {
     defaults = {
       mappings = {
+        n = {
+          ["K"] = require('telescope.actions').preview_scrolling_up,
+          ["J"] = require('telescope.actions').preview_scrolling_down,
+        },
         i = {
           ["<C-B>"] = require('telescope.actions').preview_scrolling_up,
           ["<C-D>"] = require('telescope.actions').preview_scrolling_down,
@@ -240,6 +247,7 @@ lua << EOF
   }
   require("telescope").load_extension "file_browser"
 
+  require 'maximize'.setup {}
   require 'trouble'.setup {}
   require 'cmp'.setup {}
   require 'nvim_comment'.setup {}
@@ -253,8 +261,6 @@ lua << EOF
       section_separators = { left = '', right = '' },
     }
   })
-
-  require("neo-tree").setup {}
 
   vim.opt.termguicolors = true
 

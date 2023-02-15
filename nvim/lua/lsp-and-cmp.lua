@@ -107,6 +107,9 @@ vim.keymap.set('n', '<space>fx', ":EslintFixAll<CR>", opts)
 require("lspsaga").setup{
   lightbulb = {
     enable = false
+  },
+  symbol_in_winbar = {
+    enable = false
   }
 }
 

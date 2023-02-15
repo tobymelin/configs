@@ -57,6 +57,8 @@ end
 require("dapui").setup()
 
 vim.keymap.set('n', '<space>dd', require('dapui').toggle)
-vim.keymap.set('n', '<space>dc', ':DapContinue')
-vim.keymap.set('n', '<space>db', ':DapToggleBreakpoint')
+vim.keymap.set('n', '<space>dc', ':DapContinue<CR>')
+vim.keymap.set('n', '<space>db', ':lua require("dap").toggle_breakpoint()<CR>')
+vim.keymap.set('n', '<space>dro', ':lua require("dap").repl.open()<CR>')
+vim.keymap.set('n', '<leader>duf', "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>")
 
