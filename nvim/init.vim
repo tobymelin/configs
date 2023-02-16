@@ -89,6 +89,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'neovim/nvim-lspconfig'
 Plug 'folke/lsp-trouble.nvim'
 
+" LSP plugin for Lua/Neovim configs
+Plug 'folke/neodev.nvim'
+
+" LSP UI
 Plug 'glepnir/lspsaga.nvim'
 
 Plug 'jose-elias-alvarez/typescript.nvim'

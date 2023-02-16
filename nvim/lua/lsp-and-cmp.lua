@@ -73,16 +73,24 @@ cmp.setup({
   })
 })
 
+-- Set up Neodev (must happen before lspconfig)
+require("neodev").setup({
+  override = function(root_dir, library)
+    if root_dir:find('dev/configs') then
+      library.enabled = true
+      library.plugins = true
+    end
+  end,
+})
+
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 
--- require('lspconfig')['tsserver'].setup {
 require("typescript").setup {
   server = {
     on_attach = on_attach,
-    handlers = handlers,
     capabilities = capabilities,
     root_dir = function() return vim.loop.cwd() end
   }
@@ -90,11 +98,11 @@ require("typescript").setup {
 
 require'lspconfig'.eslint.setup{
   on_attach = on_attach,
-  handlers = handlers,
   capabilities = capabilities,
   root_dir = function() return vim.loop.cwd() end
 }
 
+require'lspconfig'.lua_ls.setup {}
 require'lspconfig'.gopls.setup {}
 
 vim.g.go_doc_popup_window = 1
