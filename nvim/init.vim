@@ -120,33 +120,12 @@ Plug 'MunifTanjim/prettier.nvim'
 
 call plug#end()
 
+lua require("tm")
+
 
 " ================================
 " VIM Settings
 " ================================
-if has('win32') || has('win64')
-	language en_US.utf8
-endif
-
-filetype plugin indent on
-syntax enable
-" colorscheme gruvbox
-colorscheme nightfly
-set number relativenumber
-set shellslash
-set scrolloff=1
-set list " show tab and space characters
-
-" Set tab width and auto-expand tab characters
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-" Case sensitive search if using uppercase characters, otherwise case
-" insensitive
-set ignorecase
-set smartcase
-set fileformats=unix,dos
 
 " Required for org-mode
 set conceallevel=2
@@ -156,45 +135,13 @@ let g:vim_markdown_folding_disabled=1
 " vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 let g:neo_tree_remove_legacy_commands = 1
 
-" tabline colour configuration
-hi TabLine      ctermfg=Black  ctermbg=8     cterm=NONE
-hi TabLineFill  ctermfg=Black  ctermbg=235     cterm=NONE
-hi TabLineSel   ctermfg=White  ctermbg=33  cterm=NONE
 
 " ================================
 " Key mappings
 " ================================
-nnoremap <SPACE> <Nop>
-let mapleader=" "
-
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fd <cmd>Telescope file_browser<cr>
-
-nnoremap tr <cmd>Telescope lsp_references<CR>
-nnoremap td <cmd>Telescope lsp_definitions<CR>
-nnoremap tt <cmd>Telescope diagnostics<CR>
-
-nnoremap <leader>qw <cmd>bdel<CR>
-nnoremap <leader>qt <cmd>tabc<CR>
 
 nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>hi :lua require("harpoon.mark").add_file()<CR>
-
-" " Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>y  "+y
-nnoremap  <leader>yy  "+yy
-
-" " Paste from clipboard
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
 
 " vim-test mappings
 nmap <silent> <leader>rt :TestNearest<CR>
@@ -216,14 +163,9 @@ nmap <leader><Tab> :JABSOpen<CR>
 nmap <leader>/ :HopChar2<CR>
 nmap <leader>? :Cheatsheet<CR>
 nmap <leader>gd :DiffviewOpen<CR>
-nmap <leader>h :nohlsearch<CR>
-nmap <leader>w :w<CR>
-" nmap <leader>tt :Neotree<CR>
 nmap <leader>tt :NvimTreeToggle<CR>
-" nmap <leader>t :NvimTreeFindFileToggle<CR>
 nmap <leader>T :TroubleToggle<CR>
 nmap <leader>C :NoNeckPain<CR>
-map <C-S-V> "*p
 
 lua << EOF
   require 'git'
@@ -265,8 +207,6 @@ lua << EOF
       section_separators = { left = '', right = '' },
     }
   })
-
-  vim.opt.termguicolors = true
 
   require("nvim-tree").setup({
     view = {
