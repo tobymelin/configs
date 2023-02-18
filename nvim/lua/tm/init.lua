@@ -1,3 +1,5 @@
+require("tm.remap")
+
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "80"
 
@@ -32,4 +34,12 @@ vim.cmd [[
   hi TabLine      ctermfg=Black  ctermbg=8     cterm=NONE
   hi TabLineFill  ctermfg=Black  ctermbg=235     cterm=NONE
   hi TabLineSel   ctermfg=White  ctermbg=33  cterm=NONE
+
+
+  " Required for org-mode
+  set conceallevel=2
+  set concealcursor=nc
+
+  let g:vim_markdown_folding_disabled=1
+  let g:test#javascript#ava#file_pattern = '\vtests?/.*\.(js|jsx|coffee|ts|tsx)$'
 ]]

@@ -123,50 +123,6 @@ call plug#end()
 lua require("tm")
 
 
-" ================================
-" VIM Settings
-" ================================
-
-" Required for org-mode
-set conceallevel=2
-set concealcursor=nc
-
-let g:vim_markdown_folding_disabled=1
-" vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-let g:neo_tree_remove_legacy_commands = 1
-
-
-" ================================
-" Key mappings
-" ================================
-
-nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <leader>hi :lua require("harpoon.mark").add_file()<CR>
-
-" vim-test mappings
-nmap <silent> <leader>rt :TestNearest<CR>
-nmap <silent> <leader>rf :TestFile<CR>
-nmap <silent> <leader>ra :TestSuite<CR>
-nmap <silent> <leader>rl :TestLast<CR>
-nmap <silent> <leader>rg :TestVisit<CR>
-
-let g:test#javascript#ava#file_pattern = '\vtests?/.*\.(js|jsx|coffee|ts|tsx)$'
-
-" nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-t> :NvimTreeFindFile<CR>
-" nnoremap <C-t> :Neotree reveal<CR>
-
-nnoremap yF :silent ! echo % \| pbcopy<CR>
-
-nmap <C-Tab> :JABSOpen<CR>
-nmap <leader><Tab> :JABSOpen<CR>
-nmap <leader>/ :HopChar2<CR>
-nmap <leader>? :Cheatsheet<CR>
-nmap <leader>gd :DiffviewOpen<CR>
-nmap <leader>tt :NvimTreeToggle<CR>
-nmap <leader>T :TroubleToggle<CR>
-nmap <leader>C :NoNeckPain<CR>
-
 lua << EOF
   require 'git'
   require 'orgmode-conf'
@@ -213,25 +169,6 @@ lua << EOF
       width = 40,
     }
   })
-
-  --[[
-  require("nvim-tree").setup({
-    view = {
-      mappings = {
-        list = {
-          { key = "u", action = "dir_up" }
-        }
-      }
-    },
-    filters = {
-      dotfiles = true
-    },
-    update_focused_file = {
-      enable = true,
-      update_root = true,
-    },
-  })
-  ]]--
 
 	require 'tabout'.setup {
     tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
