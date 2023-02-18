@@ -2,8 +2,6 @@ local imap = require("tm.keymap").imap
 local nmap = require("tm.keymap").nmap
 local vmap = require("tm.keymap").vmap
 
-vim.g.mapleader = " "
-
 -- window/buffer management shortcuts
 nmap { "<leader>qw", "<cmd>bdel<CR>", { noremap = true } }
 nmap { "<leader>qt", "<cmd>tabc<CR>", { noremap = true } }
