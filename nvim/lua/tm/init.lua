@@ -17,6 +17,7 @@ vim.opt.expandtab = true
 
 -- show tab and space characters
 vim.opt.list = true
+vim.opt.listchars:append "space:⋅"
 
 -- Case sensitive search if using uppercase characters, otherwise case
 -- insensitive
