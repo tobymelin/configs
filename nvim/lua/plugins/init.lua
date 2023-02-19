@@ -79,7 +79,6 @@ return {
 
   -- Git plugins
   -- 'TimUntersberger/neogit',
-  'lewis6991/gitsigns.nvim',
   {
     'sindrets/diffview.nvim',
     config = function()
