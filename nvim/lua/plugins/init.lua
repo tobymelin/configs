@@ -42,7 +42,12 @@ return {
   { 'mg979/vim-visual-multi', branch = 'master'},
 
 -- Toggle line comments
-  'terrortylor/nvim-comment',
+  {
+    'terrortylor/nvim-comment',
+    config = function ()
+      require('nvim_comment').setup()
+    end
+  },
 
 -- Maximize window splits
   'declancm/maximize.nvim',
@@ -56,10 +61,6 @@ return {
 
 -- Harpoon (also requires plenary)
   'ThePrimeagen/harpoon',
-
--- Telescope File Tree
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x' },
-  'nvim-telescope/telescope-file-browser.nvim',
 
 -- nvim-tree
   {
