@@ -1,5 +1,3 @@
-require 'diffview'.setup {}
-
 require 'gitsigns'.setup {
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
@@ -37,9 +35,4 @@ require 'gitsigns'.setup {
     map('n', '<leader>td', gs.toggle_deleted)
   end
 }
-
-
--- require 'neogit'.setup {}
--- nmap <leader>G :Neogit<CR>
--- map('n', '<leader>G', ':Neogit<CR>')
 

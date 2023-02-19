@@ -1,3 +1,5 @@
+local nmap = require("tm.keymap").nmap
+
 return {
   -- Common Dependencies
   'nvim-lua/plenary.nvim',
@@ -5,14 +7,18 @@ return {
 
   -- Utilities
   'sudormrfbin/cheatsheet.nvim',
-  'lukas-reineke/indent-blankline.nvim',
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require("indent_blankline").setup({
+        space_char_blankline = " ",
+      })
+    end
+  },
 
   -- Treesitter and org mode
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
   'nvim-orgmode/orgmode',
-
--- TODO comments/highlight
-  'folke/todo-comments.nvim',
 
 -- Type gS to split single line into a multi-liner
   'AndrewRadev/splitjoin.vim',
@@ -23,20 +29,20 @@ return {
 -- Markdown plugin
   'ixru/nvim-markdown',
 
--- Hop (Navigation  in)
-  'phaazon/hop.nvim',
+-- Hop (Navigation plugin)
+  {
+    'phaazon/hop.nvim',
+    config = function()
+      require 'hop'.setup {}
+      nmap { "<leader>/", ":HopChar2<CR>" }
+    end
+  },
 
 -- Multiline selection (Sublime-like)
   { 'mg979/vim-visual-multi', branch = 'master'},
 
--- Tabout plugin
-  'abecodes/tabout.nvim',
-
 -- Toggle line comments
   'terrortylor/nvim-comment',
-
--- Toggleterm
-  { 'akinsho/toggleterm.nvim', lazy = false },
 
 -- Maximize window splits
   'declancm/maximize.nvim',
@@ -56,10 +62,16 @@ return {
   'nvim-telescope/telescope-file-browser.nvim',
 
 -- nvim-tree
-  'nvim-tree/nvim-tree.lua',
+  {
+    'nvim-tree/nvim-tree.lua',
+    opts = {
+      view = {
+        width = 40,
+      }
+    }
+  },
 
--- Status Line and tabline
-  'nvim-lualine/lualine.nvim',
+-- Tabline plugin
   'mkitt/tabline.vim',
 
 -- Center buffers
@@ -68,7 +80,14 @@ return {
   -- Git plugins
   -- 'TimUntersberger/neogit',
   'lewis6991/gitsigns.nvim',
-  'sindrets/diffview.nvim',
+  {
+    'sindrets/diffview.nvim',
+    config = function()
+      require 'diffview'.setup({})
+      nmap { "<leader>gd", "<cmd>DiffviewOpen<CR>" }
+    end
+  },
+
   'tpope/vim-fugitive',
 
   -- nvim completion

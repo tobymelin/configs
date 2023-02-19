@@ -50,9 +50,7 @@ nnoremap <C-t> :NvimTreeFindFile<CR>
 
 nmap <C-Tab> :JABSOpen<CR>
 nmap <leader><Tab> :JABSOpen<CR>
-nmap <leader>/ :HopChar2<CR>
 nmap <leader>? :Cheatsheet<CR>
-nmap <leader>gd :DiffviewOpen<CR>
 nmap <leader>tt :NvimTreeToggle<CR>
 nmap <leader>T :TroubleToggle<CR>
 nmap <leader>C :NoNeckPain<CR>
