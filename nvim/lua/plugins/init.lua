@@ -16,10 +16,6 @@ return {
     end
   },
 
-  -- Treesitter and org mode
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
-  'nvim-orgmode/orgmode',
-
 -- Type gS to split single line into a multi-liner
   'AndrewRadev/splitjoin.vim',
 
