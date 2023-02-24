@@ -5,7 +5,7 @@ return {
     priority = 1000,
     lazy = false,
     config = function()
-      vim.cmd([[ colorscheme nightfly ]])
+      -- vim.cmd([[ colorscheme nightfly ]])
     end,
   },
   --  'Mofiqul/dracula.nvim',
@@ -13,10 +13,27 @@ return {
   -- 'Everblush/nvim',
   -- 'navarasu/onedark.nvim',
   -- 'EdenEast/nightfox.nvim',
-  -- 'NLKNguyen/papercolor-theme',
+  'NLKNguyen/papercolor-theme',
   -- 'morhetz/gruvbox',
   -- 'tanvirtin/monokai.nvim',
-  -- { 'catppuccin/nvim', name = 'catppuccin' },
-  -- { 'folke/tokyonight.nvim', branch = 'main' },
+  { 'catppuccin/nvim', name = 'catppuccin' },
+  {
+    'folke/tokyonight.nvim',
+    branch = 'main',
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require('tokyonight').setup({
+        on_highlights = function(hl, c)
+          hl.TelescopePreviewMatch = { bg = c.bg_search, fg = c.orange }
+          hl.TelescopeResults = { bg = c.bg_search, fg = c.fg }
+          hl.TelescopeSelection = { bg = c.bg_search, fg = c.fg }
+          hl.TelescopeMatching = { fg = c.orange }
+        end
+      })
+
+      vim.cmd([[ colorscheme tokyonight ]])
+    end
+  },
 }
 

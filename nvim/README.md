@@ -2,8 +2,8 @@
 
 ## TODO
 
-- [ ] Migrate to [lazy.nvim](https://github.com/folke/lazy.nvim)
-- [ ] Rewrite `init` file to full lua instead of Vimscript
+- [x] Migrate to [lazy.nvim](https://github.com/folke/lazy.nvim)
+- [x] Rewrite `init` file to full lua instead of Vimscript
 
 ## Useful Resources
 
