@@ -110,9 +110,10 @@ require'lspconfig'.vuels.setup {}
 
 vim.g.go_doc_popup_window = 1
 
-vim.keymap.set('n', '<space>gr', ":GoRun<CR>", opts)
-vim.keymap.set('n', '<space>gt', ":GoTest<CR>", opts)
-vim.keymap.set('n', '<space>fx', ":EslintFixAll<CR>", opts)
+vim.keymap.set('n', '<leader>gr', ":GoRun<CR>", opts)
+vim.keymap.set('n', '<leader>gt', ":GoTest<CR>", opts)
+vim.keymap.set('n', '<leader>fx', ":EslintFixAll<CR>", opts)
+vim.keymap.set('n', '<leader>fp', "<cmd>Prettier<CR>", opts)
 
 
 require("lspsaga").setup{
