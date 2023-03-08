@@ -49,5 +49,6 @@
   "vim-test": { "branch": "master", "commit": "c63b94c1e5089807f4532e05f087351ddb5a207c" },
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
   "vim-vsnip": { "branch": "master", "commit": "8dde8c0ef10bb1afdbb301e2bd7eb1c153dd558e" },
+  "vim-vue-plugin": { "branch": "master", "commit": "58ac69b2c8a98a9bd2a95fbaa7b5f0fe806bad0f" },
   "vimtex": { "branch": "master", "commit": "aa55f528d1a12ba2cdf7953639e5b6ced9aa1999" }
 }

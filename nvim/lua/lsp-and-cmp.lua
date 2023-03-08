@@ -106,6 +106,7 @@ require'lspconfig'.eslint.setup{
 
 require'lspconfig'.lua_ls.setup {}
 require'lspconfig'.gopls.setup {}
+require'lspconfig'.vuels.setup {}
 
 vim.g.go_doc_popup_window = 1
 
