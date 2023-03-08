@@ -5,7 +5,7 @@ return {
     priority = 1000,
     lazy = false,
     config = function()
-      -- vim.cmd([[ colorscheme nightfly ]])
+      -- vim.cmd.colorscheme('nightfly')
     end,
   },
   --  'Mofiqul/dracula.nvim',
@@ -17,6 +17,8 @@ return {
   -- 'morhetz/gruvbox',
   -- 'tanvirtin/monokai.nvim',
   { 'catppuccin/nvim', name = 'catppuccin' },
+  { 'NTBBloodbath/sweetie.nvim' },
+
   {
     'folke/tokyonight.nvim',
     branch = 'main',
@@ -32,7 +34,7 @@ return {
         end
       })
 
-      vim.cmd([[ colorscheme tokyonight ]])
+      vim.cmd.colorscheme('tokyonight')
     end
   },
 }
