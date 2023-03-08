@@ -46,7 +46,14 @@ return {
   },
 
 -- Maximize window splits
-  'declancm/maximize.nvim',
+  {
+    'declancm/maximize.nvim',
+    config = function ()
+      require('maximize').setup()
+
+      vim.keymap.set('n', '<leader>z', "<cmd>lua require('maximize').toggle()<CR>")
+    end
+  },
 
 -- VimTeX
   'lervag/vimtex',
