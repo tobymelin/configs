@@ -4,6 +4,14 @@ local vmap = require("tm.keymap").vmap
 
 nmap { "U", "<cmd>redo<CR>" }
 
+nmap { "<leader>b", function ()
+  if vim.o.background == 'light' then
+    vim.o.background = 'dark'
+  else
+    vim.o.background = 'light'
+  end
+end }
+
 -- window/buffer management shortcuts
 nmap { "<leader>qw", "<cmd>bdel<CR>", { noremap = true } }
 nmap { "<leader>qt", "<cmd>tabc<CR>", { noremap = true } }
