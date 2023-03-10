@@ -2,11 +2,11 @@ return {
   {
     'bluz71/vim-nightfly-colors',
     name = 'nightfly',
-    priority = 1000,
-    lazy = false,
-    config = function()
+    -- priority = 1000,
+    -- lazy = false,
+    -- config = function()
       -- vim.cmd.colorscheme('nightfly')
-    end,
+    -- end,
   },
   --  'Mofiqul/dracula.nvim',
   -- { 'dracula/vim', name = 'dracula' },
@@ -16,14 +16,19 @@ return {
   'NLKNguyen/papercolor-theme',
   -- 'morhetz/gruvbox',
   -- 'tanvirtin/monokai.nvim',
-  { 'catppuccin/nvim', name = 'catppuccin' },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
+    lazy = false,
+    config = function()
+      vim.cmd.colorscheme('catppuccin')
+    end,
+  },
   { 'NTBBloodbath/sweetie.nvim' },
-
   {
     'folke/tokyonight.nvim',
     branch = 'main',
-    priority = 1000,
-    lazy = false,
     config = function()
       require('tokyonight').setup({
         on_highlights = function(hl, c)
@@ -33,8 +38,6 @@ return {
           hl.TelescopeMatching = { fg = c.orange }
         end
       })
-
-      vim.cmd.colorscheme('tokyonight')
     end
   },
 }

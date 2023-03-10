@@ -28,8 +28,6 @@ vim.opt.smartcase = true
 vim.cmd [[
   filetype plugin indent on
   syntax enable
-  " colorscheme gruvbox
-  colorscheme nightfly
 
   " tabline colour configuration
   hi TabLine      ctermfg=Black  ctermbg=8     cterm=NONE
