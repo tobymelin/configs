@@ -22,7 +22,19 @@ return {
     priority = 1000,
     lazy = false,
     config = function()
-      vim.cmd.colorscheme('catppuccin-macchiato')
+      require('catppuccin').setup({
+        flavour = 'macchiato',
+        custom_highlights = function (colors)
+          return {
+            -- Comment = { fg = colors.flamingo, bg = "#0f0aff" },
+            -- Cursor = { fg = "#ffffff", bg = "#ffffff" },
+            -- CursorColumn = { fg = "#ffffff", bg = "#ffffff" },
+            -- iCursor = { fg = "#ffffff", bg = "#ffffff" },
+          }
+        end
+      })
+
+      vim.cmd.colorscheme('catppuccin')
     end,
   },
   { 'NTBBloodbath/sweetie.nvim' },
