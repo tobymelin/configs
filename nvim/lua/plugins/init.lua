@@ -120,7 +120,12 @@ return {
   'mxsdev/nvim-dap-vscode-js',
 
 -- nvim test runner
-  'vim-test/vim-test',
+  {
+    'vim-test/vim-test',
+    config = function ()
+      vim.cmd([[ tmap <C-o> <C-\><C-n> ]])
+    end
+  },
 
 -- Prettier (requires null-ls and lspconfig)
   'jose-elias-alvarez/null-ls.nvim',
