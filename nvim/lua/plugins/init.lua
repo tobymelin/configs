@@ -30,7 +30,7 @@ return {
     'phaazon/hop.nvim',
     config = function()
       require 'hop'.setup {}
-      nmap { "<leader>/", ":HopChar2<CR>" }
+      nmap { "<leader>/", "<cmd>HopChar2<CR>" }
     end
   },
 
