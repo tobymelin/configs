@@ -75,6 +75,10 @@ ZSH_DISABLE_COMPFIX="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git python colorize colored-man-pages z git-prompt git-extras gh golang gcloud zsh-autosuggestions npm)
 
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
