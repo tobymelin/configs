@@ -20,7 +20,13 @@ return {
   'AndrewRadev/splitjoin.vim',
 
   -- nvim-surround, use ys{motion}{char}, ds{char} and cs{target}{replacement} to change surround characters
-  { 'kylechui/nvim-surround' },
+  {
+    'kylechui/nvim-surround',
+    lazy = false,
+    config = function ()
+      require('nvim-surround').setup()
+    end
+  },
 
 -- Buffer Switcher Window
   { 'matbme/JABS.nvim' },
