@@ -19,6 +19,9 @@ return {
 -- Type gS to split single line into a multi-liner
   'AndrewRadev/splitjoin.vim',
 
+  -- nvim-surround, use ys{motion}{char}, ds{char} and cs{target}{replacement} to change surround characters
+  { 'kylechui/nvim-surround' },
+
 -- Buffer Switcher Window
   { 'matbme/JABS.nvim' },
 
