@@ -156,6 +156,7 @@ alias gbranches='git branch --format "%(refname:short)     %(upstream)"'
 alias gmt='git mergetool'
 alias gp='git push'
 alias gs='git status'
+alias glf='git log --oneline --max-count 15 | fzf | sed -e "s/ .*//" | pbcopy'
 
 alias nr='npm run'
 
@@ -226,3 +227,5 @@ if [ -d $HOME/Library/Android/sdk ]; then
 	export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
