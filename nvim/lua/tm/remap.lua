@@ -44,24 +44,27 @@ nmap { "tr", "<cmd>Telescope lsp_references<CR>" }
 nmap { "td", "<cmd>Telescope lsp_definitions<CR>" }
 nmap { "tt", "<cmd>Telescope diagnostics<CR>" }
 
+-- General plugin mappings
+nmap { "<leader>C", "<cmd>NoNeckPain<CR>" }
+nmap { "<leader>?", "<cmd>Cheatsheet<CR>" }
+nmap { "<leader>T", "<cmd>TroubleToggle<CR>" }
 
-vim.cmd[[
-nnoremap <leader>hh :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <leader>hi :lua require("harpoon.mark").add_file()<CR>
+-- NvimTree mappings
+nmap { "<leader>tt", "<cmd>NvimTreeToggle<CR>" }
+nmap { "<C-t>", "<cmd>NvimTreeFindFile<CR>" }
 
-" vim-test mappings
-nmap <silent> <leader>rt :TestNearest<CR>
-nmap <silent> <leader>rf :TestFile<CR>
-nmap <silent> <leader>ra :TestSuite<CR>
-nmap <silent> <leader>rl :TestLast<CR>
-nmap <silent> <leader>rg :TestVisit<CR>
+-- JABS mappings
+nmap { "<C-Tab>", "<cmd>JABSOpen<CR>" }
+nmap { "<leader><Tab>", "<cmd>JABSOpen<CR>" }
 
-nnoremap <C-t> :NvimTreeFindFile<CR>
+-- vim-test mappings
+nmap { "<leader>rt", "<cmd>TestNearest<CR>" }
+nmap { "<leader>rf", "<cmd>TestFile<CR>" }
+nmap { "<leader>ra", "<cmd>TestSuite<CR>" }
+nmap { "<leader>rl", "<cmd>TestLast<CR>" }
+nmap { "<leader>rg", "<cmd>TestVisit<CR>" }
 
-nmap <C-Tab> :JABSOpen<CR>
-nmap <leader><Tab> :JABSOpen<CR>
-nmap <leader>? :Cheatsheet<CR>
-nmap <leader>tt :NvimTreeToggle<CR>
-nmap <leader>T :TroubleToggle<CR>
-nmap <leader>C :NoNeckPain<CR>
-]]
+-- Harpoon mappings
+nmap { "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>" }
+nmap { "<leader>hi", "<cmd>lua require('harpoon.mark').add_file()<CR>" }
+
