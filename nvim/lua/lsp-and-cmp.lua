@@ -22,7 +22,7 @@ local on_attach = function(client, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -116,16 +116,16 @@ vim.keymap.set('n', '<leader>fx', "<cmd>EslintFixAll<CR>", opts)
 vim.keymap.set('n', '<leader>fp', "<cmd>Prettier<CR>", opts)
 
 
-require("lspsaga").setup{
-  lightbulb = {
-    enable = false
-  },
-  symbol_in_winbar = {
-    enable = false
-  }
-}
-
-vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+-- require("lspsaga").setup{
+--   lightbulb = {
+--     enable = false
+--   },
+--   symbol_in_winbar = {
+--     enable = false
+--   }
+-- }
+--
+-- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
 local null_ls = require("null-ls")
 

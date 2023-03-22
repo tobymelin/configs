@@ -12,7 +12,6 @@
   "lazy.nvim": { "branch": "main", "commit": "4cdc8aa8dbcfee5d7cef1dcbf5159af50214f005" },
   "lsp-overloads.nvim": { "branch": "main", "commit": "1423a6114f5540681a694330c22c36b0ca21f1d4" },
   "lsp-trouble.nvim": { "branch": "main", "commit": "7915277a259fdff5d46c6f1d2e100df2ec384d3b" },
-  "lspsaga.nvim": { "branch": "main", "commit": "04617d1f5b1cfbdd2a99d9765ef04fc6ae415622" },
   "lualine.nvim": { "branch": "master", "commit": "e99d733e0213ceb8f548ae6551b04ae32e590c80" },
   "maximize.nvim": { "branch": "master", "commit": "97bfc171775c404396f8248776347ebe64474fe7" },
   "neodev.nvim": { "branch": "main", "commit": "13376f7b2098e5665becd2861930085e26fce0a1" },

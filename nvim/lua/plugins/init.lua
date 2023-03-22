@@ -110,7 +110,7 @@ return {
   'folke/neodev.nvim',
 
   -- LSP UI
-  'glepnir/lspsaga.nvim',
+  -- 'glepnir/lspsaga.nvim',
 
   'jose-elias-alvarez/typescript.nvim',
   { 'fatih/vim-go', build = ':GoUpdateBinaries' },
