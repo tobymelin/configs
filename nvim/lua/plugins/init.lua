@@ -124,6 +124,9 @@ return {
   'hrsh7th/cmp-vsnip',
   'hrsh7th/vim-vsnip',
 
+  -- GitHub Copilot
+  'github/copilot.vim',
+
 -- nvim debugging tools
   'mfussenegger/nvim-dap',
   'rcarriga/nvim-dap-ui',
