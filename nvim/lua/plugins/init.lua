@@ -118,7 +118,8 @@ return {
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/nvim-cmp',
 
-  'Issafalcon/lsp-overloads.nvim',
+  -- Show code signature overloads in lsp
+  -- 'Issafalcon/lsp-overloads.nvim',
 
   'hrsh7th/cmp-vsnip',
   'hrsh7th/vim-vsnip',
