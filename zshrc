@@ -179,6 +179,11 @@ mkd() {
 	cd "$1"
 }
 
+mktmp() {
+	mkdir -p "/tmp/$1"
+	cd "/tmp/$1"
+}
+
 #alias vorg="v $ORGDIR/weekly/$(date -v1w +"%y%m%d").org $ORGDIR/refile.org"
 #alias vorg="v $ORGDIR/weekly/$(date -v1w +"%y%m%d").org"
 vorg() {
@@ -227,5 +232,6 @@ if [ -d $HOME/Library/Android/sdk ]; then
 	export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 fi
 
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
