@@ -3,9 +3,9 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 local cmp = require'cmp'
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",
-})
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+--   border = "rounded",
+-- })
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -22,9 +22,12 @@ local on_attach = function(_, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+
   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wl', function()
@@ -34,7 +37,7 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', '<space>ff', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 -- Mappings.
@@ -46,6 +49,9 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
 -- Set up nvim-cmp.
 cmp.setup({
+  window = {
+    documentation = cmp.config.window.bordered()
+  },
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
@@ -91,10 +97,15 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 
 require("typescript").setup {
+  -- lspconfig settings
   server = {
     on_attach = on_attach,
     capabilities = capabilities,
-    root_dir = function() return vim.loop.cwd() end
+    root_dir = function() return vim.loop.cwd() end,
+    -- enable snippet completions
+    completions = {
+      completeFunctionCalls = true
+    },
   }
 }
 
@@ -116,16 +127,16 @@ vim.keymap.set('n', '<leader>fx', "<cmd>EslintFixAll<CR>", opts)
 vim.keymap.set('n', '<leader>fp', "<cmd>Prettier<CR>", opts)
 
 
--- require("lspsaga").setup{
---   lightbulb = {
---     enable = false
---   },
---   symbol_in_winbar = {
---     enable = false
---   }
--- }
---
--- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+require("lspsaga").setup{
+  lightbulb = {
+    enable = false
+  },
+  symbol_in_winbar = {
+    enable = false
+  }
+}
+
+vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 
 local null_ls = require("null-ls")
 
@@ -164,6 +175,8 @@ null_ls.setup({
   -- end
 -- end,
 })
+
+require('lsp_signature').setup()
 
 require('prettier').setup()
 

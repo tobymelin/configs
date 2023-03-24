@@ -110,7 +110,7 @@ return {
   'folke/neodev.nvim',
 
   -- LSP UI
-  -- 'glepnir/lspsaga.nvim',
+  'glepnir/lspsaga.nvim',
 
   'jose-elias-alvarez/typescript.nvim',
   { 'fatih/vim-go', build = ':GoUpdateBinaries' },
@@ -126,6 +126,8 @@ return {
 
   -- GitHub Copilot
   'github/copilot.vim',
+  -- Code completion/signature help while typing
+  'ray-x/lsp_signature.nvim',
 
 -- nvim debugging tools
   'mfussenegger/nvim-dap',
