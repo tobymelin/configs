@@ -1,4 +1,6 @@
 -- Tabout plugin
+return {}
+
 -- return {
 --   {
 --     'abecodes/tabout.nvim',
@@ -30,4 +32,4 @@
 --     end
 --   },
 -- }
---
+
