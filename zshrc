@@ -235,3 +235,7 @@ fi
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Source local environment variable config if it exists
+[ -f ~/.env.zsh ] && source ~/.env.zsh
+
