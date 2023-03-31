@@ -27,5 +27,12 @@ return {
       require("telescope").load_extension "file_browser"
     end
   },
+
+  {
+    'nvim-telescope/telescope-dap.nvim',
+    config = function()
+      require('telescope').load_extension('dap')
+    end
+  }
 }
 
