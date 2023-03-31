@@ -38,6 +38,7 @@ return {
     end,
   },
   { 'NTBBloodbath/sweetie.nvim' },
+  { 'maxmx03/dracula.nvim' },
   {
     'folke/tokyonight.nvim',
     branch = 'main',
