@@ -132,7 +132,8 @@ require("lspsaga").setup{
     enable = false
   },
   symbol_in_winbar = {
-    enable = false
+    enable = false,
+    hide_keyword = false,
   }
 }
 
