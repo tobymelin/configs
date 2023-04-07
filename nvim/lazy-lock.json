@@ -37,6 +37,7 @@
   "nvim-treesitter-context": { "branch": "master", "commit": "68eaeb86738c660f7f31afb2cbfb2bdec50bbd92" },
   "nvim-web-devicons": { "branch": "master", "commit": "0568104bf8d0c3ab16395433fcc5c1638efc25d4" },
   "orgmode": { "branch": "master", "commit": "87cf0069949bb9426ef4930efdcaea942438cf92" },
+  "overseer.nvim": { "branch": "master", "commit": "9473677696ab288ef74cb5a115338f39fbf740e5" },
   "papercolor-theme": { "branch": "master", "commit": "9051480ad9129ff4ab4fffb38b44779b9081626f" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "prettier.nvim": { "branch": "main", "commit": "08f7f08fae57fd970c7470d883c9127f172bd9e6" },
@@ -59,3 +60,4 @@
   "vim-vsnip": { "branch": "master", "commit": "7753ba9c10429c29d25abfd11b4c60b76718c438" },
   "vim-vue-plugin": { "branch": "master", "commit": "58ac69b2c8a98a9bd2a95fbaa7b5f0fe806bad0f" },
   "vimtex": { "branch": "master", "commit": "e8542f26b45e489fe7cfa7894737ccb0fe937fcd" }
+}
