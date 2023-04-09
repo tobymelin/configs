@@ -77,6 +77,7 @@ return {
 -- nvim-tree
   {
     'nvim-tree/nvim-tree.lua',
+    event = 'VeryLazy',
     opts = {
       view = {
         width = 40,
@@ -94,6 +95,7 @@ return {
   -- 'TimUntersberger/neogit',
   {
     'sindrets/diffview.nvim',
+    event = 'VeryLazy',
     config = function()
       require 'diffview'.setup({})
       nmap { "<leader>gd", "<cmd>DiffviewOpen<CR>" }
