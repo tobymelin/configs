@@ -19,6 +19,3 @@ require("lazy").setup("plugins")
 require("tm")
 require("plugintmpsetup")
 
--- JABS must be required from init.lua to work...
-require("jabs").setup()
-

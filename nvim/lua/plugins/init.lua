@@ -30,7 +30,13 @@ return {
   },
 
 -- Buffer Switcher Window
-  { 'matbme/JABS.nvim' },
+{
+  'matbme/JABS.nvim',
+  lazy = false,
+  config = function ()
+    require('jabs').setup()
+  end,
+},
 
 -- Markdown plugin
   'ixru/nvim-markdown',
@@ -38,10 +44,13 @@ return {
 -- Hop (Navigation plugin)
   {
     'phaazon/hop.nvim',
+    lazy = true,
     config = function()
-      require 'hop'.setup {}
-      nmap { "<leader>/", "<cmd>HopChar2<CR>" }
-    end
+      require('hop').setup()
+    end,
+    keys = {
+      { '<leader>/', '<cmd>HopChar2<CR>' },
+    },
   },
 
 -- Multiline selection (Sublime-like)
@@ -58,11 +67,18 @@ return {
 -- Maximize window splits
   {
     'declancm/maximize.nvim',
+    lazy = true,
     config = function ()
       require('maximize').setup()
-
-      vim.keymap.set('n', '<leader>z', "<cmd>lua require('maximize').toggle()<CR>")
-    end
+    end,
+    keys = {
+      {
+        '<leader>z',
+        function ()
+          require('maximize').toggle()
+        end
+      },
+    },
   },
 
 -- VimTeX
@@ -144,7 +160,7 @@ return {
     end
   },
 
--- Prettier (requires null-ls and lspconfig)
+  -- Prettier (requires null-ls and lspconfig)
   'jose-elias-alvarez/null-ls.nvim',
   'MunifTanjim/prettier.nvim',
 }
