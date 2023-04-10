@@ -4,6 +4,7 @@ local nmap = require("tm.keymap").nmap
 return {
   {
     'SmiteshP/nvim-navbuddy',
+    event = 'VeryLazy',
     dependencies = {
       "SmiteshP/nvim-navic",
       "MunifTanjim/nui.nvim"

@@ -23,6 +23,7 @@ return {
 
   {
     'nvim-telescope/telescope-file-browser.nvim',
+    event = 'VeryLazy',
     config = function()
       require("telescope").load_extension "file_browser"
     end
@@ -30,6 +31,7 @@ return {
 
   {
     'nvim-telescope/telescope-dap.nvim',
+    event = 'VeryLazy',
     config = function()
       require('telescope').load_extension('dap')
     end

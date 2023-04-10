@@ -111,32 +111,18 @@ return {
   -- LSP plugin for Lua/Neovim configs
   'folke/neodev.nvim',
 
-  -- LSP UI
-  'glepnir/lspsaga.nvim',
-
   'jose-elias-alvarez/typescript.nvim',
   { 'fatih/vim-go', build = ':GoUpdateBinaries' },
 
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/nvim-cmp',
-
   -- Show code signature overloads in lsp
   -- 'Issafalcon/lsp-overloads.nvim',
-
-  'hrsh7th/cmp-vsnip',
-  'hrsh7th/vim-vsnip',
 
   -- GitHub Copilot
   'github/copilot.vim',
   -- Code completion/signature help while typing
   'ray-x/lsp_signature.nvim',
 
--- nvim debugging tools
-  'mfussenegger/nvim-dap',
-  'rcarriga/nvim-dap-ui',
-  'mxsdev/nvim-dap-vscode-js',
-
--- nvim test runner
+  -- nvim test runner
   {
     'vim-test/vim-test',
     config = function ()
