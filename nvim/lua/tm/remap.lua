@@ -52,10 +52,6 @@ nmap { "<leader>T", "<cmd>TroubleToggle<CR>" }
 nmap { "<leader>tt", "<cmd>NvimTreeToggle<CR>" }
 nmap { "<C-t>", "<cmd>NvimTreeFindFile<CR>" }
 
--- JABS mappings
-nmap { "<C-Tab>", "<cmd>JABSOpen<CR>" }
-nmap { "<leader><Tab>", "<cmd>JABSOpen<CR>" }
-
 -- vim-test mappings
 nmap { "<leader>rt", "<cmd>TestNearest<CR>" }
 nmap { "<leader>rf", "<cmd>TestFile<CR>" }

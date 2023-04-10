@@ -41,6 +41,7 @@ end
 return {
   {
     'neovim/nvim-lspconfig',
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = 'folke/neodev.nvim',
     config = function ()
       -- Set up lspconfig.
@@ -67,7 +68,10 @@ return {
         root_dir = function() return vim.loop.cwd() end
       }
 
-      require'lspconfig'.lua_ls.setup {}
+      require'lspconfig'.lua_ls.setup {
+        on_attach = on_attach,
+      }
+
       require'lspconfig'.gopls.setup {}
       require'lspconfig'.vuels.setup {}
     end,

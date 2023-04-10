@@ -1,5 +1,3 @@
-local nmap = require("tm.keymap").nmap
-
 return {
   -- Common Dependencies
   'nvim-lua/plenary.nvim',
@@ -32,10 +30,14 @@ return {
 -- Buffer Switcher Window
 {
   'matbme/JABS.nvim',
-  lazy = false,
+  lazy = true,
   config = function ()
     require('jabs').setup()
   end,
+  keys = {
+    { '<C-Tab>', '<cmd>JABSOpen<CR>' },
+    { '<leader><Tab>', '<cmd>JABSOpen<CR>' },
+  },
 },
 
 -- Markdown plugin

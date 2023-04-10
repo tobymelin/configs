@@ -2,6 +2,7 @@ return {
   -- Prettier (requires null-ls and lspconfig)
   {
     'jose-elias-alvarez/null-ls.nvim',
+    event = { "BufReadPre", "BufNewFile" },
     config = function ()
       local null_ls = require("null-ls")
 
@@ -45,6 +46,7 @@ return {
 
   {
     'MunifTanjim/prettier.nvim',
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = 'jose-elias-alvarez/null-ls.nvim',
     keys = {
       { '<leader>fp', '<cmd>Prettier<CR>' },
