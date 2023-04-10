@@ -130,14 +130,9 @@ return {
   'tpope/vim-fugitive',
 
   -- nvim completion
-  'neovim/nvim-lspconfig',
   'folke/lsp-trouble.nvim',
 
-  -- LSP plugin for Lua/Neovim configs
-  'folke/neodev.nvim',
-
   'jose-elias-alvarez/typescript.nvim',
-  { 'fatih/vim-go', build = ':GoUpdateBinaries' },
   -- 'ray-x/go.nvim',
 
   -- Show code signature overloads in lsp

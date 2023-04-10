@@ -38,49 +38,39 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', '<space>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
--- Set up Neodev (must happen before lspconfig)
-require("neodev").setup({
-  override = function(root_dir, library)
-    -- if root_dir:find('dev/configs') then
-    --   library.enabled = true
-    --   library.plugins = true
-    -- end
-      library.enabled = true
-      library.plugins = true
-  end,
-})
+return {
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = 'folke/neodev.nvim',
+    config = function ()
+      -- Set up lspconfig.
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
--- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+      require("typescript").setup {
+        -- lspconfig settings
+        server = {
+          on_attach = on_attach,
+          capabilities = capabilities,
+          root_dir = function() return vim.loop.cwd() end,
+          -- enable snippet completions
+          completions = {
+            completeFunctionCalls = true
+          },
+        }
+      }
 
-require("typescript").setup {
-  -- lspconfig settings
-  server = {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    root_dir = function() return vim.loop.cwd() end,
-    -- enable snippet completions
-    completions = {
-      completeFunctionCalls = true
-    },
+      require'lspconfig'.eslint.setup{
+        on_attach = on_attach,
+        capabilities = capabilities,
+        root_dir = function() return vim.loop.cwd() end
+      }
+
+      require'lspconfig'.lua_ls.setup {}
+      require'lspconfig'.gopls.setup {}
+      require'lspconfig'.vuels.setup {}
+    end,
   }
 }
-
-require'lspconfig'.eslint.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-  root_dir = function() return vim.loop.cwd() end
-}
-
-require'lspconfig'.lua_ls.setup {}
-require'lspconfig'.gopls.setup {}
-require'lspconfig'.vuels.setup {}
-
-vim.g.go_doc_popup_window = 1
-
-vim.keymap.set('n', '<leader>gr', "<cmd>GoRun<CR>", opts)
-vim.keymap.set('n', '<leader>gt', "<cmd>GoTest<CR>", opts)
-vim.keymap.set('n', '<leader>fx', "<cmd>EslintFixAll<CR>", opts)
 
