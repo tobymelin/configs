@@ -159,9 +159,5 @@ return {
       vim.cmd([[ tmap <C-o> <C-\><C-n> ]])
     end
   },
-
-  -- Prettier (requires null-ls and lspconfig)
-  'jose-elias-alvarez/null-ls.nvim',
-  'MunifTanjim/prettier.nvim',
 }
 

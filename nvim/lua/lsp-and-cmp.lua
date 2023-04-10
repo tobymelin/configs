@@ -38,13 +38,6 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', '<space>lf', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-
 -- Set up Neodev (must happen before lspconfig)
 require("neodev").setup({
   override = function(root_dir, library)
@@ -90,47 +83,4 @@ vim.g.go_doc_popup_window = 1
 vim.keymap.set('n', '<leader>gr', "<cmd>GoRun<CR>", opts)
 vim.keymap.set('n', '<leader>gt', "<cmd>GoTest<CR>", opts)
 vim.keymap.set('n', '<leader>fx', "<cmd>EslintFixAll<CR>", opts)
-vim.keymap.set('n', '<leader>fp', "<cmd>Prettier<CR>", opts)
-
-local null_ls = require("null-ls")
-
-local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-local event = "BufWritePre" -- or "BufWritePost"
-local async = event == "BufWritePost"
-
-null_ls.setup({
-  sources = {
-      null_ls.builtins.formatting.prettier.with({
-        only_local = "node_modules/.bin",
-      }),
-  },
-  on_attach = function(client, bufnr)
-  if client.supports_method("textDocument/formatting") then
-    -- vim.keymap.set("n", "<Leader>f", function()
-    --   vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-    -- end, { buffer = bufnr, desc = "[lsp] format" })
-
-    -- format on save
-    vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
-    vim.api.nvim_create_autocmd(event, {
-      buffer = bufnr,
-      group = group,
-      callback = function()
-        vim.lsp.buf.format({ bufnr = bufnr, async = async })
-      end,
-      desc = "[lsp] format on save",
-    })
-  end
-  --
-  -- if client.supports_method("textDocument/rangeFormatting") then
-  --   vim.keymap.set("x", "<Leader>f", function()
-  --     vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-  --   end, { buffer = bufnr, desc = "[lsp] format" })
-  -- end
-  end,
-})
-
-require('lsp_signature').setup()
-
-require('prettier').setup()
 
