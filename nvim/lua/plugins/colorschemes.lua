@@ -37,10 +37,17 @@ return {
       vim.cmd.colorscheme('catppuccin')
     end,
   },
-  { 'NTBBloodbath/sweetie.nvim' },
-  { 'maxmx03/dracula.nvim' },
+  {
+    'NTBBloodbath/sweetie.nvim',
+    lazy = true,
+  },
+  {
+    'maxmx03/dracula.nvim',
+    lazy = true,
+  },
   {
     'folke/tokyonight.nvim',
+    lazy = true,
     branch = 'main',
     config = function()
       require('tokyonight').setup({

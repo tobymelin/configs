@@ -7,6 +7,7 @@ return {
 
   -- Utilities
   'sudormrfbin/cheatsheet.nvim',
+
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
@@ -16,13 +17,13 @@ return {
     end
   },
 
--- Type gS to split single line into a multi-liner
+  -- Type gS to split single line into a multi-liner
   'AndrewRadev/splitjoin.vim',
 
   -- nvim-surround, use ys{motion}{char}, ds{char} and cs{target}{replacement} to change surround characters
   {
     'kylechui/nvim-surround',
-    lazy = false,
+    event = 'VeryLazy',
     config = function ()
       require('nvim-surround').setup()
     end
@@ -89,7 +90,13 @@ return {
   'mkitt/tabline.vim',
 
 -- Center buffers
-  'shortcuts/no-neck-pain.nvim',
+  {
+    'shortcuts/no-neck-pain.nvim',
+    lazy = true,
+    keys = {
+     { '<leader>C', '<cmd>NoNeckPain<CR>' },
+    },
+  },
 
   -- Git plugins
   -- 'TimUntersberger/neogit',
@@ -98,8 +105,10 @@ return {
     event = 'VeryLazy',
     config = function()
       require 'diffview'.setup({})
-      nmap { "<leader>gd", "<cmd>DiffviewOpen<CR>" }
-    end
+    end,
+    keys = {
+      { '<leader>gd', '<cmd>DiffviewOpen<CR>' },
+    },
   },
 
   'tpope/vim-fugitive',
@@ -113,12 +122,17 @@ return {
 
   'jose-elias-alvarez/typescript.nvim',
   { 'fatih/vim-go', build = ':GoUpdateBinaries' },
+  -- 'ray-x/go.nvim',
 
   -- Show code signature overloads in lsp
   -- 'Issafalcon/lsp-overloads.nvim',
 
   -- GitHub Copilot
-  'github/copilot.vim',
+  {
+    'github/copilot.vim',
+    event = 'VeryLazy',
+  },
+
   -- Code completion/signature help while typing
   'ray-x/lsp_signature.nvim',
 

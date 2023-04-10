@@ -45,7 +45,6 @@ nmap { "td", "<cmd>Telescope lsp_definitions<CR>" }
 nmap { "tt", "<cmd>Telescope diagnostics<CR>" }
 
 -- General plugin mappings
-nmap { "<leader>C", "<cmd>NoNeckPain<CR>" }
 nmap { "<leader>?", "<cmd>Cheatsheet<CR>" }
 nmap { "<leader>T", "<cmd>TroubleToggle<CR>" }
 
