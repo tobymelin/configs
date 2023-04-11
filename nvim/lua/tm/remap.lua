@@ -55,10 +55,6 @@ nmap { "<leader>ra", "<cmd>TestSuite<CR>" }
 nmap { "<leader>rl", "<cmd>TestLast<CR>" }
 nmap { "<leader>rg", "<cmd>TestVisit<CR>" }
 
--- Harpoon mappings
-nmap { "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>" }
-nmap { "<leader>hi", "<cmd>lua require('harpoon.mark').add_file()<CR>" }
-
 -- LSP mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
