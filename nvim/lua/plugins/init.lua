@@ -93,15 +93,19 @@ return {
 -- Harpoon (also requires plenary)
   'ThePrimeagen/harpoon',
 
--- nvim-tree
+  -- nvim-tree
   {
     'nvim-tree/nvim-tree.lua',
-    event = 'VeryLazy',
+    lazy = true,
     opts = {
       view = {
         width = 40,
       }
-    }
+    },
+    keys = {
+      { "<leader>tt", '<cmd>NvimTreeToggle<CR>' },
+      { '<C-t>', '<cmd>NvimTreeFindFile<CR>' },
+    },
   },
 
 -- Tabline plugin

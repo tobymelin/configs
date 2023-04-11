@@ -48,10 +48,6 @@ nmap { "tt", "<cmd>Telescope diagnostics<CR>" }
 nmap { "<leader>?", "<cmd>Cheatsheet<CR>" }
 nmap { "<leader>T", "<cmd>TroubleToggle<CR>" }
 
--- NvimTree mappings
-nmap { "<leader>tt", "<cmd>NvimTreeToggle<CR>" }
-nmap { "<C-t>", "<cmd>NvimTreeFindFile<CR>" }
-
 -- vim-test mappings
 nmap { "<leader>rt", "<cmd>TestNearest<CR>" }
 nmap { "<leader>rf", "<cmd>TestFile<CR>" }
