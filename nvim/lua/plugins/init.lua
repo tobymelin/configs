@@ -158,7 +158,13 @@ return {
   },
 
   -- Code completion/signature help while typing
-  'ray-x/lsp_signature.nvim',
+  {
+    'ray-x/lsp_signature.nvim',
+    lazy = false,
+    config = function ()
+      require('lsp_signature').setup()
+    end
+  },
 
   -- nvim test runner
   {

@@ -42,7 +42,10 @@ return {
   {
     'neovim/nvim-lspconfig',
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = 'folke/neodev.nvim',
+    dependencies = {
+      'folke/neodev.nvim',
+      'ray-x/lsp_signature.nvim',
+    },
     config = function ()
       -- Set up lspconfig.
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
