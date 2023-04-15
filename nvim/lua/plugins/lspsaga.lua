@@ -5,8 +5,8 @@ return {
     event = "LspAttach",
     dependencies = 'neovim/nvim-lspconfig',
     keys = {
-      -- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>")
       { 'K', '<cmd>Lspsaga hover_doc<CR>' },
+      { 'gp', '<cmd>Lspsaga peek_definition<CR>' },
     },
     opts = {
       lightbulb = {

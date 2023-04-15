@@ -12,7 +12,12 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- if client.server_capabilities.signatureHelpProvider then
-  --   require('lsp-overloads').setup(client, {})
+  --   require('lsp-overloads').setup(client, {
+  --     keymaps = {
+  --       next_signature = "<C-j>",
+  --       previous_signature = "<C-k>",
+  --     },
+  --   })
   -- end
 
   -- Mappings.

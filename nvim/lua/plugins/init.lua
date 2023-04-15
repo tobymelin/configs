@@ -127,21 +127,6 @@ return {
     },
   },
 
-  -- Git plugins
-  -- 'TimUntersberger/neogit',
-  {
-    'sindrets/diffview.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require 'diffview'.setup({})
-    end,
-    keys = {
-      { '<leader>gd', '<cmd>DiffviewOpen<CR>' },
-    },
-  },
-
-  'tpope/vim-fugitive',
-
   -- nvim completion
   'folke/lsp-trouble.nvim',
 

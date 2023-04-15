@@ -12,6 +12,7 @@
   "hop.nvim": { "branch": "master", "commit": "90db1b2c61b820e230599a04fedcd2679e64bd07" },
   "indent-blankline.nvim": { "branch": "master", "commit": "018bd04d80c9a73d399c1061fa0c3b14a7614399" },
   "lazy.nvim": { "branch": "main", "commit": "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
+  "lsp-overloads.nvim": { "branch": "main", "commit": "91a933b024b39aaef42cb03db3edbce516ac0b0b" },
   "lsp-trouble.nvim": { "branch": "main", "commit": "2ae7237c2917d661f458443c9a88680f8ca2d7b2" },
   "lsp_signature.nvim": { "branch": "master", "commit": "775c0cdf5be5adcc08f27c9058edb00b5b517520" },
   "lspsaga.nvim": { "branch": "main", "commit": "1ead4ce8a20a8ac7e96aca038d54ceaa185be4e0" },
