@@ -12,9 +12,7 @@ return {
 
       null_ls.setup({
         sources = {
-            null_ls.builtins.formatting.prettier.with({
-              only_local = "node_modules/.bin",
-            }),
+            null_ls.builtins.formatting.prettierd,
         },
         on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
@@ -23,7 +21,7 @@ return {
           -- end, { buffer = bufnr, desc = "[lsp] format" })
 
           -- format on save
-          vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
+          -- vim.api.nvim_clear_autocmds({ buffer = bufnr, group = group })
           vim.api.nvim_create_autocmd(event, {
             buffer = bufnr,
             group = group,
