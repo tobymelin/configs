@@ -6,6 +6,16 @@ return {
     config = function ()
       local null_ls = require("null-ls")
 
+      vim.api.nvim_create_user_command('NullLsToggle', function ()
+        require('null-ls').toggle('prettierd')
+        require('null-ls').toggle('eslint_d')
+      end, {})
+
+      vim.api.nvim_create_user_command('NullLsDisable', function ()
+        require('null-ls').disable('prettierd')
+        require('null-ls').disable('eslint_d')
+      end, {})
+
       local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
       local event = "BufWritePre" -- or "BufWritePost"
       local async = event == "BufWritePost"
@@ -13,6 +23,7 @@ return {
       null_ls.setup({
         sources = {
             null_ls.builtins.formatting.prettierd,
+            null_ls.builtins.formatting.eslint_d,
         },
         on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
