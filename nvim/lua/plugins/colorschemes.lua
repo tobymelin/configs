@@ -22,6 +22,15 @@ M = {
   },
   -- 'morhetz/gruvbox',
   -- 'tanvirtin/monokai.nvim',
+  { 'sainnhe/sonokai' },
+  {
+    'rebelot/kanagawa.nvim',
+    name = 'kanagawa',
+  },
+  {
+    'marko-cerovac/material.nvim',
+    name = 'material',
+  },
   {
     'catppuccin/nvim',
     name = 'catppuccin',
