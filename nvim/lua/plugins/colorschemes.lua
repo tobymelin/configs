@@ -2,6 +2,7 @@ return {
   {
     'bluz71/vim-nightfly-colors',
     name = 'nightfly',
+    event = 'VeryLazy',
     -- priority = 1000,
     -- lazy = false,
     -- config = function()
@@ -39,15 +40,15 @@ return {
   },
   {
     'NTBBloodbath/sweetie.nvim',
-    lazy = true,
+    event = 'VeryLazy',
   },
   {
     'maxmx03/dracula.nvim',
-    lazy = true,
+    event = 'VeryLazy',
   },
   {
     'folke/tokyonight.nvim',
-    lazy = true,
+    event = 'VeryLazy',
     branch = 'main',
     config = function()
       require('tokyonight').setup({
