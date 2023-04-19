@@ -7,7 +7,7 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -18,6 +18,11 @@ local on_attach = function(_, bufnr)
   --       previous_signature = "<C-k>",
   --     },
   --   })
+  -- end
+
+  -- if client.name == 'eslint' then
+  --   local ns = vim.lsp.diagnostic.get_namespace(client.id)
+  --   vim.diagnostic.disable(nil, ns)
   -- end
 
   -- Mappings.
@@ -82,6 +87,42 @@ return {
 
       require'lspconfig'.gopls.setup {}
       require'lspconfig'.vuels.setup {}
+
+      -- https://github.com/jose-elias-alvarez/typescript.nvim/issues/19
+      -- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils (search filter)
+      -- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils/blob/main/lua/nvim-lsp-ts-utils/client.lua#L47-L110
+      -- https://github.com/neovim/neovim/issues/20745
+      local function filter_diagnostics(diagnostic)
+        -- Filter out all diagnostics from sumneko_lua
+        -- if diagnostic.source:find('typescript', 1, true) then
+        -- if diagnostic.source:find('eslint', 1, true) then
+        --   return false
+        -- end
+        return true
+      end
+
+      -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+      --   vim.lsp.diagnostic.on_publish_diagnostics, {
+      --     -- Enable underline, use default values
+      --     underline = true,
+      --     -- Use a function to dynamically turn signs off
+      --     -- and on, using buffer local variables
+      --     signs = true
+      --   }
+      -- )
+
+      vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+        function(_, result, ctx, config)
+          result.diagnostics = vim.tbl_filter(filter_diagnostics, result.diagnostics)
+          -- vim.print(result.diagnostics)
+          vim.lsp.diagnostic.on_publish_diagnostics(_, result, ctx, config)
+        end,
+        {
+          underline = true,
+          signs = true,
+        }
+      )
+
     end,
   }
 }
