@@ -1,8 +1,10 @@
-return {
+local default_colorscheme = 'catppuccin'
+local M = {}
+
+M = {
   {
     'bluz71/vim-nightfly-colors',
     name = 'nightfly',
-    event = 'VeryLazy',
     -- priority = 1000,
     -- lazy = false,
     -- config = function()
@@ -14,14 +16,15 @@ return {
   -- 'Everblush/nvim',
   -- 'navarasu/onedark.nvim',
   -- 'EdenEast/nightfox.nvim',
-  'NLKNguyen/papercolor-theme',
+  {
+    'NLKNguyen/papercolor-theme',
+    name = 'Papercolor',
+  },
   -- 'morhetz/gruvbox',
   -- 'tanvirtin/monokai.nvim',
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    priority = 1000,
-    lazy = false,
     config = function()
       require('catppuccin').setup({
         flavour = 'macchiato',
@@ -34,21 +37,19 @@ return {
           }
         end
       })
-
-      vim.cmd.colorscheme('catppuccin')
     end,
   },
   {
     'NTBBloodbath/sweetie.nvim',
-    event = 'VeryLazy',
+    name = 'sweetie',
   },
   {
     'maxmx03/dracula.nvim',
-    event = 'VeryLazy',
+    name = 'dracula',
   },
   {
     'folke/tokyonight.nvim',
-    event = 'VeryLazy',
+    name = 'tokyonight',
     branch = 'main',
     config = function()
       require('tokyonight').setup({
@@ -63,3 +64,27 @@ return {
   },
 }
 
+for key, val in ipairs(M) do
+  -- vim.print(val)
+    if val.name == default_colorscheme then
+      M[key].priority = 1000
+      M[key].lazy = false
+
+      if val.config == nil then
+        M[key].config = function()
+          vim.cmd.colorscheme(default_colorscheme)
+        end
+      else
+        local config = val.config
+        M[key].config = function()
+          config()
+          vim.cmd.colorscheme(default_colorscheme)
+        end
+      end
+
+    else
+      M[key].event = 'VeryLazy'
+    end
+end
+
+return M
