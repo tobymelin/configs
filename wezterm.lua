@@ -16,10 +16,14 @@ end
 config.color_scheme = 'Dracula'
 
 -- config.font = wezterm.font('Fira Code', {weight="Medium"})
-config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
-config.font_size = 12.0
+-- config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
+-- config.font = wezterm.font('JetBrains Mono', { weight="Medium" })
+config.font_size = 6
+-- config.freetype_load_flags = 'NO_HINTING'
 -- config.line_height = 1.1
--- config.dpi = 144.0
+config.dpi = 144.0
+
+config.hide_tab_bar_if_only_one_tab = true
 
 config.keys = {
   {
