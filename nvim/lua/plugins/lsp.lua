@@ -101,6 +101,17 @@ return {
         return true
       end
 
+      vim.api.nvim_create_user_command('LspDiagDisable', function ()
+        local clients = vim.lsp.get_active_clients({ name = 'eslint' })[1]
+        local clients2 = vim.lsp.get_active_clients({ name = 'tsserver' })[1]
+
+        local ns1 = vim.lsp.diagnostic.get_namespace(clients.id)
+        local ns2 = vim.lsp.diagnostic.get_namespace(clients2.id)
+
+        vim.diagnostic.disable(nil, ns1)
+        vim.diagnostic.disable(nil, ns2)
+      end, {})
+
       -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       --   vim.lsp.diagnostic.on_publish_diagnostics, {
       --     -- Enable underline, use default values
