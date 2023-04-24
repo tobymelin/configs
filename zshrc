@@ -129,6 +129,7 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
 alias m='mv -v'
+alias n='nnn -A'
 alias p='pacman'
 alias py='python3'
 alias rr='rm -rv'
@@ -233,6 +234,10 @@ if [ -d $HOME/Library/Android/sdk ]; then
 fi
 
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+# For gcloud completion and adding to PATH
+#source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+#source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
