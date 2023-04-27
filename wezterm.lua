@@ -15,13 +15,8 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = 'Dracula'
 
--- config.font = wezterm.font('Fira Code', {weight="Medium"})
--- config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
--- config.font = wezterm.font('JetBrains Mono', { weight="Medium" })
--- config.font_size = 5
--- config.freetype_load_flags = 'NO_HINTING'
+config.font = wezterm.font('Hack Nerd Font', { weight="Medium" })
 -- config.line_height = 1.0
--- config.dpi = 192.0
 
 config.hide_tab_bar_if_only_one_tab = true
 
