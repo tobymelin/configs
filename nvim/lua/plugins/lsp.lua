@@ -62,18 +62,21 @@ return {
 
       -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 
-      require("typescript").setup {
-        -- lspconfig settings
-        server = {
-          on_attach = on_attach,
-          capabilities = capabilities,
-          root_dir = function() return vim.loop.cwd() end,
-          -- enable snippet completions
-          completions = {
-            completeFunctionCalls = true
-          },
-        }
-      }
+      -- require("typescript").setup {
+      --   -- lspconfig settings
+      --   server = {
+      --     on_attach = on_attach,
+      --     capabilities = capabilities,
+      --     root_dir = function() return vim.loop.cwd() end,
+      --     -- enable snippet completions
+      --     completions = {
+      --       completeFunctionCalls = true
+      --     },
+      --   }
+      -- }
+
+      require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config
+      require("lspconfig").vtsls.setup({ --[[ your custom server config here ]] })
 
       require'lspconfig'.eslint.setup{
         on_attach = on_attach,
