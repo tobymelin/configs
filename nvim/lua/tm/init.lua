@@ -3,6 +3,9 @@ require("tm.remap")
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "80"
 
+-- Hide mode information from command lines
+vim.opt.showmode = false
+
 -- Minimum line numbers to show above/below cursor
 vim.opt.scrolloff = 4
 
