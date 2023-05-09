@@ -13,9 +13,9 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Catppuccin Macchiato'
+config.color_scheme = 'Catppuccin Frappe'
 
-config.font = wezterm.font('Hack Nerd Font', { weight="Medium" })
+config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
 -- config.line_height = 1.0
 
 config.hide_tab_bar_if_only_one_tab = true
