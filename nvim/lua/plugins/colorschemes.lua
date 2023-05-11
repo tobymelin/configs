@@ -1,4 +1,4 @@
-local default_colorscheme = 'catppuccin'
+local default_colorscheme = 'nordic'
 local M = {}
 
 M = {
@@ -23,7 +23,24 @@ M = {
   -- 'morhetz/gruvbox',
   -- 'tanvirtin/monokai.nvim',
   { 'sainnhe/sonokai' },
-  { 'AlexvZyl/nordic.nvim' },
+  {
+    'AlexvZyl/nordic.nvim',
+    name = 'nordic',
+    opts = {
+    },
+    config = function ()
+      local palette = require 'nordic.colors'
+
+      require('nordic').setup({
+        override = {
+          Comment = {
+            fg = palette.gray5,
+            italic = false,
+          },
+    }
+      })
+    end
+  },
   {
     'rebelot/kanagawa.nvim',
     name = 'kanagawa',
