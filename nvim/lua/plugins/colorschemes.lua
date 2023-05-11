@@ -23,6 +23,7 @@ M = {
   -- 'morhetz/gruvbox',
   -- 'tanvirtin/monokai.nvim',
   { 'sainnhe/sonokai' },
+  { 'AlexvZyl/nordic.nvim' },
   {
     'rebelot/kanagawa.nvim',
     name = 'kanagawa',
@@ -37,14 +38,14 @@ M = {
     config = function()
       require('catppuccin').setup({
         flavour = 'macchiato',
-        custom_highlights = function (colors)
-          return {
+        -- custom_highlights = function (colors)
+          -- return {
             -- Comment = { fg = colors.flamingo, bg = "#0f0aff" },
             -- Cursor = { fg = "#ffffff", bg = "#ffffff" },
             -- CursorColumn = { fg = "#ffffff", bg = "#ffffff" },
             -- iCursor = { fg = "#ffffff", bg = "#ffffff" },
-          }
-        end
+          -- }
+        -- end
       })
     end,
   },
