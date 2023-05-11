@@ -30,6 +30,12 @@ return {
           n = { description = 'Note', template = '* %?\n %u' }
         }
       })
+
+      vim.api.nvim_create_autocmd({ "BufRead,BufNewFile" }, {
+        pattern = { "*.org" },
+        command = "setlocal foldlevel=5",
+        -- command = "setlocal conceallevel=2",
+      })
     end
   },
 }
