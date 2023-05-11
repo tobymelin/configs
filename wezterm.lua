@@ -13,13 +13,14 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Catppuccin Frappe'
+config.color_scheme = 'Catppuccin Macchiato'
 
 config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
 -- config.line_height = 1.0
 
 config.hide_tab_bar_if_only_one_tab = true
 
+config.leader = { key="b", mods="CTRL" }
 config.keys = {
   {
     key = "d",
@@ -45,6 +46,26 @@ config.keys = {
     key = "]",
     mods = "CMD",
     action = wezterm.action.ActivatePaneDirection 'Next',
+  },
+  {
+    key = 'H',
+    mods = 'LEADER',
+    action = wezterm.action.AdjustPaneSize { 'Left', 5 },
+  },
+  {
+    key = 'J',
+    mods = 'LEADER',
+    action = wezterm.action.AdjustPaneSize { 'Down', 5 },
+  },
+  {
+    key = 'K',
+    mods = 'LEADER',
+    action = wezterm.action.AdjustPaneSize { 'Up', 5 }
+  },
+  {
+    key = 'L',
+    mods = 'LEADER',
+    action = wezterm.action.AdjustPaneSize { 'Right', 5 },
   },
 }
 

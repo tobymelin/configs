@@ -2281,9 +2281,3 @@ map cmd+shift+] neighboring_window down
 map kitty_mod+enter next_layout
 
 # }}}
-
-
-# BEGIN_KITTY_THEME
-# Catppuccin-Macchiato
-include current-theme.conf
-# END_KITTY_THEME
