@@ -62,5 +62,10 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
-vim.keymap.set('n', '<leader>fx', "<cmd>EslintFixAll<CR>")
+vim.keymap.set('n', '<leader>fx', function ()
+  vim.cmd('EslintFixAll')
+  vim.lsp.buf.format()
+  vim.cmd('VtsExec add_missing_imports')
+  vim.cmd('VtsExec remove_unused_imports')
+end)
 

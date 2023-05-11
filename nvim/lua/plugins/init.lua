@@ -115,6 +115,11 @@ return {
     },
   },
 
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+  },
+
 -- Tabline plugin
   'mkitt/tabline.vim',
 
