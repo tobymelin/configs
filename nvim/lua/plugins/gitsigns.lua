@@ -2,6 +2,7 @@ return {
   'lewis6991/gitsigns.nvim',
   event = 'VeryLazy',
   opts = {
+    current_line_blame = false,
     on_attach = function(bufnr)
       local gs = package.loaded.gitsigns
 
@@ -36,7 +37,7 @@ return {
       map('n', '<leader>hd', gs.diffthis)
       map('n', '<leader>hD', function() gs.diffthis('~') end)
       map('n', '<leader>td', gs.toggle_deleted)
-    end
+    end,
   }
 }
 

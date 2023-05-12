@@ -40,6 +40,16 @@ return {
   },
 },
 
+-- Buffer auto-close if too many open
+{
+  'axkirillov/hbac.nvim',
+  config = function ()
+    require("hbac").setup({
+      threshold = 8,
+    })
+  end
+},
+
 -- Markdown plugin
   'ixru/nvim-markdown',
 

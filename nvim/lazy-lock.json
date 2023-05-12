@@ -10,6 +10,7 @@
   "dracula": { "branch": "master", "commit": "c77f9e7c5018b5f70cff1dc3d57d373723b1df6a" },
   "gitsigns.nvim": { "branch": "main", "commit": "e5edefd9976039f5352e0c900f35206770b33a2d" },
   "harpoon": { "branch": "master", "commit": "f7040fd0c44e7a4010369136547de5604b9c22a1" },
+  "hbac.nvim": { "branch": "main", "commit": "c0b9240f341518e15cb8339bbe4bac70da334aea" },
   "hop.nvim": { "branch": "master", "commit": "90db1b2c61b820e230599a04fedcd2679e64bd07" },
   "indent-blankline.nvim": { "branch": "master", "commit": "018bd04d80c9a73d399c1061fa0c3b14a7614399" },
   "kanagawa": { "branch": "master", "commit": "497a5eadf76bc57ab0d80d50a87ecc0e7535d72d" },

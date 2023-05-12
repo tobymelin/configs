@@ -34,8 +34,11 @@ M = {
       require('nordic').setup({
         override = {
           Comment = {
-            fg = palette.gray5,
+            fg = palette.grey5,
             italic = false,
+          },
+          Search = {
+            bg = palette.grey4,
           },
     }
       })
