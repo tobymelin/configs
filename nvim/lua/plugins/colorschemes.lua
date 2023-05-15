@@ -40,6 +40,9 @@ M = {
           Search = {
             bg = palette.grey4,
           },
+          Visual = {
+            bg = palette.grey4,
+          },
     }
       })
     end
