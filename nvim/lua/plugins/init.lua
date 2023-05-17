@@ -128,6 +128,9 @@ return {
   {
     'stevearc/oil.nvim',
     opts = {},
+    keys = {
+      { '<leader>to', '<cmd>Oil<CR>' },
+    },
   },
 
 -- Tabline plugin
