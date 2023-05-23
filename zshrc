@@ -169,6 +169,7 @@ alias -g :h='| head'
 alias -g :p='| less -R'
 alias -g :t='| tail'
 alias -g :t1='| tail -n 1'
+alias -g :w='| wc -l'
 
 # Default applications based on file endings
 alias -s {md,py}=$VSCODE
