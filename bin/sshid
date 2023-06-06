@@ -2,10 +2,20 @@
 
 SSH_CONF="$HOME/.ssh/config"
 
+if [ -n $1 ] && [ "$1" == "-h" ]; then
+  echo "Usage: sshid <CONFIG SUFFIX>"
+  echo "-l: Print current key file"
+  echo "-n: Non-Yubikey SSH key"
+  exit 0
+fi
+
 if [ -n $1 ] && [ "$1" == "-l" ]; then
-  grep Identity $SSH_CONF
+  grep IdentityFile $SSH_CONF
+elif [ -n $1 ] && [ "$1" == "-n" ]; then
+  sed -i -E -e "s/ed25519.*/ed25519/" $SSH_CONF
+  grep IdentityFile $SSH_CONF
 else
-  sed -i -E -e "s/_sk.*/_sk$1/" $SSH_CONF
-  grep Identity $SSH_CONF
+  sed -i -E -e "s/ed25519.*/ed25519_sk$1/" $SSH_CONF
+  grep IdentityFile $SSH_CONF
 fi
 
