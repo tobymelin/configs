@@ -7,7 +7,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.showmode = false
 
 -- Minimum line numbers to show above/below cursor
-vim.opt.scrolloff = 4
+vim.opt.scrolloff = 8
 
 -- Line numbering config
 vim.opt.number = true
@@ -37,10 +37,10 @@ vim.cmd [[
   hi TabLineFill  ctermfg=Black  ctermbg=235     cterm=NONE
   hi TabLineSel   ctermfg=White  ctermbg=33  cterm=NONE
 
-
   " Required for org-mode
   set conceallevel=2
   set concealcursor=nc
+  set foldlevel=6
 
   let g:vim_markdown_folding_disabled=1
   let g:vim_markdown_conceal = 0

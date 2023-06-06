@@ -24,7 +24,7 @@ return {
 
       local dropdown = themes.get_dropdown({
         hidden = true,
-        no_ignore = true,
+        no_ignore = false,
         previewer = false,
         prompt_title = '',
         preview_title = '',
