@@ -1,4 +1,4 @@
-local default_colorscheme = 'nordic'
+local default_colorscheme = 'catppuccin'
 local M = {}
 
 M = {
@@ -61,6 +61,7 @@ M = {
     config = function()
       require('catppuccin').setup({
         flavour = 'macchiato',
+        -- flavour = 'latte',
         -- custom_highlights = function (colors)
           -- return {
             -- Comment = { fg = colors.flamingo, bg = "#0f0aff" },

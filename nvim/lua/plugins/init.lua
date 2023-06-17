@@ -65,6 +65,15 @@ return {
     },
   },
 
+  -- Leap (hop alternative for navigation)
+  {
+    'ggandor/leap.nvim',
+    config = function ()
+      require('leap').add_default_mappings()
+    end
+  },
+
+
 -- Multiline selection (Sublime-like)
   { 'mg979/vim-visual-multi', branch = 'master'},
 
