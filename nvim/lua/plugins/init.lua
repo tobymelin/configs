@@ -161,7 +161,6 @@ return {
     'jose-elias-alvarez/typescript.nvim',
     enabled = false,
   },
-  -- 'ray-x/go.nvim',
 
   -- npm install -g @vtsls/language-server
   -- https://github.com/yioneko/vtsls
