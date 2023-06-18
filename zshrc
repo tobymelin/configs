@@ -124,6 +124,7 @@ fi
 alias c='clear'
 alias d='du -h'
 alias di='colordiff -Nau'
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -l'
@@ -211,6 +212,9 @@ pycalc() {
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+
+export PATH="/opt/homebrew/bin:$PATH"
+
 # brew-specific commands
 if type brew &> /dev/null; then
 	#export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
@@ -224,8 +228,10 @@ fi
 
 # go path
 if [ -d $HOME/go/bin ]; then
-  export GOPATH=$HOME/go/bin
-  export PATH=$PATH:$GOPATH
+  export GOPATH=$HOME/go
+  export GOBIN=$HOME/go/bin
+  export PATH=$PATH:$GOPATH/bin
+  export GOPRIVATE="github.com/tokenweb3/*"
 fi
 
 if [ -d $HOME/Library/Android/sdk ]; then
