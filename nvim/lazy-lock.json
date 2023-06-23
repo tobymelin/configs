@@ -9,6 +9,7 @@
   "copilot.vim": { "branch": "release", "commit": "1358e8e45ecedc53daf971924a0541ddf6224faf" },
   "diffview.nvim": { "branch": "main", "commit": "b3a763f8c7810b352226c95faa7d3ac9fb93b8d9" },
   "dracula": { "branch": "master", "commit": "2f396b6ba988ad4b3961c2e40d1b9ae436b8c26c" },
+  "github-nvim-theme": { "branch": "main", "commit": "36b8a376221bf72affbfc9ed99d4577a0377586b" },
   "gitsigns.nvim": { "branch": "main", "commit": "256569c2fe697a3003dbd49ff474e5935af9066c" },
   "go.nvim": { "branch": "master", "commit": "a8095eb334495caec3099b717cc7f5b1fbc3e628" },
   "guihua.lua": { "branch": "master", "commit": "ab8b1f09603cc268770efd057115035dc6cfa83d" },

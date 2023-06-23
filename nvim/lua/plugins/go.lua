@@ -4,7 +4,9 @@ return {
     "ray-x/guihua.lua",
   },
   config = function()
-    require("go").setup()
+    require("go").setup({
+      gofmt = 'gofmt',
+    })
   end,
   -- event = {"CmdlineEnter"},
   ft = {'go', 'gomod'},
