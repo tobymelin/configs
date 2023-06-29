@@ -20,7 +20,7 @@ config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
 
 config.hide_tab_bar_if_only_one_tab = true
 
-config.leader = { key="b", mods="CTRL" }
+-- config.leader = { key="b", mods="CTRL" }
 config.keys = {
   {
     key = "d",
