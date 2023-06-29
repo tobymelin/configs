@@ -1,7 +1,7 @@
 require("tm.remap")
 
 vim.opt.termguicolors = true
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80,130"
 
 -- Hide mode information from command lines
 vim.opt.showmode = false
