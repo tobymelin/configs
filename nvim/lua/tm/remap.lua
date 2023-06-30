@@ -48,13 +48,6 @@ nmap { "tt", "<cmd>Telescope diagnostics<CR>" }
 nmap { "<leader>?", "<cmd>Cheatsheet<CR>" }
 nmap { "<leader>T", "<cmd>TroubleToggle<CR>" }
 
--- vim-test mappings
-nmap { "<leader>rt", "<cmd>TestNearest<CR>" }
-nmap { "<leader>rf", "<cmd>TestFile<CR>" }
-nmap { "<leader>ra", "<cmd>TestSuite<CR>" }
-nmap { "<leader>rl", "<cmd>TestLast<CR>" }
-nmap { "<leader>rg", "<cmd>TestVisit<CR>" }
-
 -- LSP mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }

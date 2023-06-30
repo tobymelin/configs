@@ -32,7 +32,9 @@ return {
   'matbme/JABS.nvim',
   lazy = true,
   config = function ()
-    require('jabs').setup()
+    require('jabs').setup({
+      width = 80,
+    })
   end,
   keys = {
     { '<C-Tab>', '<cmd>JABSOpen<CR>' },
@@ -170,14 +172,6 @@ return {
     lazy = false,
     config = function ()
       require('lsp_signature').setup()
-    end
-  },
-
-  -- nvim test runner
-  {
-    'vim-test/vim-test',
-    config = function ()
-      vim.cmd([[ tmap <C-o> <C-\><C-n> ]])
     end
   },
 

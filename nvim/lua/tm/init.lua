@@ -44,11 +44,9 @@ vim.cmd [[
 
   let g:vim_markdown_folding_disabled=1
   let g:vim_markdown_conceal = 0
-  let g:test#javascript#ava#file_pattern = '\vtests?/.*\.(js|jsx|coffee|ts|tsx)$'
 ]]
 
 vim.api.nvim_create_autocmd({ "BufRead,BufNewFile" }, {
   pattern = { "*.json", "*.md" },
   command = "setlocal conceallevel=0",
 })
-

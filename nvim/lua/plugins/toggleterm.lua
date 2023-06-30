@@ -43,8 +43,8 @@ return {
       end
 
       vim.api.nvim_set_keymap("n", "<leader>L", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
-      vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>lua _ava_toggle()<CR>", {noremap = true, silent = true})
-      vim.api.nvim_set_keymap("n", "<leader>ru", "<cmd>lua _ava_toggle(true)<CR>", {noremap = true, silent = true})
+      -- vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>lua _ava_toggle()<CR>", {noremap = true, silent = true})
+      -- vim.api.nvim_set_keymap("n", "<leader>ru", "<cmd>lua _ava_toggle(true)<CR>", {noremap = true, silent = true})
       vim.api.nvim_set_keymap("n", "<leader>ry", "<cmd>lua _lint_toggle()<CR>", {noremap = true, silent = true})
     end
   },
