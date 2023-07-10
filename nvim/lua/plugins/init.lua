@@ -147,16 +147,6 @@ return {
   -- nvim completion
   'folke/lsp-trouble.nvim',
 
-  {
-    'jose-elias-alvarez/typescript.nvim',
-    enabled = false,
-  },
-
-  -- npm install -g @vtsls/language-server
-  -- https://github.com/yioneko/vtsls
-  -- https://github.com/yioneko/nvim-vtsls
-  'yioneko/nvim-vtsls',
-
   -- Show code signature overloads in lsp
   -- 'Issafalcon/lsp-overloads.nvim',
 

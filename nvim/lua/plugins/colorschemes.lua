@@ -1,4 +1,5 @@
 local default_colorscheme = 'nordic'
+-- local default_colorscheme = 'catppuccin'
 local M = {}
 
 M = {
@@ -23,7 +24,9 @@ M = {
   -- 'morhetz/gruvbox',
   -- 'tanvirtin/monokai.nvim',
   { 'sainnhe/sonokai' },
-  { 'projekt0n/github-nvim-theme' },
+  {
+    'projekt0n/github-nvim-theme',
+  },
   {
     'AlexvZyl/nordic.nvim',
     name = 'nordic',
