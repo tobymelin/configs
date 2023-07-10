@@ -13,6 +13,9 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
+config.color_scheme = 'Github'
+config.color_scheme = 'Nord Light (Gogh)'
+config.color_scheme = 'Catppuccin Latte'
 config.color_scheme = 'Catppuccin Macchiato'
 
 config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
