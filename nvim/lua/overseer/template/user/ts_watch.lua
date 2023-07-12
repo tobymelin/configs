@@ -4,7 +4,7 @@ return {
     return {
       cmd = { "npm" },
       args = { "run", "build:typescript", "--", "--watch" },
-      components = { "default" },
+      components = { "default_no_dispose" },
     }
   end,
   condition = {

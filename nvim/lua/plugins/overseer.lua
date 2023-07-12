@@ -3,6 +3,14 @@ return {
   event = 'VeryLazy',
   config = function ()
     require('overseer').setup({
+      component_aliases = {
+        default_no_dispose = {
+          { "display_duration", detail_level = 2 },
+          "on_output_summarize",
+          "on_exit_set_status",
+          "on_complete_notify",
+        },
+      },
       templates = {
         "builtin",
         "user.ts_watch",
