@@ -3,6 +3,9 @@ return {
   event = "VeryLazy",
   ---@type Flash.Config
   opts = {},
+  init = function ()
+    require('flash').toggle(false)
+  end,
   keys = {
     {
       "s",
