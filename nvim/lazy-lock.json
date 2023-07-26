@@ -53,6 +53,7 @@
   "overseer.nvim": { "branch": "master", "commit": "514a5e1af18b490721836fa19b62ca60761e5b59" },
   "plenary.nvim": { "branch": "master", "commit": "267282a9ce242bbb0c5dc31445b6d353bed978bb" },
   "qmk.nvim": { "branch": "main", "commit": "17d030ba96e0d122545cfe7205cb199bd699ca9f" },
+  "rose-pine": { "branch": "main", "commit": "e10340767534b4988992de838d6c811db63b74db" },
   "sonokai": { "branch": "master", "commit": "a9b2a3e83ed4fa7a5541e41be9becaa7b436edcf" },
   "sweetie": { "branch": "master", "commit": "49ff478503557f3d4304fd1a5247a55ce72a9dd8" },
   "tabline.vim": { "branch": "master", "commit": "69c9698a3240860adaba93615f44778a9ab724b4" },

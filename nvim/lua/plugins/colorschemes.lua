@@ -12,6 +12,7 @@ M = {
       -- vim.cmd.colorscheme('nightfly')
     -- end,
   },
+  { 'rose-pine/neovim', name = 'rose-pine' },
   --  'Mofiqul/dracula.nvim',
   -- { 'dracula/vim', name = 'dracula' },
   -- 'Everblush/nvim',
@@ -38,14 +39,14 @@ M = {
       require('nordic').setup({
         override = {
           Comment = {
-            fg = palette.grey5,
+            fg = palette.gray5,
             italic = false,
           },
           Search = {
-            bg = palette.grey4,
+            bg = palette.gray5,
           },
           Visual = {
-            bg = palette.grey4,
+            bg = palette.gray5,
           },
     }
       })
