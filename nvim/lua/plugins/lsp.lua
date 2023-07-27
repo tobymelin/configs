@@ -83,12 +83,12 @@ return {
         capabilities = capabilities,
         root_dir = function() return vim.loop.cwd() end
       }
-
       require'lspconfig'.lua_ls.setup {
         on_attach = on_attach,
       }
-
-      require'lspconfig'.gopls.setup {}
+      require'lspconfig'.gopls.setup {
+        on_attach = on_attach,
+      }
       require'lspconfig'.vuels.setup {}
 
       -- https://github.com/jose-elias-alvarez/typescript.nvim/issues/19
