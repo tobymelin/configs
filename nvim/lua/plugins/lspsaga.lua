@@ -1,7 +1,7 @@
 return {
   -- LSP UI
   {
-    'glepnir/lspsaga.nvim',
+    'nvimdev/lspsaga.nvim',
     event = "LspAttach",
     dependencies = 'neovim/nvim-lspconfig',
     keys = {
