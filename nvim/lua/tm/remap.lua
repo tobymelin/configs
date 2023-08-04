@@ -56,11 +56,11 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
 vim.keymap.set('n', '<leader>fx', function ()
-  vim.cmd('EslintFixAll')
-  vim.lsp.buf.format()
   -- vim.cmd('VtsExec add_missing_imports')
   -- vim.cmd('VtsExec remove_unused_imports')
   vim.cmd('TSToolsOrganizeImports')
   vim.cmd('TSToolsAddMissingImports')
+  vim.cmd('EslintFixAll')
+  vim.lsp.buf.format()
 end)
 
