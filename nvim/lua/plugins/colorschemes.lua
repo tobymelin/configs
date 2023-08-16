@@ -1,5 +1,5 @@
-local default_colorscheme = 'nordic'
--- local default_colorscheme = 'catppuccin'
+-- local default_colorscheme = 'nordic'
+local default_colorscheme = 'catppuccin'
 local M = {}
 
 M = {
@@ -66,6 +66,12 @@ M = {
     config = function()
       require('catppuccin').setup({
         flavour = 'macchiato',
+        custom_highlights = function (colors)
+          return {
+            FlashCurrent = { bg = '#800000' },
+            FlashMatch = { bg = '#555555' },
+          }
+        end,
         -- flavour = 'latte',
         -- custom_highlights = function (colors)
           -- return {

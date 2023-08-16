@@ -5,6 +5,12 @@ return {
 
   -- Utilities
   'sudormrfbin/cheatsheet.nvim',
+  {
+    'NvChad/nvim-colorizer.lua',
+    config = function ()
+      require('colorizer').setup()
+    end
+  },
 
   {
     'lukas-reineke/indent-blankline.nvim',

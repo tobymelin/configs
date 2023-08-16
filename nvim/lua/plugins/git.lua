@@ -3,6 +3,9 @@ return {
     'tpope/vim-fugitive',
   },
 
+  -- Enables GBrowse for GitHub files
+  'tpope/vim-rhubarb',
+
   -- 'TimUntersberger/neogit',
 
   {
