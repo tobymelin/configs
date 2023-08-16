@@ -18,8 +18,16 @@ config.color_scheme = 'Nord Light (Gogh)'
 config.color_scheme = 'Catppuccin Latte'
 config.color_scheme = 'Catppuccin Macchiato'
 
-config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
+-- config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
+config.font = wezterm.font('JetBrainsMono Nerd Font Mono', { weight="Medium" })
 -- config.line_height = 1.0
+
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
+}
 
 config.hide_tab_bar_if_only_one_tab = true
 
