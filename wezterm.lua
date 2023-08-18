@@ -29,7 +29,39 @@ config.window_padding = {
   bottom = 0,
 }
 
+config.window_close_confirmation = "NeverPrompt"
 config.hide_tab_bar_if_only_one_tab = true
+config.use_fancy_tab_bar = false
+config.show_new_tab_button_in_tab_bar = false
+
+config.colors = {
+  visual_bell = "#1e2030",
+  tab_bar = {
+    background = "#2E3440",
+    active_tab = {
+      bg_color = "#4C566A",
+      fg_color = "#ECEFF4",
+      intensity = "Bold",
+    },
+    inactive_tab = {
+      bg_color = "#3B4252",
+      fg_color = "#ECEFF4",
+      intensity = "Normal",
+    },
+    inactive_tab_hover = {
+      bg_color = "#434C5E",
+      fg_color = "#ECEFF4",
+    },
+    new_tab = {
+      bg_color = "#3B4252",
+      fg_color = "#ECEFF4",
+    },
+    new_tab_hover = {
+      bg_color = "#434C5E",
+      fg_color = "#ECEFF4",
+    },
+  },
+}
 
 -- config.leader = { key="b", mods="CTRL" }
 config.keys = {
