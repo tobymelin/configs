@@ -19,10 +19,11 @@ nmap { "<leader>qt", "<cmd>tabc<CR>", { noremap = true } }
 nmap { "<leader>h", "<cmd>nohlsearch<CR>" }
 nmap { "<leader>w", "<cmd>w<CR>" }
 
-nmap { "<C-h>", "<cmd>wincmd h<CR>" }
-nmap { "<C-l>", "<cmd>wincmd l<CR>" }
-nmap { "<C-j>", "<cmd>wincmd j<CR>" }
-nmap { "<C-k>", "<cmd>wincmd k<CR>" }
+-- now managed by smart-splits.nvim
+-- nmap { "<C-h>", "<cmd>wincmd h<CR>" }
+-- nmap { "<C-l>", "<cmd>wincmd l<CR>" }
+-- nmap { "<C-j>", "<cmd>wincmd j<CR>" }
+-- nmap { "<C-k>", "<cmd>wincmd k<CR>" }
 
 -- Copy to clipboard
 vmap { '<leader>y', '"+y', { noremap = true } }
