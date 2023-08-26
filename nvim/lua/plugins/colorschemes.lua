@@ -1,5 +1,5 @@
 -- local default_colorscheme = 'nordic'
-local default_colorscheme = 'catppuccin'
+local default_colorscheme = 'rose-pine'
 local M = {}
 
 M = {
@@ -12,7 +12,15 @@ M = {
       -- vim.cmd.colorscheme('nightfly')
     -- end,
   },
-  { 'rose-pine/neovim', name = 'rose-pine' },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function ()
+      require('rose-pine').setup({
+        dark_variant = 'moon',
+      })
+    end,
+  },
   --  'Mofiqul/dracula.nvim',
   -- { 'dracula/vim', name = 'dracula' },
   -- 'Everblush/nvim',
