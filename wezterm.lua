@@ -12,6 +12,7 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
+config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 
 -- For example, changing the color scheme:
 config.color_scheme = 'Github'
@@ -32,8 +33,9 @@ config.window_padding = {
 
 config.window_close_confirmation = "NeverPrompt"
 config.hide_tab_bar_if_only_one_tab = true
-config.use_fancy_tab_bar = false
+config.use_fancy_tab_bar = true
 config.show_new_tab_button_in_tab_bar = false
+config.adjust_window_size_when_changing_font_size = false
 
 config.colors = {
   visual_bell = "#1e2030",
