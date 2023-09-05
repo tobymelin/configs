@@ -105,16 +105,6 @@ return {
   'godlygeek/tabular',
   'preservim/vim-markdown',
 
-  -- Harpoon (also requires plenary)
-  {
-    'ThePrimeagen/harpoon',
-    lazy = true,
-    keys = {
-      { "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>" },
-      { "<leader>hi", "<cmd>lua require('harpoon.mark').add_file()<CR>" }
-    },
-  },
-
   -- nvim-tree
   {
     'nvim-tree/nvim-tree.lua',
