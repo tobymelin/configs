@@ -38,6 +38,10 @@ return {
             buffer = bufnr,
             group = group,
             callback = function()
+              if not vim.g.autoformat then
+                return
+              end
+
               vim.lsp.buf.format({ bufnr = bufnr, async = async })
             end,
             desc = "[lsp] format on save",

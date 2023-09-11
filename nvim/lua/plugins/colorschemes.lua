@@ -18,6 +18,9 @@ M = {
     config = function ()
       require('rose-pine').setup({
         dark_variant = 'moon',
+        highlight_groups = {
+          MiniIndentscopeSymbol = { fg = '#90acff' },
+        },
       })
     end,
   },

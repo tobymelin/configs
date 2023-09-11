@@ -50,3 +50,6 @@ vim.api.nvim_create_autocmd({ "BufRead,BufNewFile" }, {
   pattern = { "*.json", "*.md" },
   command = "setlocal conceallevel=0",
 })
+
+-- null-ls helper
+vim.g.autoformat = true
