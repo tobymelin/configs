@@ -1,5 +1,6 @@
 -- local default_colorscheme = 'nordic'
-local default_colorscheme = 'rose-pine'
+-- local default_colorscheme = 'rose-pine'
+local default_colorscheme = 'kanagawa'
 local M = {}
 
 M = {
@@ -66,6 +67,15 @@ M = {
   {
     'rebelot/kanagawa.nvim',
     name = 'kanagawa',
+    config = function ()
+      require('kanagawa').setup({
+        overrides = function ()
+          return {
+            MiniIndentscopeSymbol = { fg = '#90acff' },
+          }
+        end,
+      })
+    end,
   },
   {
     'marko-cerovac/material.nvim',
