@@ -10,8 +10,8 @@ return {
       vim.keymap.set('n', '<space>dd', require('dapui').toggle)
       vim.keymap.set('n', '<space>dc', '<cmd>DapContinue<CR>')
       vim.keymap.set('n', '<space>db', '<cmd>lua require("dap").toggle_breakpoint()<CR>')
-      vim.keymap.set('n', '<space>dc', '<cmd>lua require("dap").clear_breakpoints()<CR>')
-      vim.keymap.set('n', '<space>dro', '<cmd>lua require("dap").repl.open()<CR>')
+      vim.keymap.set('n', '<space>drm', '<cmd>lua require("dap").clear_breakpoints()<CR>')
+      vim.keymap.set('n', '<space>dro', '<cmd>lua require("dap").repl.toggle()<CR>')
       vim.keymap.set('n', '<leader>duf', "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>")
 
       vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#ed3d3d', bg = '#31353f' })

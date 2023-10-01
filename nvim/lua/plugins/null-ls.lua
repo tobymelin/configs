@@ -42,6 +42,10 @@ return {
                 return
               end
 
+              if vim.bo.filetype ~= "javascript" and vim.bo.filetype ~= "typescript" and vim.bo.filetype ~= "go" then
+                return
+              end
+
               vim.lsp.buf.format({ bufnr = bufnr, async = async })
             end,
             desc = "[lsp] format on save",
