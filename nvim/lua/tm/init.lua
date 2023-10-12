@@ -46,7 +46,7 @@ vim.cmd [[
   let g:vim_markdown_conceal = 0
 ]]
 
-vim.api.nvim_create_autocmd({ "BufRead,BufNewFile" }, {
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.json", "*.md" },
   command = "setlocal conceallevel=0",
 })

@@ -31,7 +31,7 @@ return {
         }
       })
 
-      vim.api.nvim_create_autocmd({ "BufRead,BufNewFile" }, {
+      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
         pattern = { "*.org" },
         command = "setlocal foldlevel=5",
         -- command = "setlocal conceallevel=2",
