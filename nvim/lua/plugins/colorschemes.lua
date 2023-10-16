@@ -1,6 +1,6 @@
 -- local default_colorscheme = 'nordic'
 -- local default_colorscheme = 'rose-pine'
-local default_colorscheme = 'kanagawa'
+local default_colorscheme = 'bamboo'
 local M = {}
 
 M = {
@@ -12,6 +12,17 @@ M = {
     -- config = function()
       -- vim.cmd.colorscheme('nightfly')
     -- end,
+  },
+  {
+    'ribru17/bamboo.nvim',
+    name = 'bamboo',
+    config = function ()
+      require('bamboo').setup({
+        highlights = {
+          MiniIndentscopeSymbol = { fg = '#90acff' },
+        },
+      })
+    end,
   },
   {
     'rose-pine/neovim',
