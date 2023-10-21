@@ -59,6 +59,7 @@ return {
     dependencies = {
       'folke/neodev.nvim',
       'ray-x/lsp_signature.nvim',
+      'williamboman/mason-lspconfig.nvim',
     },
     config = function ()
       -- Set up lspconfig.
