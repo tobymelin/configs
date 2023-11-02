@@ -251,3 +251,5 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 # Source local environment variable config if it exists
 [ -f ~/.env.zsh ] && source ~/.env.zsh
 
+
+source /Users/tobymelin/.config/broot/launcher/bash/br
