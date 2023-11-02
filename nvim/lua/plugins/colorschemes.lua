@@ -20,6 +20,7 @@ M = {
       require('bamboo').setup({
         highlights = {
           MiniIndentscopeSymbol = { fg = '#90acff' },
+          IblIndent = { fg = '#999999' },
         },
       })
     end,
@@ -71,7 +72,7 @@ M = {
           Visual = {
             bg = palette.gray5,
           },
-    }
+        },
       })
     end
   },

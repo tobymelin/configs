@@ -2,6 +2,8 @@ local imap = require("tm.keymap").imap
 local nmap = require("tm.keymap").nmap
 local vmap = require("tm.keymap").vmap
 
+local map = vim.keymap.set
+
 nmap { "U", "<cmd>redo<CR>" }
 
 nmap { "<leader>b", function ()
@@ -42,9 +44,14 @@ imap { '<C-S-V>', '"*p', { noremap = true } }
 -- Telescope mappings
 nmap { "<leader>ff", "<cmd>Telescope find_files<CR>" }
 nmap { "<leader>fg", "<cmd>Telescope live_grep<CR>" }
-nmap { "<leader>fb", "<cmd>Telescope buffers<CR>" }
 nmap { "<leader>fh", "<cmd>Telescope help_tags<CR>" }
 nmap { "<leader>fd", "<cmd>Telescope file_browser<CR>" }
+nmap({
+  '<leader>fb',
+  function ()
+    require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true, })
+  end
+})
 
 nmap { "tr", "<cmd>Telescope lsp_references<CR>" }
 nmap { "td", "<cmd>Telescope lsp_definitions<CR>" }

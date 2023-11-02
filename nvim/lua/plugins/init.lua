@@ -14,10 +14,11 @@ return {
 
   {
     'lukas-reineke/indent-blankline.nvim',
-    enabled = false,
-    config = function()
-      require("ibl").setup()
-    end
+    main = "ibl",
+    opts = {
+      indent = { char = '▏', tab_char = '▏' },
+      scope = { enabled = false },
+    },
   },
 
   -- Type gS to split single line into a multi-liner

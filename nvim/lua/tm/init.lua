@@ -28,7 +28,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Various vim settings without Lua equivalents
-vim.cmd [[
+vim.cmd([[
   filetype plugin indent on
   syntax enable
 
@@ -40,11 +40,16 @@ vim.cmd [[
   " Required for org-mode
   set conceallevel=2
   set concealcursor=nc
-  set foldlevel=6
 
   let g:vim_markdown_folding_disabled=1
   let g:vim_markdown_conceal = 0
-]]
+]])
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false -- Disable folding at startup.
+vim.opt.foldlevel = 99
+vim.opt.foldcolumn = "1"
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.json", "*.md" },
