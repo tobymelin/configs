@@ -24,6 +24,9 @@ config.color_scheme = 'Catppuccin Macchiato'
 config.font = wezterm.font('JetBrainsMono Nerd Font Mono', { weight="Medium" })
 -- config.line_height = 1.0
 
+-- Disable font hinting to improve display on HiDPI screens
+config.freetype_load_flags = 'NO_HINTING'
+
 config.window_padding = {
   left = 0,
   right = 0,
