@@ -18,7 +18,7 @@ end }
 nmap { "<leader>qw", "<cmd>bdel<CR>", { noremap = true } }
 nmap { "<leader>qt", "<cmd>tabc<CR>", { noremap = true } }
 
-nmap { "<leader>h", "<cmd>nohlsearch<CR>" }
+nmap { "<leader>hl", "<cmd>nohlsearch<CR>" }
 nmap { "<leader>w", "<cmd>w<CR>" }
 
 -- now managed by smart-splits.nvim
@@ -64,7 +64,7 @@ nmap { "<leader>T", "<cmd>TroubleToggle<CR>" }
 -- LSP mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
