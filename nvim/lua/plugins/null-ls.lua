@@ -1,3 +1,5 @@
+local autoformat_types = { "javascript", "typescript", "go" }
+
 return {
   -- Prettier (requires null-ls and lspconfig)
   {
@@ -42,7 +44,8 @@ return {
                 return
               end
 
-              if vim.bo.filetype ~= "javascript" and vim.bo.filetype ~= "typescript" and vim.bo.filetype ~= "go" then
+              -- Do not autoformat if filetype is not in autoformat_types
+              if autoformat_types[vim.bo.filetype] == nil then
                 return
               end
 
