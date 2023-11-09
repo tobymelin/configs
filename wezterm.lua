@@ -22,6 +22,8 @@ config.color_scheme = 'Catppuccin Macchiato'
 
 -- config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
 config.font = wezterm.font('JetBrainsMono Nerd Font Mono', { weight="Medium" })
+config.font = wezterm.font('Hack Nerd Font', { weight="Medium" })
+-- config.font = wezterm.font('SauceCodePro Nerd Font', { weight="Medium" })
 -- config.line_height = 1.0
 
 -- Disable font hinting to improve display on HiDPI screens
