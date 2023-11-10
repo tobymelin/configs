@@ -27,6 +27,8 @@ config.font = wezterm.font('MonoLisa', { weight="Medium" })
 -- config.font = wezterm.font('SauceCodePro Nerd Font', { weight="Medium" })
 -- config.line_height = 1.0
 
+config.font = wezterm.font_with_fallback{'MonoLisa', 'Symbols Nerd Font Mono', 'JetBrains Mono'}
+
 -- Disable font hinting to improve display on HiDPI screens
 config.freetype_load_flags = 'NO_HINTING'
 
