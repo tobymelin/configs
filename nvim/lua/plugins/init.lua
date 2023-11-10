@@ -43,7 +43,7 @@ return {
     })
   end,
   keys = {
-    { '<C-Tab>', '<cmd>JABSOpen<CR>' },
+    -- { '<C-Tab>', '<cmd>JABSOpen<CR>' },
     { '<leader><Tab>', '<cmd>JABSOpen<CR>' },
   },
 },

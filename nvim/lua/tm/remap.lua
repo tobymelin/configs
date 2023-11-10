@@ -47,6 +47,12 @@ nmap { "<leader>fg", "<cmd>Telescope live_grep<CR>" }
 nmap { "<leader>fh", "<cmd>Telescope help_tags<CR>" }
 nmap { "<leader>fd", "<cmd>Telescope file_browser<CR>" }
 nmap({
+  '<leader><Tab>',
+  function ()
+    require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true, })
+  end
+})
+nmap({
   '<leader>fb',
   function ()
     require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true, })
