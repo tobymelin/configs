@@ -8,8 +8,8 @@ local M = {
             -- Whaler configuration
             file_explorer = "oil",
             directories = {
-              "/Users/toby/dev",
-              "/Users/toby/dev-token",
+              vim.env.HOME .. "/dev",
+              vim.env.HOME .. "/dev-token",
             },
         }
       }
