@@ -1,6 +1,6 @@
 -- local default_colorscheme = 'nordic'
--- local default_colorscheme = 'rose-pine'
-local default_colorscheme = 'bamboo'
+local default_colorscheme = 'rose-pine'
+-- local default_colorscheme = 'bamboo'
 local M = {}
 
 M = {
@@ -39,19 +39,14 @@ M = {
   },
   --  'Mofiqul/dracula.nvim',
   -- { 'dracula/vim', name = 'dracula' },
-  -- 'Everblush/nvim',
   -- 'navarasu/onedark.nvim',
-  -- 'EdenEast/nightfox.nvim',
-  {
-    'NLKNguyen/papercolor-theme',
-    name = 'Papercolor',
-  },
   -- 'morhetz/gruvbox',
-  -- 'tanvirtin/monokai.nvim',
-  { 'sainnhe/sonokai' },
   {
-    'projekt0n/github-nvim-theme',
+    'EdenEast/nightfox.nvim',
+    name = 'nightfox',
   },
+  { 'sainnhe/sonokai' },
+  { 'projekt0n/github-nvim-theme' },
   {
     'AlexvZyl/nordic.nvim',
     name = 'nordic',
@@ -90,10 +85,6 @@ M = {
     end,
   },
   {
-    'marko-cerovac/material.nvim',
-    name = 'material',
-  },
-  {
     'catppuccin/nvim',
     name = 'catppuccin',
     config = function()
@@ -118,8 +109,12 @@ M = {
     end,
   },
   {
-    'NTBBloodbath/sweetie.nvim',
-    name = 'sweetie',
+    'shaunsingh/nord.nvim',
+    name = 'nord',
+  },
+  { -- nice light theme
+    'ramojus/mellifluous.nvim',
+    name = 'mellifluous',
   },
   {
     'maxmx03/dracula.nvim',
