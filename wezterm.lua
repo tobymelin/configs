@@ -19,13 +19,20 @@ config.color_scheme = 'Github'
 config.color_scheme = 'Nord Light (Gogh)'
 config.color_scheme = 'Catppuccin Latte'
 config.color_scheme = 'Catppuccin Macchiato'
+config.color_scheme = 'Rosé Pine Moon (Gogh)'
 
 -- config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
-config.font = wezterm.font('JetBrainsMono Nerd Font Mono', { weight="Medium" })
-config.font = wezterm.font('Hack Nerd Font', { weight="Medium" })
-config.font = wezterm.font('MonoLisa', { weight="Medium" })
+-- config.font = wezterm.font('JetBrainsMono Nerd Font Mono', { weight="Medium" })
+config.font = wezterm.font('Hack Nerd Font')
+config.font = wezterm.font('MonoLisa Nerd Font')
+config.font = wezterm.font('MonoLisa')
+-- config.font = wezterm.font('Berkeley Mono', { weight="Medium" })
 -- config.font = wezterm.font('SauceCodePro Nerd Font', { weight="Medium" })
--- config.line_height = 1.0
+-- config.font = wezterm.font('Input Mono')
+-- config.font = wezterm.font('IosevkaTerm Nerd Font', { weight="Medium" })
+-- config.font = wezterm.font('CommitMono')
+-- config.font = wezterm.font('Operator Mono', { weight="Light" })
+-- config.line_height = 1.00
 
 config.font = wezterm.font_with_fallback{'MonoLisa', 'Symbols Nerd Font Mono', 'JetBrains Mono'}
 
