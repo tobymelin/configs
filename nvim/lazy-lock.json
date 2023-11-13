@@ -31,7 +31,7 @@
   "maximize.nvim": { "branch": "master", "commit": "97bfc171775c404396f8248776347ebe64474fe7" },
   "mellifluous": { "branch": "main", "commit": "b0e7d7753331c181633dbaf11b23633c0f72341d" },
   "mini.nvim": { "branch": "main", "commit": "f2b89efbbad1943657e43f474fe308fceb63597e" },
-  "neodev.nvim": { "branch": "main", "commit": "f93a984ee75ba6d532d85419619cc6e91d954ee9" },
+  "neodev.nvim": { "branch": "main", "commit": "1fc168ee385441994d7e9397e854cb20f5c7e324" },
   "nightfly": { "branch": "master", "commit": "06ad2689ebd251a71c6caeb9fb47e231773c9b47" },
   "nightfox": { "branch": "main", "commit": "6a6076bd678f825ffbe16ec97807793c3167f1a7" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "2bcb6b761a34c69739da9aab642839b59236b801" },
