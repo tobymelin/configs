@@ -46,6 +46,7 @@ nmap { "<leader>ff", "<cmd>Telescope find_files<CR>" }
 nmap { "<leader>fg", "<cmd>Telescope live_grep<CR>" }
 nmap { "<leader>fh", "<cmd>Telescope help_tags<CR>" }
 nmap { "<leader>fd", "<cmd>Telescope file_browser<CR>" }
+nmap { "<leader>fr", "<cmd>Telescope resume<CR>" }
 nmap({
   '<leader><Tab>',
   function ()

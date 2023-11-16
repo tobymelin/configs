@@ -11,6 +11,8 @@ return {
             n = {
               ["K"] = require('telescope.actions').preview_scrolling_up,
               ["J"] = require('telescope.actions').preview_scrolling_down,
+              ['H'] = require('telescope.actions').cycle_history_prev,
+              ['L'] = require('telescope.actions').cycle_history_next,
             },
             i = {
               ["<C-B>"] = require('telescope.actions').preview_scrolling_up,
