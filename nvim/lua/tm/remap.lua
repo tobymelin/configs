@@ -75,6 +75,11 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
+nmap { '<leader>ft', function ()
+  vim.g.autoformat = not vim.g.autoformat
+  vim.notify('Autoformat ' .. (vim.g.autoformat and 'enabled' or 'disabled'))
+end, { desc = 'Toggle autoformat' } }
+
 vim.keymap.set('n', '<leader>fe', function ()
   -- vim.cmd('VtsExec add_missing_imports')
   -- vim.cmd('VtsExec remove_unused_imports')
