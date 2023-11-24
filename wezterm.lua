@@ -34,7 +34,14 @@ config.font = wezterm.font('MonoLisa')
 -- config.font = wezterm.font('Operator Mono', { weight="Light" })
 -- config.line_height = 1.00
 
-config.font = wezterm.font_with_fallback{'MonoLisa', 'Symbols Nerd Font Mono', 'JetBrains Mono'}
+config.font = wezterm.font_with_fallback{
+  'Berkeley Mono',
+  'MonoLisa',
+  'Iosevka Comfy', 'Iosevka Nerd Font',
+  'Symbols Nerd Font Mono',
+  'JetBrains Mono'
+}
+-- config.font = wezterm.font_with_fallback{'MonoLisa', 'Symbols Nerd Font Mono', 'JetBrains Mono'}
 
 -- Disable font hinting to improve display on HiDPI screens
 config.freetype_load_flags = 'NO_HINTING'
@@ -108,7 +115,7 @@ local function split_nav(resize_or_move, key)
       if is_vim(pane) then
         -- pass the keys through to vim/nvim
         win:perform_action({
-          SendKey = { key = key, mods = resize_or_move == 'resize' and 'SHIFT|META' or 'CTRL' },
+          SendKey = { key = key, mods = resize_or_move == 'resize' and 'SHIFT|CTRL' or 'CTRL' },
         }, pane)
       else
         if resize_or_move == 'resize' then
