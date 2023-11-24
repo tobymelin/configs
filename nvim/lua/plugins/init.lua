@@ -13,6 +13,16 @@ return {
   },
 
   {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
+  {
+    'rcarriga/nvim-notify',
+    config = function ()
+      vim.notify = require('notify')
+    end,
+  },
+  {
     'lukas-reineke/indent-blankline.nvim',
     main = "ibl",
     opts = {
