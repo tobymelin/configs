@@ -36,11 +36,12 @@ local on_attach = function(client, bufnr)
   -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 
-  vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
+  -- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  -- vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  -- vim.keymap.set('n', '<leader>wl', function()
+  --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  -- end, bufopts)
+
   vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
@@ -50,6 +51,11 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'vrr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', 'vca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'vrn', vim.lsp.buf.rename, bufopts)
+
+  if client.name == 'gopls' then
+    vim.notify('gopls')
+    vim.keymap.set('n', '<leader>gr', '<cmd>GoRun<CR>', bufopts)
+  end
 end
 
 return {
