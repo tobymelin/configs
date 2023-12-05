@@ -25,6 +25,7 @@ return {
     end,
     keys = {
       { '<leader>gd', '<cmd>DiffviewOpen<CR>' },
+      { '<leader>gD', '<cmd>DiffviewOpen master<CR>' },
     },
   },
 
