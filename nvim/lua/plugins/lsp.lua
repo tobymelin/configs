@@ -53,7 +53,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'vrn', vim.lsp.buf.rename, bufopts)
 
   if client.name == 'gopls' then
-    vim.notify('gopls')
     vim.keymap.set('n', '<leader>gr', '<cmd>GoRun<CR>', bufopts)
   end
 end

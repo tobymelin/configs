@@ -26,6 +26,10 @@ M = {
     end,
   },
   {
+    'rmehri01/onenord.nvim',
+    name = 'onenord',
+  },
+  {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function ()
