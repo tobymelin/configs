@@ -11,6 +11,7 @@ return {
       require('colorizer').setup()
     end
   },
+  'folke/zen-mode.nvim',
 
   {
     'stevearc/dressing.nvim',
