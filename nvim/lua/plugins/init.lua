@@ -11,8 +11,13 @@ return {
       require('colorizer').setup()
     end
   },
-  'folke/zen-mode.nvim',
-
+  {
+    'folke/zen-mode.nvim',
+    event = 'VeryLazy',
+    keys = {
+      { '<leader>Z', '<cmd>ZenMode<CR>' },
+    },
+  },
   {
     'stevearc/dressing.nvim',
     opts = {},
