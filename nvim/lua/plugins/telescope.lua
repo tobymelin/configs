@@ -13,6 +13,7 @@ return {
               ["J"] = require('telescope.actions').preview_scrolling_down,
               ['H'] = require('telescope.actions').cycle_history_prev,
               ['L'] = require('telescope.actions').cycle_history_next,
+              ['D'] = require('telescope.actions').delete_buffer,
             },
             i = {
               ["<C-B>"] = require('telescope.actions').preview_scrolling_up,
