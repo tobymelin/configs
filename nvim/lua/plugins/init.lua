@@ -50,19 +50,19 @@ return {
   },
 
 -- Buffer Switcher Window
-{
-  'matbme/JABS.nvim',
-  lazy = true,
-  config = function ()
-    require('jabs').setup({
-      width = 80,
-    })
-  end,
-  keys = {
-    -- { '<C-Tab>', '<cmd>JABSOpen<CR>' },
-    { '<leader><Tab>', '<cmd>JABSOpen<CR>' },
-  },
-},
+-- {
+--   'matbme/JABS.nvim',
+--   lazy = true,
+--   config = function ()
+--     require('jabs').setup({
+--       width = 80,
+--     })
+--   end,
+--   keys = {
+--     -- { '<C-Tab>', '<cmd>JABSOpen<CR>' },
+--     { '<leader><Tab>', '<cmd>JABSOpen<CR>' },
+--   },
+-- },
 
 -- Buffer auto-close if too many open
 {
