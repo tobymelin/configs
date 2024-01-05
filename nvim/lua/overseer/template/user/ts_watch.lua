@@ -16,6 +16,13 @@ return {
     }
   end,
   condition = {
-    filetype = { "typescript" },
+    -- filetype = { "typescript" },
+    callback = function (opts)
+      local f = vim.fs.find('tsconfig.json', { upward = true, type = "file", path = opts.dir, stop = "../" })
+      if f ~= nil then
+        return true
+      end
+      return false
+    end
   },
 }

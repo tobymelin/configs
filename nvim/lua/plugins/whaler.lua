@@ -21,6 +21,7 @@ local M = {
     {
       "<leader>fw",
       mode = { "n" },
+      desc = "Telescope: Whaler",
       function()
         local w = require('telescope').extensions.whaler.whaler
         w({

@@ -54,12 +54,6 @@ nmap({
     require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true, })
   end
 })
-nmap({
-  '<leader>fb',
-  function ()
-    require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true, })
-  end
-})
 
 nmap { "tr", "<cmd>Telescope lsp_references<CR>" }
 nmap { "td", "<cmd>Telescope lsp_definitions<CR>" }
