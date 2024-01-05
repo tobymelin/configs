@@ -24,7 +24,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide.html#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 0
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -167,3 +167,6 @@ if.app-id = 'com.TickTick.task.mac'
 if.during-aerospace-startup = true
 check-further-callbacks = false
 run = ['layout floating']
+
+[workspace-to-monitor-force-assignment]
+3 = 'secondary'
