@@ -147,7 +147,8 @@
 alt - g : yabai -m window --toggle split
 alt + shift - g : yabai -m space --balance
 alt - r : yabai -m space --rotate 90
-alt - t : yabai -m window --toggle float --grid 7:7:1:1:5:5
+alt + shift - space : yabai -m window --toggle float --grid 7:7:1:1:5:5
+# alt - t : yabai -m window --toggle float --grid 7:7:1:1:5:5
 # alt - t : yabai -m window --toggle float
 
 alt - a : yabai -m space --layout bsp
@@ -191,3 +192,11 @@ meh - tab : yabai -m space --focus recent
 
 meh - w : yabai -m space --focus 3;                      # yabai -m window --focus (yabai -m query --windows |jq '.[] | select (.app  == "Safari") | .id');
 meh - r : yabai -m space --focus 2;                      # yabai -m window --focus (yabai -m query --windows |jq '.[] | select (.app  | contains("Rider")) | .id');
+
+# increase window size
+shift + alt - a : yabai -m window --resize left:-50:0
+shift + alt - s : yabai -m window --resize top:0:-50
+
+# decrease window size
+shift + cmd - a : yabai -m window --resize left:50:0
+shift + cmd - s : yabai -m window --resize top:0:50
