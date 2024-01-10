@@ -14,6 +14,7 @@ return {
       templates = {
         "builtin",
         "user.ts_watch",
+        "user.tsbuild_watch",
       },
     })
   end,

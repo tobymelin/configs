@@ -1,5 +1,6 @@
 -- local default_colorscheme = 'nordic'
-local default_colorscheme = 'rose-pine'
+-- local default_colorscheme = 'rose-pine'
+local default_colorscheme = 'kanagawa'
 -- local default_colorscheme = 'bamboo'
 local M = {}
 
@@ -41,7 +42,13 @@ M = {
       })
     end,
   },
-  --  'Mofiqul/dracula.nvim',
+  {
+    'Mofiqul/dracula.nvim',
+    name = 'dracula',
+  },
+  {
+    'sainnhe/everforest',
+  },
   -- { 'dracula/vim', name = 'dracula' },
   -- 'navarasu/onedark.nvim',
   -- 'morhetz/gruvbox',

@@ -16,9 +16,9 @@ local tsbuilder = function (cmd)
 end
 
 return {
-  name = "NPM Build (watch)",
+  name = "TypeScript Build (watch)",
   builder = function()
-    return tsbuilder("build")
+    return tsbuilder("build:typescript")
   end,
   condition = {
     -- filetype = { "typescript" },
@@ -26,9 +26,8 @@ return {
       local f = vim.fs.find('tsconfig.json', { upward = true, type = "file", path = opts.dir, stop = "../" })
       if f ~= nil then
         local fn = 'package.json'
-        local gcmd = 'grep "build" ' .. fn
+        local gcmd = 'grep "build:typescript" ' .. fn
         local fnd = os.execute(gcmd)
-
         if fnd == 0 then
           return true
         end
