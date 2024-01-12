@@ -23,7 +23,7 @@ return {
   condition = {
     -- filetype = { "typescript" },
     callback = function (opts)
-      local f = vim.fs.find('tsconfig.json', { upward = true, type = "file", path = opts.dir, stop = "../" })
+      local f = vim.fs.find('tsconfig.json', { upward = true, type = "file", path = opts.dir, stop = vim.fn.getcwd() })
       if f ~= nil then
         local fn = 'package.json'
         local gcmd = 'grep "build" ' .. fn
