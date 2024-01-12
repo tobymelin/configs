@@ -37,8 +37,8 @@ yabai -m config                                 \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 off            \
-    top_padding                  12             \
-    bottom_padding               20             \ # 60 when hiding dock
+    top_padding                  0              \
+    bottom_padding               0              \ # 60 when hiding dock
     left_padding                 12             \
     right_padding                12             \
     window_gap                   06             \
