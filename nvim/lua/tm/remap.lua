@@ -5,6 +5,7 @@ local vmap = require("tm.keymap").vmap
 local map = vim.keymap.set
 
 nmap { "U", "<cmd>redo<CR>" }
+nmap { "<BS>", "ciw" }
 
 nmap { "<leader>b", function ()
   if vim.o.background == 'light' then
@@ -86,5 +87,8 @@ end, { desc = 'LSP: Lint and format' })
 
 vim.keymap.set('n', '<leader>fx', function ()
   vim.cmd('TSToolsAddMissingImports')
-  vim.cmd('TSToolsOrganizeImports')
+  vim.cmd('TSToolsRemoveUnusedImports')
+  -- vim.cmd('TSToolsOrganizeImports')
+  vim.cmd('EslintFixAll')
+  vim.lsp.buf.format({ async = true })
 end, { desc = 'TS: Fix imports' })

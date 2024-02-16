@@ -27,6 +27,10 @@ M = {
     end,
   },
   {
+    'HoNamDuong/hybrid.nvim',
+    name = 'hybrid',
+  },
+  {
     'rmehri01/onenord.nvim',
     name = 'onenord',
   },

@@ -74,6 +74,16 @@ return {
   end
 },
 
+-- Global Notes plugin
+  {
+    'backdround/global-note.nvim',
+    opts = {
+    },
+    keys = {
+      { '<leader>n', '<cmd>lua require("global-note").toggle_note()<CR>' },
+    },
+  },
+
 -- Markdown plugin
   'ixru/nvim-markdown',
 

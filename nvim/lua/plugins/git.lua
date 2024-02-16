@@ -21,7 +21,14 @@ return {
     'sindrets/diffview.nvim',
     event = 'VeryLazy',
     config = function()
-      require 'diffview'.setup({})
+      require 'diffview'.setup({
+        enhanced_diff_hl = true,
+        view = {
+          merge_tool = {
+            layout = 'diff3_mixed',
+          },
+        },
+      })
     end,
     keys = {
       { '<leader>gd', '<cmd>DiffviewOpen<CR>' },
