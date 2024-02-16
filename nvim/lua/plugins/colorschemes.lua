@@ -5,6 +5,8 @@ local default_colorscheme = 'kanagawa'
 local M = {}
 
 M = {
+  -- { 'sainnhe/sonokai' },
+  -- { 'sainnhe/everforest' },
   {
     'bluz71/vim-nightfly-colors',
     name = 'nightfly',
@@ -50,9 +52,10 @@ M = {
     'Mofiqul/dracula.nvim',
     name = 'dracula',
   },
-  {
-    'sainnhe/everforest',
-  },
+  -- {
+  --   'maxmx03/dracula.nvim',
+  --   name = 'dracula',
+  -- },
   -- { 'dracula/vim', name = 'dracula' },
   -- 'navarasu/onedark.nvim',
   -- 'morhetz/gruvbox',
@@ -60,7 +63,6 @@ M = {
     'EdenEast/nightfox.nvim',
     name = 'nightfox',
   },
-  { 'sainnhe/sonokai' },
   { 'projekt0n/github-nvim-theme' },
   {
     'AlexvZyl/nordic.nvim',
@@ -130,10 +132,6 @@ M = {
   { -- nice light theme
     'ramojus/mellifluous.nvim',
     name = 'mellifluous',
-  },
-  {
-    'maxmx03/dracula.nvim',
-    name = 'dracula',
   },
   {
     'folke/tokyonight.nvim',
