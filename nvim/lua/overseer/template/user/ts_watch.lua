@@ -1,35 +1,19 @@
-local tsbuilder = function (cmd)
-  vim.notify("TSBUILDER:" .. cmd)
-  return {
-    cmd = { "npm" },
-    args = { "run", cmd, "--", "--watch" },
-    components = {
-      "default_no_dispose",
-      { "on_output_parse", problem_matcher = "$tsc-watch" },
-      "on_result_diagnostics_quickfix",
-      {
-        "on_result_notify",
-        on_change = false,
-      },
-    },
-  }
-end
+local searchStringInFile = require('tm.overseer_shared').searchStringInFile
+local tsBuilder = require('tm.overseer_shared').tsBuilder
 
 return {
-  name = "NPM Build (watch)",
+  name = "npm build (watch)",
   builder = function()
-    return tsbuilder("build")
+    return tsBuilder("build")
   end,
   condition = {
     -- filetype = { "typescript" },
     callback = function (opts)
       local f = vim.fs.find('tsconfig.json', { upward = true, type = "file", path = opts.dir, stop = vim.fn.getcwd() })
       if f ~= nil then
-        local fn = 'package.json'
-        local gcmd = 'grep "build" ' .. fn
-        local fnd = os.execute(gcmd)
+        local fn = vim.fn.getcwd() .. '/package.json'
 
-        if fnd == 0 then
+        if searchStringInFile(fn, '"build":') then
           return true
         end
       end
