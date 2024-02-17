@@ -57,6 +57,9 @@ return {
         group = 'startup',
         pattern = '*',
         callback = function()
+          if vim.fn.getcwd() == vim.env.HOME or vim.g.neovide then
+            return
+          end
           -- Open file browser if argument is a folder
           local arg = vim.api.nvim_eval('argv(0)')
           if arg and (vim.fn.isdirectory(arg) ~= 0 or arg == "") then

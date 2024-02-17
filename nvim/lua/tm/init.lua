@@ -1,4 +1,5 @@
 require("tm.remap")
+require("tm.neovide")
 
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "80,130"
