@@ -218,8 +218,10 @@ export PATH="/opt/homebrew/bin:$PATH"
 # brew-specific commands
 if type brew &> /dev/null; then
 	#export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-	export PATH="$(brew --prefix)/lib/ruby/gems/2.7.0/bin:$PATH"
-	export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
+	# export PATH="$(brew --prefix)/lib/ruby/gems/2.7.0/bin:$PATH"
+	# export PATH="/opt/homebrew/opt/ruby@2.7/bin:$PATH"
+	export PATH="$(brew --prefix)/lib/ruby/gems/3.2.0/bin:$PATH"
+	export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 	#export LDFLAGS="-L/opt/homebrew/opt/ruby@2.7/lib"
 	#export CPPFLAGS="-I/opt/homebrew/opt/ruby@2.7/include"
@@ -236,8 +238,11 @@ fi
 
 if [ -d $HOME/Library/Android/sdk ]; then
 	export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+	export ANDROID_HOME=$HOME/Library/Android/sdk
 	export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 	export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 fi
 
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
