@@ -2,6 +2,7 @@ return {
   -- LSP UI
   {
     'nvimdev/lspsaga.nvim',
+    enabled = false,
     event = "LspAttach",
     dependencies = 'neovim/nvim-lspconfig',
     keys = {
