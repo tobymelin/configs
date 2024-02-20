@@ -7,6 +7,7 @@ return {
   -- Prettier (requires null-ls and lspconfig)
   {
     'jose-elias-alvarez/null-ls.nvim',
+    enabled = false,
     event = { "BufReadPre", "BufNewFile" },
     config = function ()
       local null_ls = require("null-ls")
