@@ -1,4 +1,5 @@
 local slow_format_filetypes = {}
+slow_format_filetypes['typescript'] = true
 
 local M = {
   'stevearc/conform.nvim',
