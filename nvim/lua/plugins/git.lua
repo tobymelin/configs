@@ -15,7 +15,10 @@ return {
   -- Enables GBrowse for GitHub files
   'tpope/vim-rhubarb',
 
-  -- 'TimUntersberger/neogit',
+  {
+    'NeogitOrg/neogit',
+    opts = {},
+  },
 
   {
     'sindrets/diffview.nvim',

@@ -34,9 +34,10 @@
   "mason.nvim": { "branch": "main", "commit": "3b5068f0fc565f337d67a2d315d935f574848ee7" },
   "maximize.nvim": { "branch": "master", "commit": "97bfc171775c404396f8248776347ebe64474fe7" },
   "mellifluous": { "branch": "main", "commit": "42ccf800b96b4ff401506c3eebabea1975cf2d4b" },
-  "mini.nvim": { "branch": "main", "commit": "70d8a16399ca6df759d20bea302d6dfd710a1df8" },
-  "neodev.nvim": { "branch": "main", "commit": "84e0290f5600e8b89c0dfcafc864f45496a53400" },
-  "nightfly": { "branch": "master", "commit": "2ceaf5c9fede38b0fcc24c957d05297d06919277" },
+  "mini.nvim": { "branch": "main", "commit": "b7403ad0c2a4dab777244171ca1b7e8c89696584" },
+  "neodev.nvim": { "branch": "main", "commit": "3157f2e876fd6223d36cfa76bee4709247d62fa5" },
+  "neogit": { "branch": "master", "commit": "0d0879b0045fb213c328126969a3317c0963d34a" },
+  "nightfly": { "branch": "master", "commit": "56fe47bd16272d9644fd9946a2596fa2c3905c35" },
   "nightfox": { "branch": "main", "commit": "a408e6bb101066952b81de9c11be367114bd561f" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "7ab539aaa083e92ef438d4cdc0261d8661916f1d" },
   "nord": { "branch": "master", "commit": "80c1e5321505aeb22b7a9f23eb82f1e193c12470" },
@@ -87,4 +88,3 @@
   "whaler.nvim": { "branch": "main", "commit": "9e0b67e36250cb80e679563adcd4b7451eae26b2" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" },
   "zen-mode.nvim": { "branch": "main", "commit": "78557d972b4bfbb7488e17b5703d25164ae64e6a" }
-}
