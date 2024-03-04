@@ -16,6 +16,9 @@ M = {
       -- vim.cmd.colorscheme('nightfly')
     -- end,
   },
+  { -- nice light theme
+    'sainnhe/edge',
+  },
   {
     'ribru17/bamboo.nvim',
     name = 'bamboo',
