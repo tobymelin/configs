@@ -203,5 +203,9 @@ return {
        "nvim-tree/nvim-web-devicons"
     },
   },
+  {
+    'code-biscuits/nvim-biscuits',
+    opts = {},
+  },
 }
 
