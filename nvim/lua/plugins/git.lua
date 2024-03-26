@@ -38,6 +38,9 @@ return {
       { '<leader>gD', '<cmd>DiffviewOpen master<CR>' },
     },
   },
-
+  {
+    'JojoMakesGames/git-remote-url.nvim',
+    opts = {}
+  },
 }
 

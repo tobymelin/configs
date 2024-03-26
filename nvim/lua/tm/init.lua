@@ -31,7 +31,6 @@ vim.opt.smartcase = true
 -- Various vim settings without Lua equivalents
 vim.cmd([[
   filetype plugin indent on
-  syntax enable
 
   " tabline colour configuration
   hi TabLine      ctermfg=Black  ctermbg=8     cterm=NONE

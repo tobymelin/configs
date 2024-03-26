@@ -203,9 +203,31 @@ return {
        "nvim-tree/nvim-web-devicons"
     },
   },
+
+  -- faster.nvim, inspired by bigfile.nvim, helps make
+  -- nvim faster when opening/processing big files.
   {
-    'code-biscuits/nvim-biscuits',
-    opts = {},
+    'pteroctopus/faster.nvim',
+    opts = {
+      behaviors = {
+        bigfile = {
+          on = true,
+          -- Table which contains names of features that will be disabled when
+          -- bigfile is opened. Feature names can be seen in features table below.
+          -- features_disabled can also be set to "all" and then all features that
+          -- are on (on=true) are going to be disabled for this behaviour
+          features_disabled = {
+            "illuminate", "matchparen", "lsp", "treesitter",
+            "indent_blankline", "vimopts", "syntax", "filetype"
+          },
+          -- Files larger than `filesize` are considered big files. Value is in MB.
+          filesize = 0.2,
+          -- Autocmd pattern that controls on which files behaviour will be applied.
+          -- `*` means any file.
+          pattern = "*",
+        },
+      },
+    },
   },
 }
 
