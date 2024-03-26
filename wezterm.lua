@@ -58,6 +58,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 config.show_new_tab_button_in_tab_bar = false
 config.adjust_window_size_when_changing_font_size = false
+config.max_fps = 144
 
 config.colors = {
   visual_bell = "#1e2030",
@@ -186,6 +187,21 @@ config.keys = {
   --   mods = 'LEADER',
   --   action = wezterm.action.AdjustPaneSize { 'Right', 5 },
   -- },
+  {
+    key = 'E',
+    mods = 'CMD|SHIFT',
+    action = wezterm.action.QuickSelectArgs {
+      label = 'open url',
+      patterns = {
+        'https?://\\S+',
+      },
+      action = wezterm.action_callback(function(window, pane)
+        local url = window:get_selection_text_for_pane(pane)
+        wezterm.log_info('opening: ' .. url)
+        wezterm.open_with(url)
+      end),
+    },
+  },
 }
 
 -- and finally, return the configuration to wezterm
