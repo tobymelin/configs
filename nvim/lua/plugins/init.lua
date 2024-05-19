@@ -6,10 +6,8 @@ return {
   -- Utilities
   'sudormrfbin/cheatsheet.nvim',
   {
-    'NvChad/nvim-colorizer.lua',
-    config = function ()
-      require('colorizer').setup()
-    end
+    'brenoprata10/nvim-highlight-colors',
+    opts = {},
   },
   {
     'folke/zen-mode.nvim',
@@ -168,6 +166,7 @@ return {
   -- GitHub Copilot
   {
     'github/copilot.vim',
+    enabled = false,
     event = 'VeryLazy',
   },
 

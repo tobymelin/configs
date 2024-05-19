@@ -18,6 +18,10 @@ end }
 -- window/buffer management shortcuts
 -- nmap { "<leader>qw", "<cmd>bdel<CR>", { noremap = true } }
 nmap { "<leader>qt", "<cmd>tabc<CR>", { noremap = true } }
+nmap { "<leader>tp", "<cmd>tabp<CR>", { noremap = true } }
+nmap { "<leader>tn", "<cmd>tabn<CR>", { noremap = true } }
+
+nmap { "<leader>qf", "<cmd>copen<CR>", { noremap = true } }
 
 nmap { "<leader>hl", "<cmd>nohlsearch<CR>" }
 nmap { "<leader>w", "<cmd>w<CR>" }

@@ -85,8 +85,8 @@ return {
       --   }
       -- }
 
-      -- require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config
-      -- require("lspconfig").vtsls.setup({ --[[ your custom server config here ]] })
+      require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config
+      require("lspconfig").vtsls.setup({ --[[ your custom server config here ]] })
 
       require'lspconfig'.eslint.setup{
         on_attach = on_attach,

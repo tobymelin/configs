@@ -1,6 +1,7 @@
+local default_colorscheme = 'catppuccin'
+-- local default_colorscheme = 'kanagawa'
 -- local default_colorscheme = 'nordic'
 -- local default_colorscheme = 'rose-pine'
-local default_colorscheme = 'kanagawa'
 -- local default_colorscheme = 'bamboo'
 local M = {}
 
@@ -18,6 +19,18 @@ M = {
   },
   { -- nice light theme
     'sainnhe/edge',
+  },
+  {
+    'scottmckendry/cyberdream.nvim',
+  },
+  {
+    'fynnfluegge/monet.nvim',
+  },
+  {
+    'dgox16/oldworld.nvim',
+  },
+  {
+    'mellow-theme/mellow.nvim',
   },
   {
     'ribru17/bamboo.nvim',
@@ -109,7 +122,7 @@ M = {
     name = 'catppuccin',
     config = function()
       require('catppuccin').setup({
-        flavour = 'macchiato',
+        flavour = 'mocha',
         custom_highlights = function (colors)
           return {
             FlashCurrent = { bg = '#800000' },

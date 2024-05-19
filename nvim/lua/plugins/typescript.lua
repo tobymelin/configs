@@ -9,12 +9,13 @@ return {
   -- https://github.com/yioneko/nvim-vtsls
   {
     'yioneko/nvim-vtsls',
-    enabled = false,
+    -- enabled = false,
   },
 
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {},
+    enabled = false,
   }
 }
