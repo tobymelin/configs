@@ -13,6 +13,19 @@ return {
       auto_format_pattern = nil,
     }
 
+    ---@type qmk.UserConfig
+    local corne_conf = {
+      name = 'LAYOUT_corne',
+      layout = {
+          '_ x x x x x x _ x x x x x x',
+          '_ x x x x x x _ x x x x x x',
+          '_ x x x x x x _ x x x x x x',
+          '_ _ _ _ x x x _ x x x _ _ _',
+      },
+      variant = 'zmk',
+      auto_format_pattern = '*.keymap',
+    }
+
     require('qmk').setup(conf)
   end
 }

@@ -13,6 +13,7 @@ return {
       vim.keymap.set('n', '<leader>db', '<cmd>lua require("dap").toggle_breakpoint()<CR>')
       vim.keymap.set('n', '<leader>di', '<cmd>lua require("dap").step_into() <CR>')
       vim.keymap.set('n', '<leader>do', '<cmd>lua require("dap").step_over()<CR>')
+      vim.keymap.set('n', '<leader>dt', '<cmd>lua require("dap").terminate()<CR>')
       vim.keymap.set('n', '<leader>drr', '<cmd>lua require("dap").clear_breakpoints()<CR>')
       vim.keymap.set('n', '<leader>dro', '<cmd>lua require("dap").repl.toggle()<CR>')
       vim.keymap.set('n', '<leader>duf', "<cmd>lua local widgets=require'dap.ui.widgets';widgets.centered_float(widgets.scopes)<CR>")

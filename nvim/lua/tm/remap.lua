@@ -17,6 +17,7 @@ end }
 
 -- window/buffer management shortcuts
 -- nmap { "<leader>qw", "<cmd>bdel<CR>", { noremap = true } }
+nmap { "<C-w>t", "<cmd>tabnew<CR>", { noremap = true } }
 nmap { "<leader>qt", "<cmd>tabc<CR>", { noremap = true } }
 nmap { "<leader>tp", "<cmd>tabp<CR>", { noremap = true } }
 nmap { "<leader>tn", "<cmd>tabn<CR>", { noremap = true } }
@@ -47,7 +48,8 @@ vmap { '<leader>P', '"+P', { noremap = true } }
 imap { '<C-S-V>', '"*p', { noremap = true } }
 
 -- Telescope mappings
-nmap { "<leader>ff", "<cmd>Telescope find_files<CR>" }
+-- nmap { "<leader>ff", "<cmd>Telescope find_files<CR>" }
+nmap { "<leader>ff", "<cmd>FzfLua files<CR>" }
 nmap { "<leader>fg", "<cmd>Telescope live_grep<CR>" }
 nmap { "<leader>fh", "<cmd>Telescope help_tags<CR>" }
 nmap { "<leader>fd", "<cmd>Telescope file_browser<CR>" }

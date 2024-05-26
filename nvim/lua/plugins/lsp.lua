@@ -86,7 +86,31 @@ return {
       -- }
 
       require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config
-      require("lspconfig").vtsls.setup({ --[[ your custom server config here ]] })
+      require("lspconfig").vtsls.setup({ --[[
+        your custom server config here
+        ]]
+        settings = {
+          -- vtsls.experimental.completion.enableServerSideFuzzyMatch
+          vtsls = {
+            experimental = {
+              completion = {
+                enableServerSideFuzzyMatch = true,
+                entriesLimit = 20,
+              },
+            },
+          },
+          typescript = {
+            inlayHints = {
+              parameterNames = { enabled = "literals" },
+              parameterTypes = { enabled = true },
+              variableTypes = { enabled = true },
+              propertyDeclarationTypes = { enabled = true },
+              functionLikeReturnTypes = { enabled = true },
+              enumMemberValues = { enabled = true },
+            }
+          },
+        },
+      })
 
       require'lspconfig'.eslint.setup{
         on_attach = on_attach,

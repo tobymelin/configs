@@ -1,4 +1,5 @@
-local default_colorscheme = 'catppuccin'
+local default_colorscheme = 'everforest'
+-- local default_colorscheme = 'catppuccin'
 -- local default_colorscheme = 'kanagawa'
 -- local default_colorscheme = 'nordic'
 -- local default_colorscheme = 'rose-pine'
@@ -7,7 +8,19 @@ local M = {}
 
 M = {
   -- { 'sainnhe/sonokai' },
-  -- { 'sainnhe/everforest' },
+  {
+    'sainnhe/everforest',
+    name = 'everforest',
+    config = function ()
+      vim.g.everforest_background = 'hard'
+    end
+  },
+  {
+    'sainnhe/gruvbox-material',
+    config = function ()
+      vim.g.gruvbox_material_background = 'hard'
+    end
+  },
   {
     'bluz71/vim-nightfly-colors',
     name = 'nightfly',
@@ -32,6 +45,7 @@ M = {
   {
     'mellow-theme/mellow.nvim',
   },
+  { 'dasupradyumna/midnight.nvim' },
   {
     'ribru17/bamboo.nvim',
     name = 'bamboo',

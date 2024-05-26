@@ -48,7 +48,8 @@ return {
           end
 
           return vim.tbl_extend('force', opts, {
-            prompt_title = title
+            prompt_title = title,
+            no_ignore = false,
           }, extra or {})
         end
 
