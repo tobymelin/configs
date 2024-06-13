@@ -26,6 +26,6 @@ return {
       auto_format_pattern = '*.keymap',
     }
 
-    require('qmk').setup(conf)
+    require('qmk').setup(corne_conf)
   end
 }

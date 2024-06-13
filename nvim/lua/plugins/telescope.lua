@@ -53,24 +53,24 @@ return {
           }, extra or {})
         end
 
-      vim.api.nvim_create_augroup('startup', { clear = true })
-      vim.api.nvim_create_autocmd('VimEnter', {
-        group = 'startup',
-        pattern = '*',
-        callback = function()
-          if vim.fn.getcwd() == vim.env.HOME or vim.g.neovide then
-            return
-          end
-          -- Open file browser if argument is a folder
-          local arg = vim.api.nvim_eval('argv(0)')
-          if arg and (vim.fn.isdirectory(arg) ~= 0 or arg == "") then
-            vim.defer_fn(function()
-              require('telescope.builtin').find_files(with_title(dropdown))
-              -- require('telescope.builtin').find_files()
-            end, 10)
-          end
-        end
-      })
+      -- vim.api.nvim_create_augroup('startup', { clear = true })
+      -- vim.api.nvim_create_autocmd('VimEnter', {
+      --   group = 'startup',
+      --   pattern = '*',
+      --   callback = function()
+      --     if vim.fn.getcwd() == vim.env.HOME or vim.g.neovide then
+      --       return
+      --     end
+      --     -- Open file browser if argument is a folder
+      --     local arg = vim.api.nvim_eval('argv(0)')
+      --     if arg and (vim.fn.isdirectory(arg) ~= 0 or arg == "") then
+      --       vim.defer_fn(function()
+      --         require('telescope.builtin').find_files(with_title(dropdown))
+      --         -- require('telescope.builtin').find_files()
+      --       end, 10)
+      --     end
+      --   end
+      -- })
     end
   },
 

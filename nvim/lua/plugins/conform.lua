@@ -6,6 +6,12 @@ local M = {
   opts = {
     formatters_by_ft = {
       typescript = { 'eslint_d', 'prettier' },
+      go = { 'goimports', 'gofmt' },
+    },
+    formatters = {
+      goimports = {
+        prepend_args = { '-local', 'github.com/tokenweb3' },
+      },
     },
     format_on_save = function (bufnr)
       if not vim.g.autoformat then

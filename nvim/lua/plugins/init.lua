@@ -158,7 +158,19 @@ return {
   },
 
   -- nvim completion
-  'folke/lsp-trouble.nvim',
+  {
+    'folke/trouble.nvim',
+    lazy = true,
+    opts = {},
+    cmd = 'Trouble',
+    keys = {
+      {
+        '<leader>T',
+        '<cmd>Trouble diagnostics toggle<cr>',
+        desc = 'Diagnostics (Trouble)',
+      },
+    },
+  },
 
   -- Show code signature overloads in lsp
   -- 'Issafalcon/lsp-overloads.nvim',

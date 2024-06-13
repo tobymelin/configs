@@ -57,4 +57,4 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 
 -- null-ls helper
-vim.g.autoformat = false
+vim.g.autoformat = true

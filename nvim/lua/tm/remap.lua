@@ -49,8 +49,9 @@ imap { '<C-S-V>', '"*p', { noremap = true } }
 
 -- Telescope mappings
 -- nmap { "<leader>ff", "<cmd>Telescope find_files<CR>" }
-nmap { "<leader>ff", "<cmd>FzfLua files<CR>" }
-nmap { "<leader>fg", "<cmd>Telescope live_grep<CR>" }
+-- nmap { "<leader>fg", "<cmd>Telescope live_grep<CR>" }
+nmap { "<leader>ff", "<cmd>FzfLua files keymap.fzf.ctrl-q=select-all+accept actions.ctrl-q=false<CR>" }
+nmap { "<leader>fg", "<cmd>FzfLua live_grep keymap.fzf.ctrl-q=select-all+accept actions.ctrl-q=false<CR>" }
 nmap { "<leader>fh", "<cmd>Telescope help_tags<CR>" }
 nmap { "<leader>fd", "<cmd>Telescope file_browser<CR>" }
 nmap { "<leader>fr", "<cmd>Telescope resume<CR>" }
@@ -68,7 +69,6 @@ nmap { "tt", "<cmd>Telescope diagnostics<CR>" }
 
 -- General plugin mappings
 nmap { "<leader>?", "<cmd>Cheatsheet<CR>" }
-nmap { "<leader>T", "<cmd>TroubleToggle<CR>" }
 
 -- LSP mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

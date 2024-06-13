@@ -1,4 +1,4 @@
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -27,7 +27,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -66,7 +66,7 @@ return {
       'ray-x/lsp_signature.nvim',
       'williamboman/mason-lspconfig.nvim',
     },
-    config = function ()
+    config = function()
       -- Set up lspconfig.
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -112,18 +112,21 @@ return {
         },
       })
 
-      require'lspconfig'.eslint.setup{
+      require 'lspconfig'.eslint.setup {
         on_attach = on_attach,
         capabilities = capabilities,
         root_dir = function() return vim.loop.cwd() end
       }
-      require'lspconfig'.lua_ls.setup {
+      require 'lspconfig'.lua_ls.setup {
         on_attach = on_attach,
       }
-      require'lspconfig'.gopls.setup {
+      -- require 'lspconfig'.golangci_lint_ls.setup {
+      --   on_attach = on_attach,
+      -- }
+      require 'lspconfig'.gopls.setup {
         on_attach = on_attach,
       }
-      require'lspconfig'.vuels.setup {}
+      require 'lspconfig'.vuels.setup {}
 
       -- https://github.com/jose-elias-alvarez/typescript.nvim/issues/19
       -- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils (search filter)
@@ -138,7 +141,7 @@ return {
         return true
       end
 
-      vim.api.nvim_create_user_command('LspDiagDisable', function ()
+      vim.api.nvim_create_user_command('LspDiagDisable', function()
         local clients = vim.lsp.get_active_clients({ name = 'eslint' })[1]
         local clients2 = vim.lsp.get_active_clients({ name = 'tsserver' })[1]
 
@@ -170,8 +173,9 @@ return {
           signs = true,
         }
       )
-
     end,
+  },
+  {
+    'b0o/schemastore.nvim',
   }
 }
-
