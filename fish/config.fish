@@ -1,3 +1,7 @@
+# Environment variables - https://fishshell.com/docs/current/cmds/set.html
+set -gx EDITOR nvim
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+
 if status is-interactive
   function ..   ; cd .. ; end
   function ...   ; cd ../.. ; end
@@ -6,7 +10,7 @@ if status is-interactive
 
   function grep     ; command grep --color=auto $argv ; end
 
-    # Commands to run in interactive sessions can go here
+  # Commands to run in interactive sessions can go here
   alias c='clear'
   alias d='du -h'
   alias di='colordiff -Nau'
