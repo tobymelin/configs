@@ -20,6 +20,7 @@ config.color_scheme = 'Nord Light (Gogh)'
 config.color_scheme = 'Catppuccin Latte'
 config.color_scheme = 'Catppuccin Macchiato'
 config.color_scheme = 'Rosé Pine Moon (Gogh)'
+config.color_scheme = 'Everforest Dark (Gogh)'
 
 -- config.font = wezterm.font('FiraCode Nerd Font Mono', { weight="Medium" })
 -- config.font = wezterm.font('JetBrainsMono Nerd Font Mono', { weight="Medium" })
@@ -35,8 +36,10 @@ config.font = wezterm.font('MonoLisa')
 -- config.line_height = 1.00
 
 config.font = wezterm.font_with_fallback{
-  'Berkeley Mono',
+  -- 'Victor Mono',
+  -- 'JetBrainsMono Nerd Font',
   'MonoLisa',
+  'Berkeley Mono',
   'Iosevka Comfy', 'Iosevka Nerd Font',
   'Symbols Nerd Font Mono',
   'JetBrains Mono'
