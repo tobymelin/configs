@@ -1,10 +1,10 @@
 return {
   {
     'tpope/vim-fugitive',
-    config = function ()
+    config = function()
       vim.api.nvim_create_user_command(
         'Browse',
-        function (opts)
+        function(opts)
           vim.fn.system { 'open', '-a', 'Firefox', opts.fargs[1] }
         end,
         { nargs = 1 }
@@ -36,6 +36,7 @@ return {
     keys = {
       { '<leader>gd', '<cmd>DiffviewOpen<CR>' },
       { '<leader>gD', '<cmd>DiffviewOpen master<CR>' },
+      { '<leader>gM', '<cmd>DiffviewOpen main<CR>' },
     },
   },
   {
@@ -43,4 +44,3 @@ return {
     opts = {}
   },
 }
-
