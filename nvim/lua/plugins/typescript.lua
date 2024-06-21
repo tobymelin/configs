@@ -17,5 +17,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {},
     enabled = false,
-  }
+  },
+
+  { 'dmmulroy/ts-error-translator.nvim' },
 }

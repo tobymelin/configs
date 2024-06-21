@@ -3,15 +3,17 @@ return {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
     build = ':TSUpdate',
-    config = function ()
+    config = function()
       require('nvim-treesitter.configs').setup({
         -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-        -- highlight = {
-        --   enable = true,
+        highlight = {
+          enable = true,
+        },
         --   additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
         -- },
         ensure_installed = {
           'c',
+          'go',
           'lua',
           'help',
           'markdown',
@@ -47,7 +49,7 @@ return {
             -- mapping query_strings to modes.
             selection_modes = {
               ['@parameter.outer'] = 'v', -- charwise
-              ['@function.outer'] = 'V', -- linewise
+              ['@function.outer'] = 'V',  -- linewise
               ['@class.outer'] = '<c-v>', -- blockwise
             },
           },
@@ -62,4 +64,3 @@ return {
     },
   },
 }
-

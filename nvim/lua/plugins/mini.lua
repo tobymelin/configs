@@ -8,10 +8,10 @@ return {
       require('mini.indentscope').setup()
       require('mini.bufremove').setup()
       require('mini.bracketed').setup()
+      require('mini.git').setup()
     end,
     keys = {
       { '<leader>qw', '<cmd>lua require("mini.bufremove").delete()<cr>' },
     },
   },
 }
-

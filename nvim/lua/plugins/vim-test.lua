@@ -1,21 +1,22 @@
-local nmap = require("tm.keymap").nmap
+-- local nmap = require("tm.keymap").nmap
 
 return {
   {
     'vim-test/vim-test',
+    -- enabled = false,
     dependencies = { 'tpope/vim-dispatch' },
-    config = function ()
+    config = function()
       -- vim-test mappings
-      nmap { "<leader>rt", "<cmd>TestNearest<CR>" }
-      nmap { "<leader>rf", "<cmd>TestFile<CR>" }
-      nmap { "<leader>ra", "<cmd>TestSuite<CR>" }
-      nmap { "<leader>rl", "<cmd>TestLast<CR>" }
-      nmap { "<leader>rg", "<cmd>TestVisit<CR>" }
-
-      nmap { "<leader>ru", "<cmd>Ava % -u<CR>" }
-      nmap { "<leader>rr", "<cmd>Ava<CR>" }
+      -- nmap { "<leader>rt", "<cmd>TestNearest<CR>" }
+      -- nmap { "<leader>rf", "<cmd>TestFile<CR>" }
+      -- nmap { "<leader>ra", "<cmd>TestSuite<CR>" }
+      -- nmap { "<leader>rl", "<cmd>TestLast<CR>" }
+      -- nmap { "<leader>rg", "<cmd>TestVisit<CR>" }
+      --
+      -- nmap { "<leader>ru", "<cmd>Ava % -u<CR>" }
+      -- nmap { "<leader>rr", "<cmd>Ava<CR>" }
     end,
-    init = function ()
+    init = function()
       vim.cmd([[
         tmap <C-o> <C-\><C-n>
 

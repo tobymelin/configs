@@ -162,10 +162,11 @@ return {
       -- )
 
       vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-        function(_, result, ctx, config)
+        function(err, result, ctx, config)
           result.diagnostics = vim.tbl_filter(filter_diagnostics, result.diagnostics)
           -- vim.print(result.diagnostics)
-          vim.lsp.diagnostic.on_publish_diagnostics(_, result, ctx, config)
+          require("ts-error-translator").translate_diagnostics(err, result, ctx, config)
+          vim.lsp.diagnostic.on_publish_diagnostics(err, result, ctx, config)
         end,
         {
           underline = true,

@@ -43,6 +43,10 @@ vim.cmd([[
 
   let g:vim_markdown_folding_disabled=1
   let g:vim_markdown_conceal = 0
+
+  " Defines a new %. modifier as a shorthand for %:h (current file dir basename)
+  " (may need to add <Tab> to the end of the mapping)
+  cnoreabbrev %. %:h
 ]])
 
 vim.opt.foldmethod = "expr"
@@ -58,3 +62,23 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 -- null-ls helper
 vim.g.autoformat = true
+
+-- quit dialogs using q rather than use it as a macro hotkey
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "checkhealth",
+    "fugitive*",
+    "git",
+    "help",
+    "lspinfo",
+    "neotest-output",
+    "neotest-summary",
+    "netrw",
+    "notify",
+    "qf",
+    "query",
+  },
+  callback = function()
+    vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
+  end,
+})
