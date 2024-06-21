@@ -2,6 +2,10 @@
 set -gx EDITOR nvim
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 
+# fish_add_path "/opt/homebrew/bin/"
+# fish_add_path "/opt/homebrew/share/google-cloud-sdk/bin"
+# fish_add_path "$HOME/bin"
+
 if status is-interactive
   function ..   ; cd .. ; end
   function ...   ; cd ../.. ; end
@@ -14,11 +18,14 @@ if status is-interactive
   alias c='clear'
   alias d='du -h'
   alias di='colordiff -Nau'
+  alias ibrew='arch -x86_64 /usr/local/bin/brew'
+  alias kc='kubectl'
   alias l='ls'
   alias la='ls -a'
   alias ll='ls -l'
   alias lla='ls -la'
   alias m='mv -v'
+  alias n='nnn -A'
   alias p='pacman'
   alias py='python3'
   alias rr='rm -rv'
@@ -59,6 +66,8 @@ if status is-interactive
   abbr -a :t --position anywhere --set-cursor '| tail %'
   abbr -a :t1 --position anywhere --set-cursor '| tail -n 1 %'
   abbr -a :w --position anywhere --set-cursor '| wc -l %'
+
+  abbr !! --position anywhere --function last_history_item
 end
 
 # starship init fish | source
