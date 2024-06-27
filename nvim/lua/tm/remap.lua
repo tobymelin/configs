@@ -7,7 +7,7 @@ local map = vim.keymap.set
 nmap { "U", "<cmd>redo<CR>" }
 nmap { "<BS>", "ciw" }
 
-nmap { "<leader>b", function ()
+nmap { "<leader>b", function()
   if vim.o.background == 'light' then
     vim.o.background = 'dark'
   else
@@ -56,9 +56,13 @@ nmap { "<leader>fh", "<cmd>Telescope help_tags<CR>" }
 nmap { "<leader>fd", "<cmd>Telescope file_browser<CR>" }
 nmap { "<leader>fr", "<cmd>Telescope resume<CR>" }
 nmap { "<leader>fq", "<cmd>Telescope quickfix<CR>" }
+-- nmap { "<leader>fc", "<cmd>Telescope colorscheme<CR>" }
+nmap { "<leader>fc", function()
+  require('telescope.builtin').colorscheme({ enable_preview = true })
+end }
 nmap({
   '<leader><Tab>',
-  function ()
+  function()
     require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true, })
   end
 })
@@ -72,17 +76,17 @@ nmap { "<leader>?", "<cmd>Cheatsheet<CR>" }
 
 -- LSP mappings
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
-nmap { '<leader>ft', function ()
+nmap { '<leader>ft', function()
   vim.g.autoformat = not vim.g.autoformat
   vim.notify('Autoformat ' .. (vim.g.autoformat and 'enabled' or 'disabled'))
 end, { desc = 'Toggle autoformat' } }
 
-vim.keymap.set('n', '<leader>fe', function ()
+vim.keymap.set('n', '<leader>fe', function()
   -- vim.cmd('VtsExec add_missing_imports')
   -- vim.cmd('VtsExec remove_unused_imports')
   -- vim.cmd('TSToolsAddMissingImports')
@@ -91,7 +95,7 @@ vim.keymap.set('n', '<leader>fe', function ()
   vim.lsp.buf.format({ async = true })
 end, { desc = 'LSP: Lint and format' })
 
-vim.keymap.set('n', '<leader>fx', function ()
+vim.keymap.set('n', '<leader>fx', function()
   vim.cmd('TSToolsAddMissingImports')
   vim.cmd('TSToolsRemoveUnusedImports')
   -- vim.cmd('TSToolsOrganizeImports')

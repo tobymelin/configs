@@ -15,7 +15,6 @@ return {
           'c',
           'go',
           'lua',
-          'help',
           'markdown',
           'markdown_inline',
           'typescript',
