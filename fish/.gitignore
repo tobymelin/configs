@@ -4,10 +4,13 @@ fishd.*
 
 # Fisher / fish-nvm
 completions/
-conf.d/
+conf.d/*
 fishfile
 
 functions/_*
 functions/fish_*
 functions/fzf_key_bindings.fish
 functions/nvm.fish
+
+# Exceptions
+!conf.d/bookmarks.fish
