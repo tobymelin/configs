@@ -3,11 +3,12 @@ return {
   'ThePrimeagen/harpoon',
   branch = "harpoon2",
   lazy = true,
-  config = function ()
+  config = function()
     local harpoon = require("harpoon")
     harpoon:setup({
       settings = {
         save_on_toggle = true,
+        sync_on_ui_close = true,
       },
     })
 
@@ -32,4 +33,3 @@ return {
   --   { "<leader>hf", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>" },
   -- },
 }
-
