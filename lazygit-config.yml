@@ -4,4 +4,4 @@
 #    Windows: %APPDATA%\lazygit\config.yml
 git:
   autoFetch: false
-
+  autoRefresh: false
