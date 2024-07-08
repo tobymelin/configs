@@ -8,8 +8,11 @@ conf.d/*
 fishfile
 
 functions/_*
+functions/bass.fish
+functions/br.fish
 functions/fish_*
 functions/fzf_key_bindings.fish
+functions/nnn.fish
 functions/nvm.fish
 
 # Exceptions
