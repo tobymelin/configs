@@ -1,4 +1,4 @@
-local default_colorscheme = 'everforest'
+local default_colorscheme = 'tm-colors'
 -- local default_colorscheme = 'catppuccin'
 -- local default_colorscheme = 'kanagawa'
 -- local default_colorscheme = 'nordic'
@@ -9,15 +9,19 @@ local M = {}
 M = {
   -- { 'sainnhe/sonokai' },
   {
+    dir = '~/dev/configs/tm-colors',
+    name = 'tm-colors',
+  },
+  {
     'sainnhe/everforest',
     name = 'everforest',
-    config = function ()
+    config = function()
       vim.g.everforest_background = 'hard'
     end
   },
   {
     'sainnhe/gruvbox-material',
-    config = function ()
+    config = function()
       vim.g.gruvbox_material_background = 'hard'
     end
   },
@@ -27,29 +31,26 @@ M = {
     -- priority = 1000,
     -- lazy = false,
     -- config = function()
-      -- vim.cmd.colorscheme('nightfly')
+    -- vim.cmd.colorscheme('nightfly')
     -- end,
   },
-  { -- nice light theme
-    'sainnhe/edge',
-  },
+  -- { -- nice light theme
+  --   'sainnhe/edge',
+  -- },
   {
     'scottmckendry/cyberdream.nvim',
   },
   {
     'fynnfluegge/monet.nvim',
   },
-  {
-    'dgox16/oldworld.nvim',
-  },
-  {
-    'mellow-theme/mellow.nvim',
-  },
+  -- { 'dgox16/oldworld.nvim' },
+  -- { 'savq/melange-nvim' },
+  -- { 'mellow-theme/mellow.nvim' },
   { 'dasupradyumna/midnight.nvim' },
   {
     'ribru17/bamboo.nvim',
     name = 'bamboo',
-    config = function ()
+    config = function()
       require('bamboo').setup({
         highlights = {
           MiniIndentscopeSymbol = { fg = '#90acff' },
@@ -58,18 +59,18 @@ M = {
       })
     end,
   },
-  {
-    'HoNamDuong/hybrid.nvim',
-    name = 'hybrid',
-  },
-  {
-    'rmehri01/onenord.nvim',
-    name = 'onenord',
-  },
+  -- {
+  --   'HoNamDuong/hybrid.nvim',
+  --   name = 'hybrid',
+  -- },
+  -- {
+  --   'rmehri01/onenord.nvim',
+  --   name = 'onenord',
+  -- },
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    config = function ()
+    config = function()
       require('rose-pine').setup({
         dark_variant = 'moon',
         highlight_groups = {
@@ -78,10 +79,10 @@ M = {
       })
     end,
   },
-  {
-    'Mofiqul/dracula.nvim',
-    name = 'dracula',
-  },
+  -- {
+  --   'Mofiqul/dracula.nvim',
+  --   name = 'dracula',
+  -- },
   -- {
   --   'maxmx03/dracula.nvim',
   --   name = 'dracula',
@@ -89,41 +90,41 @@ M = {
   -- { 'dracula/vim', name = 'dracula' },
   -- 'navarasu/onedark.nvim',
   -- 'morhetz/gruvbox',
-  {
-    'EdenEast/nightfox.nvim',
-    name = 'nightfox',
-  },
+  -- {
+  --   'EdenEast/nightfox.nvim',
+  --   name = 'nightfox',
+  -- },
   { 'projekt0n/github-nvim-theme' },
-  {
-    'AlexvZyl/nordic.nvim',
-    name = 'nordic',
-    opts = {
-    },
-    config = function ()
-      local palette = require 'nordic.colors'
-
-      require('nordic').setup({
-        override = {
-          Comment = {
-            fg = palette.gray5,
-            italic = false,
-          },
-          Search = {
-            bg = palette.gray5,
-          },
-          Visual = {
-            bg = palette.gray5,
-          },
-        },
-      })
-    end
-  },
+  -- {
+  --   'AlexvZyl/nordic.nvim',
+  --   name = 'nordic',
+  --   opts = {
+  --   },
+  --   config = function()
+  --     local palette = require 'nordic.colors'
+  --
+  --     require('nordic').setup({
+  --       override = {
+  --         Comment = {
+  --           fg = palette.gray5,
+  --           italic = false,
+  --         },
+  --         Search = {
+  --           bg = palette.gray5,
+  --         },
+  --         Visual = {
+  --           bg = palette.gray5,
+  --         },
+  --       },
+  --     })
+  --   end
+  -- },
   {
     'rebelot/kanagawa.nvim',
     name = 'kanagawa',
-    config = function ()
+    config = function()
       require('kanagawa').setup({
-        overrides = function ()
+        overrides = function()
           return {
             MiniIndentscopeSymbol = { fg = '#90acff' },
           }
@@ -137,7 +138,7 @@ M = {
     config = function()
       require('catppuccin').setup({
         flavour = 'mocha',
-        custom_highlights = function (colors)
+        custom_highlights = function(colors)
           return {
             FlashCurrent = { bg = '#800000' },
             FlashMatch = { bg = '#555555' },
@@ -145,24 +146,24 @@ M = {
         end,
         -- flavour = 'latte',
         -- custom_highlights = function (colors)
-          -- return {
-            -- Comment = { fg = colors.flamingo, bg = "#0f0aff" },
-            -- Cursor = { fg = "#ffffff", bg = "#ffffff" },
-            -- CursorColumn = { fg = "#ffffff", bg = "#ffffff" },
-            -- iCursor = { fg = "#ffffff", bg = "#ffffff" },
-          -- }
+        -- return {
+        -- Comment = { fg = colors.flamingo, bg = "#0f0aff" },
+        -- Cursor = { fg = "#ffffff", bg = "#ffffff" },
+        -- CursorColumn = { fg = "#ffffff", bg = "#ffffff" },
+        -- iCursor = { fg = "#ffffff", bg = "#ffffff" },
+        -- }
         -- end
       })
     end,
   },
-  {
-    'shaunsingh/nord.nvim',
-    name = 'nord',
-  },
-  { -- nice light theme
-    'ramojus/mellifluous.nvim',
-    name = 'mellifluous',
-  },
+  -- {
+  --   'shaunsingh/nord.nvim',
+  --   name = 'nord',
+  -- },
+  -- { -- nice light theme
+  --   'ramojus/mellifluous.nvim',
+  --   name = 'mellifluous',
+  -- },
   {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
@@ -182,25 +183,24 @@ M = {
 
 for key, val in ipairs(M) do
   -- vim.print(val)
-    if val.name == default_colorscheme then
-      M[key].priority = 1000
-      M[key].lazy = false
+  if val.name == default_colorscheme then
+    M[key].priority = 1000
+    M[key].lazy = false
 
-      if val.config == nil then
-        M[key].config = function()
-          vim.cmd.colorscheme(default_colorscheme)
-        end
-      else
-        local config = val.config
-        M[key].config = function()
-          config()
-          vim.cmd.colorscheme(default_colorscheme)
-        end
+    if val.config == nil then
+      M[key].config = function()
+        vim.cmd.colorscheme(default_colorscheme)
       end
-
     else
-      M[key].event = 'VeryLazy'
+      local config = val.config
+      M[key].config = function()
+        config()
+        vim.cmd.colorscheme(default_colorscheme)
+      end
     end
+  else
+    M[key].event = 'VeryLazy'
+  end
 end
 
 return M

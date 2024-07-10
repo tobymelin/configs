@@ -4,7 +4,10 @@ return {
   'nvim-tree/nvim-web-devicons', -- optional, for file icons
 
   -- Utilities
-  'sudormrfbin/cheatsheet.nvim',
+  {
+    'sudormrfbin/cheatsheet.nvim',
+    enabled = false,
+  },
   {
     'brenoprata10/nvim-highlight-colors',
     opts = {},
@@ -22,7 +25,7 @@ return {
   },
   {
     'rcarriga/nvim-notify',
-    config = function ()
+    config = function()
       vim.notify = require('notify')
     end,
   },
@@ -42,37 +45,38 @@ return {
   {
     'kylechui/nvim-surround',
     event = 'VeryLazy',
-    config = function ()
+    config = function()
       require('nvim-surround').setup()
     end
   },
 
--- Buffer Switcher Window
--- {
---   'matbme/JABS.nvim',
---   lazy = true,
---   config = function ()
---     require('jabs').setup({
---       width = 80,
---     })
---   end,
---   keys = {
---     -- { '<C-Tab>', '<cmd>JABSOpen<CR>' },
---     { '<leader><Tab>', '<cmd>JABSOpen<CR>' },
---   },
--- },
+  -- Buffer Switcher Window
+  -- {
+  --   'matbme/JABS.nvim',
+  --   lazy = true,
+  --   config = function ()
+  --     require('jabs').setup({
+  --       width = 80,
+  --     })
+  --   end,
+  --   keys = {
+  --     -- { '<C-Tab>', '<cmd>JABSOpen<CR>' },
+  --     { '<leader><Tab>', '<cmd>JABSOpen<CR>' },
+  --   },
+  -- },
 
--- Buffer auto-close if too many open
-{
-  'axkirillov/hbac.nvim',
-  config = function ()
-    require("hbac").setup({
-      threshold = 8,
-    })
-  end
-},
+  -- Buffer auto-close if too many open
+  {
+    'axkirillov/hbac.nvim',
+    enabled = false,
+    config = function()
+      require("hbac").setup({
+        threshold = 8,
+      })
+    end
+  },
 
--- Global Notes plugin
+  -- Global Notes plugin
   {
     'backdround/global-note.nvim',
     opts = {
@@ -82,12 +86,13 @@ return {
     },
   },
 
--- Markdown plugin
+  -- Markdown plugin
   'ixru/nvim-markdown',
 
--- Hop (Navigation plugin)
+  -- Hop (Navigation plugin)
   {
     'phaazon/hop.nvim',
+    enabled = false,
     lazy = true,
     config = function()
       require('hop').setup()
@@ -97,35 +102,35 @@ return {
     },
   },
 
--- Toggle line comments
+  -- Toggle line comments
   {
     'terrortylor/nvim-comment',
-    config = function ()
+    config = function()
       require('nvim_comment').setup()
     end
   },
 
--- Maximize window splits
+  -- Maximize window splits
   {
     'declancm/maximize.nvim',
     lazy = true,
-    config = function ()
+    config = function()
       require('maximize').setup()
     end,
     keys = {
       {
         '<leader>z',
-        function ()
+        function()
           require('maximize').toggle()
         end
       },
     },
   },
 
--- VimTeX
+  -- VimTeX
   'lervag/vimtex',
 
--- Vim Markdown plugin
+  -- Vim Markdown plugin
   'godlygeek/tabular',
   'preservim/vim-markdown',
 
@@ -141,19 +146,20 @@ return {
     },
     keys = {
       { "<leader>tt", '<cmd>NvimTreeToggle<CR>' },
-      { '<C-t>', '<cmd>NvimTreeFindFile<CR>' },
+      { '<C-t>',      '<cmd>NvimTreeFindFile<CR>' },
     },
   },
 
--- Tabline plugin
+  -- Tabline plugin
   'mkitt/tabline.vim',
 
--- Center buffers
+  -- Center buffers
   {
     'shortcuts/no-neck-pain.nvim',
     lazy = true,
+    enabled = false,
     keys = {
-     { '<leader>C', '<cmd>NoNeckPain<CR>' },
+      { '<leader>C', '<cmd>NoNeckPain<CR>' },
     },
   },
 
@@ -186,7 +192,7 @@ return {
   {
     'ray-x/lsp_signature.nvim',
     lazy = false,
-    config = function ()
+    config = function()
       require('lsp_signature').setup()
     end
   },
@@ -210,8 +216,8 @@ return {
     opts = {},
     -- Optional dependencies
     dependencies = {
-       "nvim-treesitter/nvim-treesitter",
-       "nvim-tree/nvim-web-devicons"
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
     },
   },
 
@@ -219,6 +225,7 @@ return {
   -- nvim faster when opening/processing big files.
   {
     'pteroctopus/faster.nvim',
+    enabled = false,
     opts = {
       behaviors = {
         bigfile = {
@@ -241,4 +248,3 @@ return {
     },
   },
 }
-
