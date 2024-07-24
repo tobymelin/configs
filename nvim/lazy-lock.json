@@ -19,7 +19,6 @@
   "go.nvim": { "branch": "master", "commit": "cde0c7a110c0f65b9e4e6baf342654268efff371" },
   "guihua.lua": { "branch": "master", "commit": "225db770e36aae6a1e9e3a65578095c8eb4038d3" },
   "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
-  "harpoonline": { "branch": "main", "commit": "6ba9dca0fc42781c4a0ff89932bd386d6bbd75f8" },
   "hbac.nvim": { "branch": "main", "commit": "991b13a33a017f4e5d73a483d2aab53bd5490c17" },
   "hop.nvim": { "branch": "master", "commit": "1a1eceafe54b5081eae4cb91c723abd1d450f34b" },
   "indent-blankline.nvim": { "branch": "master", "commit": "65e20ab94a26d0e14acac5049b8641336819dfc7" },

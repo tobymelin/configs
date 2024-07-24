@@ -166,7 +166,6 @@ return {
         function(err, result, ctx, config)
           result.diagnostics = vim.tbl_filter(filter_diagnostics, result.diagnostics)
           -- vim.print(result.diagnostics)
-          require("ts-error-translator").translate_diagnostics(err, result, ctx, config)
           vim.lsp.diagnostic.on_publish_diagnostics(err, result, ctx, config)
         end,
         {
