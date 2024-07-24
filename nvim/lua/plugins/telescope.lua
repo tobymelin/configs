@@ -1,7 +1,7 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    -- event = 'VeryLazy',
+    event = 'VeryLazy',
     branch = '0.1.x',
     dependencies = 'nvim-telescope/telescope-file-browser.nvim',
     config = function()
@@ -35,23 +35,23 @@ return {
         layout_config = { prompt_position = 'top' },
       })
 
-        local with_title = function(opts, extra)
-          extra = extra or {}
-          local path = opts.cwd or opts.path or extra.cwd or extra.path or nil
-          local title = ''
-          local buf_path = vim.fn.expand('%:p:h')
-          local cwd = vim.fn.getcwd()
-          if path ~= nil and buf_path ~= cwd then
-            title = require('plenary.path'):new(buf_path):make_relative(cwd)
-          else
-            title = vim.fn.fnamemodify(cwd, ':t')
-          end
-
-          return vim.tbl_extend('force', opts, {
-            prompt_title = title,
-            no_ignore = false,
-          }, extra or {})
+      local with_title = function(opts, extra)
+        extra = extra or {}
+        local path = opts.cwd or opts.path or extra.cwd or extra.path or nil
+        local title = ''
+        local buf_path = vim.fn.expand('%:p:h')
+        local cwd = vim.fn.getcwd()
+        if path ~= nil and buf_path ~= cwd then
+          title = require('plenary.path'):new(buf_path):make_relative(cwd)
+        else
+          title = vim.fn.fnamemodify(cwd, ':t')
         end
+
+        return vim.tbl_extend('force', opts, {
+          prompt_title = title,
+          no_ignore = false,
+        }, extra or {})
+      end
 
       -- vim.api.nvim_create_augroup('startup', { clear = true })
       -- vim.api.nvim_create_autocmd('VimEnter', {
@@ -90,4 +90,3 @@ return {
     end
   }
 }
-

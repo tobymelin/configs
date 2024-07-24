@@ -19,34 +19,30 @@ M = {
       vim.g.everforest_background = 'hard'
     end
   },
-  {
-    'sainnhe/gruvbox-material',
-    config = function()
-      vim.g.gruvbox_material_background = 'hard'
-    end
-  },
-  {
-    'bluz71/vim-nightfly-colors',
-    name = 'nightfly',
-    -- priority = 1000,
-    -- lazy = false,
-    -- config = function()
-    -- vim.cmd.colorscheme('nightfly')
-    -- end,
-  },
+  -- {
+  --   'sainnhe/gruvbox-material',
+  --   config = function()
+  --     vim.g.gruvbox_material_background = 'hard'
+  --   end
+  -- },
+  -- {
+  --   'bluz71/vim-nightfly-colors',
+  --   name = 'nightfly',
+  --   -- priority = 1000,
+  --   -- lazy = false,
+  --   -- config = function()
+  --   -- vim.cmd.colorscheme('nightfly')
+  --   -- end,
+  -- },
   -- { -- nice light theme
   --   'sainnhe/edge',
   -- },
-  {
-    'scottmckendry/cyberdream.nvim',
-  },
-  {
-    'fynnfluegge/monet.nvim',
-  },
+  -- { 'scottmckendry/cyberdream.nvim', },
+  -- { 'fynnfluegge/monet.nvim', },
   -- { 'dgox16/oldworld.nvim' },
   -- { 'savq/melange-nvim' },
   -- { 'mellow-theme/mellow.nvim' },
-  { 'dasupradyumna/midnight.nvim' },
+  -- { 'dasupradyumna/midnight.nvim' },
   {
     'ribru17/bamboo.nvim',
     name = 'bamboo',
@@ -119,43 +115,34 @@ M = {
   --     })
   --   end
   -- },
-  {
-    'rebelot/kanagawa.nvim',
-    name = 'kanagawa',
-    config = function()
-      require('kanagawa').setup({
-        overrides = function()
-          return {
-            MiniIndentscopeSymbol = { fg = '#90acff' },
-          }
-        end,
-      })
-    end,
-  },
-  {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    config = function()
-      require('catppuccin').setup({
-        flavour = 'mocha',
-        custom_highlights = function(colors)
-          return {
-            FlashCurrent = { bg = '#800000' },
-            FlashMatch = { bg = '#555555' },
-          }
-        end,
-        -- flavour = 'latte',
-        -- custom_highlights = function (colors)
-        -- return {
-        -- Comment = { fg = colors.flamingo, bg = "#0f0aff" },
-        -- Cursor = { fg = "#ffffff", bg = "#ffffff" },
-        -- CursorColumn = { fg = "#ffffff", bg = "#ffffff" },
-        -- iCursor = { fg = "#ffffff", bg = "#ffffff" },
-        -- }
-        -- end
-      })
-    end,
-  },
+  -- {
+  --   'rebelot/kanagawa.nvim',
+  --   name = 'kanagawa',
+  --   config = function()
+  --     require('kanagawa').setup({
+  --       overrides = function()
+  --         return {
+  --           MiniIndentscopeSymbol = { fg = '#90acff' },
+  --         }
+  --       end,
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   'catppuccin/nvim',
+  --   name = 'catppuccin',
+  --   config = function()
+  --     require('catppuccin').setup({
+  --       flavour = 'mocha',
+  --       custom_highlights = function(colors)
+  --         return {
+  --           FlashCurrent = { bg = '#800000' },
+  --           FlashMatch = { bg = '#555555' },
+  --         }
+  --       end,
+  --     })
+  --   end,
+  -- },
   -- {
   --   'shaunsingh/nord.nvim',
   --   name = 'nord',
@@ -164,21 +151,21 @@ M = {
   --   'ramojus/mellifluous.nvim',
   --   name = 'mellifluous',
   -- },
-  {
-    'folke/tokyonight.nvim',
-    name = 'tokyonight',
-    branch = 'main',
-    config = function()
-      require('tokyonight').setup({
-        on_highlights = function(hl, c)
-          hl.TelescopePreviewMatch = { bg = c.bg_search, fg = c.orange }
-          hl.TelescopeResults = { bg = c.bg_search, fg = c.fg }
-          hl.TelescopeSelection = { bg = c.bg_search, fg = c.fg }
-          hl.TelescopeMatching = { fg = c.orange }
-        end
-      })
-    end
-  },
+  -- {
+  --   'folke/tokyonight.nvim',
+  --   name = 'tokyonight',
+  --   branch = 'main',
+  --   config = function()
+  --     require('tokyonight').setup({
+  --       on_highlights = function(hl, c)
+  --         hl.TelescopePreviewMatch = { bg = c.bg_search, fg = c.orange }
+  --         hl.TelescopeResults = { bg = c.bg_search, fg = c.fg }
+  --         hl.TelescopeSelection = { bg = c.bg_search, fg = c.fg }
+  --         hl.TelescopeMatching = { fg = c.orange }
+  --       end
+  --     })
+  --   end
+  -- },
 }
 
 for key, val in ipairs(M) do

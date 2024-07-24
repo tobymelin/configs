@@ -18,6 +18,4 @@ return {
     opts = {},
     enabled = false,
   },
-
-  { 'dmmulroy/ts-error-translator.nvim' },
 }

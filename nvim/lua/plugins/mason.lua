@@ -1,13 +1,15 @@
 return {
   {
     "williamboman/mason.nvim",
-    config = function ()
+    event = 'VeryLazy',
+    config = function()
       require('mason').setup()
     end
   },
   {
     'williamboman/mason-lspconfig.nvim',
-    config = function ()
+    event = 'VeryLazy',
+    config = function()
       require('mason-lspconfig').setup({
         -- ensure_installed = { 'eslintd' },
         automatic_installation = true,
@@ -16,7 +18,8 @@ return {
   },
   {
     'jay-babu/mason-nvim-dap.nvim',
-    config = function ()
+    event = 'VeryLazy',
+    config = function()
       require('mason-nvim-dap').setup({
         automatic_installation = true,
       })
@@ -24,7 +27,8 @@ return {
   },
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-    config = function ()
+    event = 'VeryLazy',
+    config = function()
       require('mason-tool-installer').setup({
         ensure_installed = { 'eslint_d', 'prettierd' },
       })

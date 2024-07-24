@@ -1,5 +1,9 @@
 require("tm.remap")
-require("tm.neovide")
+require("tm.git_remote_url")
+
+if vim.g.neovide then
+  require("tm.neovide")
+end
 
 vim.opt.termguicolors = true
 vim.opt.colorcolumn = "80,130"
@@ -21,7 +25,10 @@ vim.opt.expandtab = true
 
 -- show tab and space characters
 vim.opt.list = true
-vim.opt.listchars:append "space:⋅,eol:¬"
+vim.opt.listchars:append "tab:▏ ,space:⋅,eol:¬"
+
+-- Hide default colorschemes from colorscheme command
+vim.opt.wildignore:append "blue.vim,darkblue.vim,default.vim,delek.vim,desert.vim,elflord.vim,evening.vim,industry.vim,koehler.vim,morning.vim,murphy.vim,pablo.vim,peachpuff.vim,ron.vim,shine.vim,slate.vim,torte.vim,zellner.vim"
 
 -- Case sensitive search if using uppercase characters, otherwise case
 -- insensitive

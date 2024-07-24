@@ -7,13 +7,13 @@ local map = vim.keymap.set
 nmap { "U", "<cmd>redo<CR>" }
 nmap { "<BS>", "ciw" }
 
-nmap { "<leader>b", function()
-  if vim.o.background == 'light' then
-    vim.o.background = 'dark'
-  else
-    vim.o.background = 'light'
-  end
-end }
+-- nmap { "<leader>b", function()
+--   if vim.o.background == 'light' then
+--     vim.o.background = 'dark'
+--   else
+--     vim.o.background = 'light'
+--   end
+-- end }
 
 -- window/buffer management shortcuts
 -- nmap { "<leader>qw", "<cmd>bdel<CR>", { noremap = true } }

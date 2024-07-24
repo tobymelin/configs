@@ -17,6 +17,7 @@ return {
 
   {
     'NeogitOrg/neogit',
+    event = 'VeryLazy',
     opts = {},
   },
 
@@ -38,9 +39,5 @@ return {
       { '<leader>gD', '<cmd>DiffviewOpen master<CR>' },
       { '<leader>gM', '<cmd>DiffviewOpen main<CR>' },
     },
-  },
-  {
-    'JojoMakesGames/git-remote-url.nvim',
-    opts = {}
   },
 }

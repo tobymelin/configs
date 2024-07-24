@@ -1,8 +1,8 @@
 local M = {
   {
     'mrjones2014/smart-splits.nvim',
-    lazy = false,
-    config = function ()
+    event = 'VeryLazy',
+    config = function()
       require('smart-splits').setup()
 
       -- recommended mappings

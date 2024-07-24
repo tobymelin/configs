@@ -1,4 +1,9 @@
 return {
   'rktjmp/lush.nvim',
-  -- opts = {},
+  event = 'VeryLazy',
+  cmd = {
+    'Lushify',
+    'LushImport',
+    'LushRunTutorial',
+  },
 }

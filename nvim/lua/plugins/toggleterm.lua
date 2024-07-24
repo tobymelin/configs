@@ -9,11 +9,12 @@ return {
         float_opts = {
           border = "double",
         },
+        autochdir = true,
       }
 
-      local Terminal  = require('toggleterm.terminal').Terminal
+      local Terminal = require('toggleterm.terminal').Terminal
 
-      local lazygit = Terminal:new({
+      local lazygit  = Terminal:new({
         cmd = "lazygit",
         hidden = true,
         direction = "float",
@@ -42,11 +43,10 @@ return {
         vim.api.nvim_command("TermExec cmd=\"npm run lint\"")
       end
 
-      vim.api.nvim_set_keymap("n", "<leader>L", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+      vim.api.nvim_set_keymap("n", "<leader>L", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
       -- vim.api.nvim_set_keymap("n", "<leader>rr", "<cmd>lua _ava_toggle()<CR>", {noremap = true, silent = true})
       -- vim.api.nvim_set_keymap("n", "<leader>ru", "<cmd>lua _ava_toggle(true)<CR>", {noremap = true, silent = true})
-      vim.api.nvim_set_keymap("n", "<leader>ry", "<cmd>lua _lint_toggle()<CR>", {noremap = true, silent = true})
+      vim.api.nvim_set_keymap("n", "<leader>ry", "<cmd>lua _lint_toggle()<CR>", { noremap = true, silent = true })
     end
   },
 }
-

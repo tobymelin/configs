@@ -31,6 +31,7 @@ return {
   },
   {
     'lukas-reineke/indent-blankline.nvim',
+    enabled = false,
     main = "ibl",
     opts = {
       indent = { char = '▏', tab_char = '▏' },
@@ -191,7 +192,7 @@ return {
   -- Code completion/signature help while typing
   {
     'ray-x/lsp_signature.nvim',
-    lazy = false,
+    event = 'VeryLazy',
     config = function()
       require('lsp_signature').setup()
     end
@@ -208,43 +209,6 @@ return {
       -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
-    },
-  },
-
-  {
-    'stevearc/aerial.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons"
-    },
-  },
-
-  -- faster.nvim, inspired by bigfile.nvim, helps make
-  -- nvim faster when opening/processing big files.
-  {
-    'pteroctopus/faster.nvim',
-    enabled = false,
-    opts = {
-      behaviors = {
-        bigfile = {
-          on = true,
-          -- Table which contains names of features that will be disabled when
-          -- bigfile is opened. Feature names can be seen in features table below.
-          -- features_disabled can also be set to "all" and then all features that
-          -- are on (on=true) are going to be disabled for this behaviour
-          features_disabled = {
-            "illuminate", "matchparen", "lsp", "treesitter",
-            "indent_blankline", "vimopts", "syntax", "filetype"
-          },
-          -- Files larger than `filesize` are considered big files. Value is in MB.
-          filesize = 0.2,
-          -- Autocmd pattern that controls on which files behaviour will be applied.
-          -- `*` means any file.
-          pattern = "*",
-        },
-      },
     },
   },
 }

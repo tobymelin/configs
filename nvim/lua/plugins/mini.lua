@@ -2,7 +2,7 @@ return {
   {
     'echasnovski/mini.nvim',
     version = false,
-    lazy = false,
+    event = 'VeryLazy',
     config = function()
       require('mini.splitjoin').setup()
       require('mini.indentscope').setup()
