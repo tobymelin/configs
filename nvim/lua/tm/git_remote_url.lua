@@ -9,7 +9,8 @@ local function build_url(branch)
   if string.find(git_url, "https://") then
     git_url = string.sub(git_url, 1, -6)
   elseif string.find(git_url, "git@") then
-    git_url = "https://github.com/" .. string.sub(git_url, 16, -1)
+    -- git_url = "https://github.com/" .. string.sub(git_url, 16, -1)
+    git_url = "https://github.com/" .. string.sub(git_url, 16, string.len(git_url) - 5)
   end
 
   local path = vim.fn.expand("%")
@@ -17,7 +18,7 @@ local function build_url(branch)
   if branch == nil then
     local git_default_branch = vim.fn.system("git config --get git-extras.default-branch")
     if git_default_branch == "" then
-      branch = "main"
+      branch = "master"
     else
       branch = git_default_branch
     end

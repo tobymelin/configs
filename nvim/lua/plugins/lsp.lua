@@ -126,6 +126,9 @@ return {
       require 'lspconfig'.gopls.setup {
         on_attach = on_attach,
       }
+      require 'lspconfig'.graphql.setup {
+        on_attach = on_attach,
+      }
       require 'lspconfig'.vuels.setup {}
 
       -- https://github.com/jose-elias-alvarez/typescript.nvim/issues/19

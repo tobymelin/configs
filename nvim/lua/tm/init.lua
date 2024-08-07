@@ -1,5 +1,6 @@
 require("tm.remap")
-require("tm.git_remote_url")
+local remoteurl = require("tm.git_remote_url")
+remoteurl.setup()
 
 if vim.g.neovide then
   require("tm.neovide")
