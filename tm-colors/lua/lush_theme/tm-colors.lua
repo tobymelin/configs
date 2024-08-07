@@ -83,7 +83,7 @@ local theme = lush(function(injected_functions)
     Statement { fg = pink0 },
     Substitute { Statement },
     Search { bg = Normal.bg.ro(50).li(32).sa(23), fg = Normal.fg },
-    IncSearch { bg = Search.bg.li(70), fg = Search.fg.da(80) },
+    IncSearch { bg = Search.bg.li(40), fg = Search.fg.da(80) },
     CurSearch { IncSearch },
 
     Function { fg = teal0 },
@@ -115,6 +115,8 @@ local theme = lush(function(injected_functions)
     -- Code-specific modifications
     sym "@string.yaml" { Variable },
     sym "@number.yaml" { fg = purple0 },
+
+    FlashBackdrop { fg = Comment.fg.li(30) },
 
     WhichKey { fg = pink0 },
     MiniIndentscopeSymbol { fg = blue0 },
