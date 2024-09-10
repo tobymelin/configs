@@ -2,6 +2,13 @@
 #    Linux: ~/.config/lazygit/config.yml
 #    MacOS: ~/Library/Application Support/lazygit/config.yml
 #    Windows: %APPDATA%\lazygit\config.yml
+gui:
+  nerdFontsVersion: ""
 git:
   autoFetch: false
   autoRefresh: false
+  truncateCopiedCommitHashesTo: 7
+  paging:
+    colorArg: always
+    pager: delta --paging=never
+    # externalDiffCommand: difft --color=always
