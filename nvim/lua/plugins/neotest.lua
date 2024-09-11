@@ -43,9 +43,6 @@ return {
       },
     })
 
-    nmap { "<leader>ru", "<cmd>Ava % -u<CR>" }
-    nmap { "<leader>rr", "<cmd>Ava<CR>" }
-
     -- vim-test configs
     vim.cmd([[
       tmap <C-o> <C-\><C-n>
@@ -62,6 +59,9 @@ return {
     { '<leader>rt', "<cmd>lua require('neotest').run.run()<CR>" },
     { '<leader>rf', "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>" },
     { '<leader>ra', "<cmd>lua require('neotest').run.run(vim.fn.getcwd())<CR>" },
+    { '<leader>ru', '<cmd>Ava % -u<CR>' },
+    { '<leader>rr', '<cmd>Ava<CR>' },
+
     -- { '<leader>rf', "<cmd>TestFile<CR>" },
     -- { '<leader>ra', "<cmd>TestSuite<CR>" },
     -- { '<leader>rl', "<cmd>TestLast<CR>" },

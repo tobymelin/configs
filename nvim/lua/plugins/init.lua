@@ -139,7 +139,7 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     lazy = true,
-    enabled = false,
+    enabled = true,
     opts = {
       view = {
         width = 40,
