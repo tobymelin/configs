@@ -9,7 +9,7 @@ return {
   -- https://github.com/yioneko/nvim-vtsls
   {
     'yioneko/nvim-vtsls',
-    -- enabled = false,
+    enabled = false,
   },
 
   {

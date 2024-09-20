@@ -80,6 +80,10 @@ local theme = lush(function(injected_functions)
     NormalFloat { fg = Normal.fg, bg = Normal.bg.li(10) }, -- Normal text in floating windows.
     WinSeparator { fg = Normal.bg.li(50) },
 
+    LineNr { fg = Normal.fg },                 -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNrAbove { fg = Normal.fg.li(-30) },    -- Line number for when the 'relativenumber' option is set, above the cursor line
+    LineNrBelow { fg = Normal.fg.li(-30) },    -- Line number for when the 'relativenumber' option is set, below the cursor line
+
     Statement { fg = pink0 },
     Substitute { Statement },
     Search { bg = Normal.bg.ro(50).li(32).sa(23), fg = Normal.fg },
