@@ -2,10 +2,11 @@ return {
   -- Vue.js syntax highlighting
   {
     'leafOfTree/vim-vue-plugin',
-    config = function ()
+    enabled = false,
+    config = function()
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "vue",
-        callback = function ()
+        callback = function()
           vim.cmd('set syntax=vue')
         end
       })

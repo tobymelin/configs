@@ -5,6 +5,24 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",
 })
 
+local function get_typescript_server_path(root_dir)
+  local global_ts = '/home/toby/.local/share/nvm/v20.8.1/lib/node_modules/typescript/lib'
+  -- Alternative location if installed as root:
+  -- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
+  local found_ts = ''
+  local function check_dir(path)
+    found_ts = vim.fs.joinpath(path, 'node_modules', 'typescript', 'lib')
+    if vim.fn.isdirectory(found_ts) then
+      return path
+    end
+  end
+  if vim.fs.search_ancestors(root_dir, check_dir) then
+    return found_ts
+  else
+    return global_ts
+  end
+end
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -143,7 +161,20 @@ return {
           },
         },
       }
-      require 'lspconfig'.vuels.setup {}
+      -- require 'lspconfig'.vuels.setup {}
+      require 'lspconfig'.volar.setup {
+        init_options = {
+          typescript = {
+            tsdk = '/Users/toby/.local/share/nvm/v20.8.1/lib/node_modules/typescript/lib/'
+          },
+        },
+        on_attach = on_attach,
+        -- on_new_config = function(new_config, new_root_dir)
+        --   new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+        --   print("Found new TS root dir in this path")
+        --   print(get_typescript_server_path(new_root_dir))
+        -- end,
+      }
 
       -- https://github.com/jose-elias-alvarez/typescript.nvim/issues/19
       -- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils (search filter)
