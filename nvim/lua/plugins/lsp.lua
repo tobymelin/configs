@@ -70,6 +70,10 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'vca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'vrn', vim.lsp.buf.rename, bufopts)
 
+  vim.keymap.set("n", "gI", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
+  end, { buffer = bufnr })
+
   if client.name == 'gopls' then
     vim.keymap.set('n', '<leader>gr', '<cmd>GoRun<CR>', bufopts)
   end
@@ -131,6 +135,20 @@ return {
 
       require 'lspconfig'.ts_ls.setup {
         on_attach = on_attach,
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = "/Users/toby/.local/share/nvm/v20.8.1/lib/node_modules/@vue/typescript-plugin",
+              languages = { "javascript", "typescript", "vue" },
+            },
+          },
+        },
+        filetypes = {
+          "javascript",
+          "typescript",
+          "vue",
+        },
       }
       require 'lspconfig'.eslint.setup {
         on_attach = on_attach,
@@ -150,6 +168,16 @@ return {
       require 'lspconfig'.graphql.setup {
         on_attach = on_attach,
       }
+
+      --Enable (broadcasting) snippet capability for completion
+      local csscapabilities = vim.lsp.protocol.make_client_capabilities()
+      csscapabilities.textDocument.completion.completionItem.snippetSupport = true
+
+      require 'lspconfig'.cssls.setup {
+        capabilities = csscapabilities,
+        on_attach = on_attach,
+      }
+
       require 'lspconfig'.basedpyright.setup {
         on_attach = on_attach,
         -- cmd = { "basedpyright-langserver", "--stdio", "--skipunannotated" },
@@ -163,6 +191,7 @@ return {
       }
       -- require 'lspconfig'.vuels.setup {}
       require 'lspconfig'.volar.setup {
+        capabilities = capabilities,
         init_options = {
           typescript = {
             tsdk = '/Users/toby/.local/share/nvm/v20.8.1/lib/node_modules/typescript/lib/'
