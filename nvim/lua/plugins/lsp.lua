@@ -134,6 +134,7 @@ return {
       -- })
 
       require 'lspconfig'.ts_ls.setup {
+        capabilities = capabilities,
         on_attach = on_attach,
         init_options = {
           plugins = {
@@ -179,6 +180,7 @@ return {
       }
 
       require 'lspconfig'.basedpyright.setup {
+        capabilities = capabilities,
         on_attach = on_attach,
         -- cmd = { "basedpyright-langserver", "--stdio", "--skipunannotated" },
         settings = {
