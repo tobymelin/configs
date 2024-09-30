@@ -103,14 +103,6 @@ return {
     },
   },
 
-  -- Toggle line comments
-  {
-    'terrortylor/nvim-comment',
-    config = function()
-      require('nvim_comment').setup()
-    end
-  },
-
   -- Maximize window splits
   {
     'declancm/maximize.nvim',

@@ -19,6 +19,9 @@ return {
     'NeogitOrg/neogit',
     event = 'VeryLazy',
     opts = {},
+    keys = {
+      { '<leader>gg', '<cmd>Neogit<CR>' },
+    },
   },
 
   {
