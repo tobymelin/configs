@@ -1,0 +1,82 @@
+#!/bin/bash
+
+GITOPSDIR="${HOME}/dev-token/gitops"
+cd $GITOPSDIR
+
+if [ -z "$(pwd | grep gitops)" ]; then
+  echo "Change directory to gitops"
+  exit 1
+fi
+
+if [ $# -lt 2 ] || [ $1 == "-h" ]; then
+  echo "Usage: $0 <service> <environment> <git commit sha>"
+  echo "Example: $0 cdd dev 123456"
+  exit 0
+fi
+
+if [ $2 == "copy" ]; then
+  DEVKUST="apps/token-services/$1/overlays/development/kustomization.yaml"
+  PRODKUST="apps/token-services/$1/overlays/production/kustomization.yaml"
+
+  if [ ! -f $DEVKUST ]; then
+    echo "Could not find kustomization.yaml for $1 in development"
+    exit 1
+  elif [ ! -f $PRODKUST ]; then
+    echo "Could not find kustomization.yaml for $1 in production"
+    exit 1
+  fi
+
+  DEVTAG="$(grep newTag $DEVKUST | sed 's/.*"\(.*\)"/\1/')"
+  PRODTAG="$(grep newTag $PRODKUST | sed 's/.*"\(.*\)"/\1/')"
+
+  sed -i "" "s/$PRODTAG/$DEVTAG/g" $PRODKUST
+
+  echo "Uprev from $PRODTAG to $DEVTAG in $1: production"
+  exit 0
+fi
+
+
+if [ $2 == "dev" ]; then
+  OPSENV="development"
+elif [ $2 == "prod" ]; then
+  OPSENV="production"
+else
+  echo "Invalid environment"
+  exit 1
+fi
+
+KUSTFILE="apps/token-services/$1/overlays/$OPSENV/kustomization.yaml"
+
+if [ ! -f $KUSTFILE ]; then
+  echo "Could not find kustomization.yaml for $1 in $OPSENV"
+  exit 1
+fi
+
+if [ -z "$3" ]; then
+  CURDIR="$(pwd)"
+
+  cd ../$1
+  NEWTAG="$(git rev-parse --short HEAD)"
+  COMMITMSG="$(git log --oneline -1)"
+  cd $CURDIR
+
+  if [ -z "$NEWTAG" ]; then
+    echo "Could not get git commit sha for $2"
+    exit 1
+  fi
+else
+  NEWTAG="$3"
+fi
+
+CURRENTTAG="$(grep newTag $KUSTFILE | sed 's/.*"\(.*\)"/\1/')"
+
+sed -i "" "s/$CURRENTTAG/$NEWTAG/g" $KUSTFILE
+
+echo "Replaced $CURRENTTAG with $NEWTAG in $1: $OPSENV"
+
+git commit -am "$1: deploy \`$NEWTAG\` to $OPSENV"
+
+if [ ! -z "$COMMITMSG" ]; then
+  echo
+  echo "$COMMITMSG"
+fi

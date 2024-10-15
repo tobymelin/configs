@@ -1,0 +1,35 @@
+#!/bin/bash
+
+GITOPSDIR="${HOME}/dev-token/gitops"
+cd $GITOPSDIR
+
+if [ -z "$(pwd | grep gitops)" ]; then
+  echo "Change directory to gitops"
+  exit 1
+fi
+
+if [ $# -lt 2 ] || [ $1 == "-h" ]; then
+  echo "Usage: $0 <service> <environment>"
+  echo "Example: $0 cdd dev"
+  exit 0
+fi
+
+if [ $2 == "dev" ]; then
+  OPSENV="development"
+elif [ $2 == "prod" ]; then
+  OPSENV="production"
+else
+  echo "Invalid environment"
+  exit 1
+fi
+
+KUSTFILE="apps/token-services/$1/overlays/$OPSENV/kustomization.yaml"
+
+if [ ! -f $KUSTFILE ]; then
+  echo "Could not find kustomization.yaml for $1 in $OPSENV"
+  exit 1
+fi
+
+CURRENTTAG="$(grep newTag $KUSTFILE | sed 's/.*"\(.*\)"/\1/')"
+
+echo $CURRENTTAG

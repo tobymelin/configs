@@ -1,0 +1,16 @@
+#!/bin/bash
+
+ORGDIR="$HOME/org"
+
+if [[ $1 == "-w" ]]; then
+  orgfn=$ORGDIR/weekly/$(date -v1w +"%y%m%d").org
+else
+  orgfn=$ORGDIR/monthly/$(date +"%y%m").org
+fi
+
+if [[ !( -e $orgfn ) ]]
+then
+        touch $orgfn
+fi
+
+$EDITOR $orgfn
