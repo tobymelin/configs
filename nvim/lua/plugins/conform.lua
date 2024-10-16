@@ -5,6 +5,7 @@ local M = {
   'stevearc/conform.nvim',
   opts = {
     formatters_by_ft = {
+      javascript = { 'eslint', 'prettier' },
       typescript = { 'eslint_d', 'prettier' },
       go = { 'goimports', 'gofmt' },
     },
