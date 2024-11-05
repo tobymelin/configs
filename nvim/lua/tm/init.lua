@@ -1,4 +1,5 @@
 require("tm.remap")
+require("tm.test")
 local remoteurl = require("tm.git_remote_url")
 remoteurl.setup()
 

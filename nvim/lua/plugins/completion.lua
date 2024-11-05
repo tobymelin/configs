@@ -1,12 +1,13 @@
 return {
   {
     'hrsh7th/cmp-nvim-lsp',
-    -- enabled = false,
+    enabled = false,
   },
   -- 'hrsh7th/cmp-vsnip',
   -- 'hrsh7th/vim-vsnip',
   {
     "L3MON4D3/LuaSnip",
+    enabled = false,
     dependencies = { "rafamadriz/friendly-snippets" },
     -- follow latest release.
     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
