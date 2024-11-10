@@ -91,8 +91,9 @@ return {
       -- Set up lspconfig.
       -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      local default_capabilities = vim.lsp.protocol.make_client_capabilities()
+      local capabilities = require('blink.cmp').get_lsp_capabilities(default_capabilities)
+      -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 
@@ -110,21 +111,23 @@ return {
       -- }
 
       -- require("lspconfig.configs").vtsls = require("vtsls").lspconfig -- set default server config
-      require("lspconfig").vtsls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-          -- vtsls.experimental.completion.enableServerSideFuzzyMatch
-          vtsls = {
-            experimental = {
-              completion = {
-                enableServerSideFuzzyMatch = true,
-                entriesLimit = 20,
-              },
-            },
-          },
-        },
-      })
+      --
+      -- require("lspconfig").vtsls.setup({
+      --   capabilities = capabilities,
+      --   on_attach = on_attach,
+      --   settings = {
+      --     -- vtsls.experimental.completion.enableServerSideFuzzyMatch
+      --     vtsls = {
+      --       experimental = {
+      --         completion = {
+      --           enableServerSideFuzzyMatch = true,
+      --           entriesLimit = 20,
+      --         },
+      --       },
+      --     },
+      --   },
+      -- })
+
       -- require("lspconfig").vtsls.setup({ --[[
       --   your custom server config here
       --   ]]
@@ -151,24 +154,25 @@ return {
       --   },
       -- })
 
-      -- require 'lspconfig'.ts_ls.setup {
-      --   capabilities = capabilities,
-      --   on_attach = on_attach,
-      --   init_options = {
-      --     plugins = {
-      --       {
-      --         name = "@vue/typescript-plugin",
-      --         location = "/Users/toby/.local/share/nvm/v20.8.1/lib/node_modules/@vue/typescript-plugin",
-      --         languages = { "javascript", "typescript", "vue" },
-      --       },
-      --     },
-      --   },
-      --   filetypes = {
-      --     "javascript",
-      --     "typescript",
-      --     "vue",
-      --   },
-      -- }
+      require 'lspconfig'.ts_ls.setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = "/Users/toby/.local/share/nvm/v20.8.1/lib/node_modules/@vue/typescript-plugin",
+              languages = { "javascript", "typescript", "vue" },
+            },
+          },
+        },
+        filetypes = {
+          "javascript",
+          "typescript",
+          "vue",
+        },
+      }
+
       require 'lspconfig'.eslint.setup {
         on_attach = on_attach,
         capabilities = capabilities,

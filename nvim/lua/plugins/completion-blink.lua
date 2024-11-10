@@ -23,7 +23,6 @@ local function render_item(ctx)
   }
 end
 
-
 return {
   'saghen/blink.cmp',
   lazy = false, -- lazy loading handled internally
@@ -54,9 +53,26 @@ return {
     -- experimental signature help support
     trigger = { signature_help = { enabled = true } },
 
+    keymap = {
+      preset = 'default',
+
+      ['<Up>'] = { 'select_prev', 'fallback' },
+      ['<C-p>'] = { 'select_prev', 'fallback' },
+      ['<C-k>'] = { 'select_prev', 'fallback' },
+      ['<Down>'] = { 'select_next', 'fallback' },
+      ['<C-n>'] = { 'select_next', 'fallback' },
+      ['<C-j>'] = { 'select_next', 'fallback' },
+      ['<CR>'] = { 'select_and_accept', 'fallback' },
+      ['<Tab>'] = { 'select_and_accept' },
+    },
+
     windows = {
-      autocomplete = {
-        draw = render_item,
+      -- autocomplete = {
+      --   draw = render_item,
+      -- },
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 50,
       },
     },
   }

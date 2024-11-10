@@ -12,11 +12,6 @@ return {
     "nvim-neotest/neotest-jest",
     "nvim-neotest/neotest-vim-test",
     "nvim-neotest/neotest-plenary",
-    {
-      -- "neotest/neotest-ava",
-      -- dev = true,
-      dir = "/Users/tobymelin/.local/share/nvim/neotest-ava",
-    },
     "vim-test/vim-test",
   },
   config = function()
@@ -38,7 +33,6 @@ return {
       -- your neotest config here
       adapters = {
         require("neotest-go"),
-        require("neotest-ava"),
         require("neotest-plenary"),
         -- require("neotest-vim-test")({ allow_file_types = { "typescript", "javascript" } }),
       },
