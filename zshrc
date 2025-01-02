@@ -257,6 +257,8 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 [ -f ~/.env.zsh ] && source ~/.env.zsh
 
 
-source /Users/tobymelin/.config/broot/launcher/bash/br
+[ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
 
-eval "$(rbenv init - zsh)"
+if type rbenv &> /dev/null; then
+  eval "$(rbenv init - zsh)"
+fi
