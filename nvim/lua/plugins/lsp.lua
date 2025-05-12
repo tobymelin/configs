@@ -89,10 +89,11 @@ return {
     },
     config = function()
       -- Set up lspconfig.
-      -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       local default_capabilities = vim.lsp.protocol.make_client_capabilities()
       local capabilities = require('blink.cmp').get_lsp_capabilities(default_capabilities)
+
+      -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
       -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.

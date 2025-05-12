@@ -80,9 +80,9 @@ local theme = lush(function(injected_functions)
     NormalFloat { fg = Normal.fg, bg = Normal.bg.li(10) }, -- Normal text in floating windows.
     WinSeparator { fg = Normal.bg.li(50) },
 
-    LineNr { fg = Normal.fg },                 -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    LineNrAbove { fg = Normal.fg.li(-30) },    -- Line number for when the 'relativenumber' option is set, above the cursor line
-    LineNrBelow { fg = Normal.fg.li(-30) },    -- Line number for when the 'relativenumber' option is set, below the cursor line
+    LineNr { fg = Normal.fg },              -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNrAbove { fg = Normal.fg.li(-30) }, -- Line number for when the 'relativenumber' option is set, above the cursor line
+    LineNrBelow { fg = Normal.fg.li(-30) }, -- Line number for when the 'relativenumber' option is set, below the cursor line
 
     Statement { fg = pink0 },
     Substitute { Statement },
@@ -126,6 +126,7 @@ local theme = lush(function(injected_functions)
     MiniIndentscopeSymbol { fg = blue0 },
     -- MiniIndentscopeSymbol { fg = '#90acff' },
 
+    Title { fg = pink0.li(20) }, -- Titles for output from ":set all", ":autocmd" etc.
 
     -- The following are the Neovim (as of 0.8.0-dev+100-g371dfb174) highlight
     -- groups, mostly used for styling UI elements.

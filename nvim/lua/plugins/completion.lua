@@ -1,13 +1,15 @@
+local nvim_cmp_enabled = false
+
 return {
   {
     'hrsh7th/cmp-nvim-lsp',
-    enabled = false,
+    enabled = nvim_cmp_enabled,
   },
   -- 'hrsh7th/cmp-vsnip',
   -- 'hrsh7th/vim-vsnip',
   {
     "L3MON4D3/LuaSnip",
-    enabled = false,
+    enabled = nvim_cmp_enabled,
     dependencies = { "rafamadriz/friendly-snippets" },
     -- follow latest release.
     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
@@ -20,13 +22,13 @@ return {
   },
   {
     'saadparwaiz1/cmp_luasnip',
-    enabled = false,
+    enabled = nvim_cmp_enabled,
   },
   {
     -- 'hrsh7th/nvim-cmp',
     'yioneko/nvim-cmp',
     branch = 'perf',
-    enabled = false,
+    enabled = nvim_cmp_enabled,
     config = function()
       local cmp = require 'cmp'
 
