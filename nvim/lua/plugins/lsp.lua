@@ -215,20 +215,20 @@ return {
         },
       }
       -- require 'lspconfig'.vuels.setup {}
-      require 'lspconfig'.volar.setup {
-        capabilities = capabilities,
-        init_options = {
-          typescript = {
-            tsdk = '/Users/toby/.local/share/nvm/v20.8.1/lib/node_modules/typescript/lib/'
-          },
-        },
-        on_attach = on_attach,
-        -- on_new_config = function(new_config, new_root_dir)
-        --   new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
-        --   print("Found new TS root dir in this path")
-        --   print(get_typescript_server_path(new_root_dir))
-        -- end,
-      }
+      -- vim.lsp.config('volar')
+
+      vim.lsp.enable('volar')
+      -- vim.lsp.config('volar', {
+      --   -- add filetypes for typescript, javascript and vue
+      --   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+      --   init_options = {
+      --     vue = {
+      --       -- disable hybrid mode
+      --       hybridMode = false,
+      --     },
+      --   },
+      -- })
+
 
       -- https://github.com/jose-elias-alvarez/typescript.nvim/issues/19
       -- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils (search filter)

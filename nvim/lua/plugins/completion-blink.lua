@@ -42,7 +42,7 @@ return {
       -- Remove 'buffer' if you don't want text completions, by default it's only enabled when LSP returns no items
       default = { 'lsp', 'path', 'snippets' },
       -- Disable cmdline completions
-      cmdline = {},
+      --cmdline = {},
     },
     appearance = {
       -- sets the fallback highlight groups to nvim-cmp's highlight groups
