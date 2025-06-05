@@ -38,11 +38,11 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+    cmdline = { enabled = false },
     sources = {
       -- Remove 'buffer' if you don't want text completions, by default it's only enabled when LSP returns no items
       default = { 'lsp', 'path', 'snippets' },
       -- Disable cmdline completions
-      --cmdline = {},
     },
     appearance = {
       -- sets the fallback highlight groups to nvim-cmp's highlight groups
