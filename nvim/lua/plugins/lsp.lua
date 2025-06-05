@@ -155,7 +155,8 @@ return {
       --   },
       -- })
 
-      require 'lspconfig'.ts_ls.setup {
+      vim.lsp.enable('ts_ls')
+      vim.lsp.config('ts_ls', {
         capabilities = capabilities,
         on_attach = on_attach,
         init_options = {
@@ -172,37 +173,48 @@ return {
           "typescript",
           "vue",
         },
-      }
+      })
 
-      require 'lspconfig'.eslint.setup {
+      vim.lsp.enable('eslint')
+      vim.lsp.config('eslint', {
         on_attach = on_attach,
         capabilities = capabilities,
         root_dir = function() return vim.loop.cwd() end
-      }
-      require 'lspconfig'.lua_ls.setup {
+      })
+
+      vim.lsp.enable('lua_ls')
+      vim.lsp.config('lua_ls', {
         on_attach = on_attach,
         capabilities = capabilities,
-      }
-      -- require 'lspconfig'.golangci_lint_ls.setup {
+      })
+
+      -- vim.lsp.enable('golangci_lint_ls')
+      -- vim.lsp.config('golangci_lint_ls', {
       --   on_attach = on_attach,
-      -- }
-      require 'lspconfig'.gopls.setup {
+      -- })
+
+      vim.lsp.enable('gopls')
+      vim.lsp.config('gopls', {
         on_attach = on_attach,
-      }
-      require 'lspconfig'.graphql.setup {
+      })
+
+      vim.lsp.enable('graphql')
+      vim.lsp.config('graphql', {
         on_attach = on_attach,
-      }
+      })
 
       --Enable (broadcasting) snippet capability for completion
       local csscapabilities = vim.lsp.protocol.make_client_capabilities()
       csscapabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      require 'lspconfig'.cssls.setup {
+      vim.lsp.enable('cssls')
+      vim.lsp.config('cssls', {
         capabilities = csscapabilities,
         on_attach = on_attach,
-      }
+      })
 
-      require 'lspconfig'.basedpyright.setup {
+      vim.lsp.enable('basedpyright')
+      vim.lsp.config('basedpyright', {
         capabilities = capabilities,
         on_attach = on_attach,
         -- cmd = { "basedpyright-langserver", "--stdio", "--skipunannotated" },
@@ -213,7 +225,7 @@ return {
             },
           },
         },
-      }
+      })
 
       vim.lsp.enable('vue_ls')
 
