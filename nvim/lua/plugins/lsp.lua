@@ -214,21 +214,8 @@ return {
           },
         },
       }
-      -- require 'lspconfig'.vuels.setup {}
-      -- vim.lsp.config('volar')
 
-      vim.lsp.enable('volar')
-      -- vim.lsp.config('volar', {
-      --   -- add filetypes for typescript, javascript and vue
-      --   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-      --   init_options = {
-      --     vue = {
-      --       -- disable hybrid mode
-      --       hybridMode = false,
-      --     },
-      --   },
-      -- })
-
+      vim.lsp.enable('vue_ls')
 
       -- https://github.com/jose-elias-alvarez/typescript.nvim/issues/19
       -- https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils (search filter)
